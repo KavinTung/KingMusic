@@ -109,7 +109,7 @@ const app = {
         barGap: 2,
         responsive: true,
         waveColor: '#999',
-        backend: 'MediaElement',
+        backend: 'MediaElement' || 'WebAudio',
     }),
 
     // Start function:
@@ -825,10 +825,9 @@ const app = {
 
     // Play music:
     playMusic: function () {
-        // this.wavesurfer.on('ready', () => {
-        //     this.wavesurfer.play()
-        // })
-        audio.play()
+        this.wavesurfer.on('ready', () => {
+            this.wavesurfer.play()
+        })
     },
 
     // Random number function:

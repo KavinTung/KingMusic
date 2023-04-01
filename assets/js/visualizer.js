@@ -1,12 +1,8 @@
-let contexClass = (window.AudioContext ||
-    window.webkitAudioContext ||
-    window.mozAudioContext ||
-    window.oAudioContext ||
-    window.msAudioContext);
-let context = new contexClass()
 
-function visualizer() {
+    function visualizer() {
     // Audio
+    let context = new AudioContext()
+    // let context = app.wavesurfer.backend.ac
 
     // When song pause:
     audio.addEventListener('pause', () => {
