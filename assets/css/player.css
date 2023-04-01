@@ -31,7 +31,7 @@
 .playing__info .playing__thumb--img {
     position: relative;
     width: 85px;
-    background-image: url(/assets/images/img1.jpg);
+    /* background-image: url(assets/images/img1.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
