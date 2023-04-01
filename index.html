@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/player.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
 
     <title>KingMusic - Music Player | Karaoke Online</title>
@@ -98,7 +99,7 @@
                 <div class="grid">
                     <div class="row">
                         <!-- Playing information -->
-                        <div class="playing__info col l-3 m-3 c-3">
+                        <div class="playing__info col l-3 hide-mobile">
                             <div class="playing__thumb--img" title="Click to play/pause">
                             </div>
                             <div class="playing__desc--text">
@@ -110,7 +111,7 @@
                         </div>
 
                         <!-- Playing controls-->
-                        <div class="playing__controls col l-6 m-6 c-6">
+                        <div class="playing__controls col l-6 m-6 c-9">
 
                             <!-- Playing icons -->
                             <div class="controls__wrap">
@@ -172,14 +173,14 @@
                         <div class="playing__additional col l-3 m-3 c-3">
 
                             <!-- Volume container -->
-                            <div class="volume__wrap">
+                            <div class="volume__wrap hide-mobile">
                                 <div class="control__btn--icon volume__btn" title="Press M to mute / unmute">
                                     <i class="bi bi-volume-up btn__vol--lound"></i>
                                     <i class="bi bi-volume-mute btn__vol--mute"></i>
                                     <!-- <i class="bi bi-volume-mute"></i> -->
                                 </div>
 
-                                <input type="range" class="playing__progress--volume" min="0" max="100" step="1">
+                                <input type="range" class="playing__progress--volume hide-mobile" min="0" max="100" step="1">
                                 <p class="playing__volume--value"></p>
                             </div>
 

@@ -1,0 +1,19 @@
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    .player {
+        padding: 24px;
+    }
+    .playing {
+        top: calc(100% - 150px);
+    }
+    .player .visualizer__wrap {
+        width: 300px;
+        height: 300px;
+    }
+    .player .visualizer .visualizer__setting {
+        display: none !important;
+    }
+}

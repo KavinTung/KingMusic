@@ -237,9 +237,7 @@ const app = {
 
         // Listen for play button click event:
         btnPlay.addEventListener('click', () => {
-            this.wavesurfer.on('ready', () => {
-            this.wavesurfer.play()
-            })
+            audio.play()
         })
 
         // Listen for pause button click event:
