@@ -105,14 +105,14 @@ const app = {
         barRadius: 3,
         cursorWidth: 0,
         hideScrollbar: true,
-        height: 25,
+        height: 20,
         barGap: 2,
         responsive: true,
         waveColor: '#999',
         backend: 'MediaElement',
     }),
 
-    // Start function
+    // Start function:
     start: function () {
         this.fetchPlayList()
             .then((dataList) => {
@@ -124,6 +124,7 @@ const app = {
                 // Functions:
                 this.renderPlayList(this.dataList)
                 this.loadMusicHandle(this.currentTrack)
+                this.setVolumeFunc(this.volume)
                 this.handleEvents()
                 this.handleMusicEvents()
             })
@@ -221,21 +222,24 @@ const app = {
                     return elmNode.getAttribute('data-id') === this.trackId
                 })
 
-                // Set background color for all element playing:
+                // Remove background color for all element not play:
                 songListElm.forEach(item => {
                     item.style.backgroundColor = 'transparent'
                 })
 
-                // Remove background for all element not play:
+                // Set background for all element now playing:
                 elmPlayings.forEach(item => {
-                    item.style.backgroundColor = 'rgba(50,50,50,0.5)'
+                    // item.style.backgroundColor = 'rgba(50,50,50,0.5)'
+                    item.style.backgroundColor = 'rgba(128,128,128,0.5)'
                 })
             })
         })
 
         // Listen for play button click event:
         btnPlay.addEventListener('click', () => {
+            this.wavesurfer.on('ready', () => {
             this.wavesurfer.play()
+            })
         })
 
         // Listen for pause button click event:
@@ -488,7 +492,18 @@ const app = {
         })
 
         // When finish a song:
-        this.wavesurfer.on('finish', () => {
+        // this.wavesurfer.on('finish', () => {
+        //         if (this.isShuffle && this.isRepeat) {
+        //             this.repeatSong()
+        //         } else if (this.isShuffle) {
+        //             this.shuffleSong()
+        //         } else if (this.isRepeat) {
+        //             this.repeatSong()
+        //         } else {
+        //             this.nextSong()
+        //         }
+        // })
+        audio.addEventListener('ended', () => {
             if (this.isShuffle && this.isRepeat) {
                 this.repeatSong()
             } else if (this.isShuffle) {
@@ -602,7 +617,7 @@ const app = {
             }
         }
 
-        // When end music:
+        // When music end:
         if (currentTime >= timeArr[timeArrLength - 1]) {
             lyricElm[timeArrLength - 2].classList.add('showed')
             lyricElm[timeArrLength - 1].classList.add('show')
@@ -625,7 +640,7 @@ const app = {
                 } else {
                     lyricElm[i - 1].classList.remove('showed')
                     // lyricElm[i - 1].scrollIntoView(options)
-                    gsap.to(lyricsElmWrap, { duration: 0.7, scrollTo: { y: lyricElm[i].offsetTop - lyricElm[i].clientHeight / 1.5 } });
+                    gsap.to(lyricsElmWrap, { duration: 0.5, scrollTo: { y: lyricElm[i].offsetTop - lyricElm[i].clientHeight / 1.5 } });
 
                 }
             }
@@ -672,9 +687,8 @@ const app = {
         // Load song:
         this.wavesurfer.load(audio)
 
-        // Render lyric and set volume:
+        // Render lyric:
         this.renderLyric()
-        this.setVolumeFunc(this.volume)
 
         // Show notify loading...::
         loadingNotifyElm.style.display = 'block'
@@ -686,7 +700,6 @@ const app = {
             loadingNotifyElm.style.display = 'none'
 
         })
-
     },
 
     // Render time function:
@@ -777,7 +790,6 @@ const app = {
             time = 1
         }
         this.wavesurfer.seekTo(time)
-        console.log('seek')
     },
 
     // Set volume function:

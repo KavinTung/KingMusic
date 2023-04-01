@@ -1,7 +1,17 @@
-
 function visualizer() {
     // Audio
     let context = new AudioContext()
+
+    // When song pause:
+    audio.addEventListener('pause', () => {
+        context.suspend()
+    })
+
+    // When song play:
+    audio.addEventListener('play', () => {
+        context.resume()
+    })
+
     let src = context.createMediaElementSource(audio)
     let analyser = context.createAnalyser()
     src.connect(analyser)
@@ -38,7 +48,17 @@ function visualizer() {
     }
 
     function update() {
+
         requestAnimationFrame(update)
+
+        // Load image:
+        cdThumb.src = app.songImage
+
+        // Draw image to canvas:
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.drawImage(cdThumb, 0, 0, canvas.width, canvas.height)
+
+        // Scale image:
         scaleImage()
     }
     update()
@@ -46,16 +66,10 @@ function visualizer() {
 
     // Draw canvas:
     function draw() {
-        // Load image:
-        cdThumb.src = app.songImage
 
         // Get request frame and get byte on time:
         requestAnimationFrame(draw)
         analyser.getByteTimeDomainData(dataArray)
-
-        // Draw image to canvas:
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.drawImage(cdThumb, 0, 0, canvas.width, canvas.height)
 
         // Draw wave to canvas:
         ctx.beginPath()
@@ -79,22 +93,19 @@ function visualizer() {
 
 
         // When song pause:
-        app.wavesurfer.on('pause', () => {
+        audio.addEventListener('pause', () => {
             ctx.strokeStyle = `transparent`
-            context.suspend()
         })
 
         // When song play:
-        app.wavesurfer.on('play', () => {
+        audio.addEventListener('play', () => {
             ctx.strokeStyle = `rgba(255,255,255, 0.6)`
-            context.resume()
         })
+
         ctx.stroke()
 
     }
-
     draw()
-
 }
 
 
