@@ -1,8 +1,7 @@
+let context = new AudioContext()
 
     function visualizer() {
     // Audio
-    let context = new AudioContext()
-    // let context = app.wavesurfer.backend.ac
 
     // When song pause:
     audio.addEventListener('pause', () => {

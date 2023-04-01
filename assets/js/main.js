@@ -109,14 +109,14 @@ const app = {
         barGap: 2,
         responsive: true,
         waveColor: '#999',
-        backend: 'MediaElement' || 'WebAudio',
+        backend: 'MediaElement',
+        mediaType: 'audio',
     }),
 
     // Start function:
     start: function () {
         this.fetchPlayList()
             .then((dataList) => {
-
                 // Get data infomation:
                 this.dataList = [...dataList]
                 this.dataListLength = this.dataList.length
