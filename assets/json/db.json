@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Là Anh",
         "image": "assets/images/img1.jpg",
-        "path": "/assets/music/song1.mp3",
+        "path": "assets/music/song1.mp3",
         "artist": "Phạm Lịch, BMZ",
         "thumb": "assets/images/img-thumb1.jpg",
         "lyricArr": [
@@ -89,7 +89,7 @@
         "id": 2,
         "name": "2 Phút Hơn",
         "image": "assets/images/img2.jpg",
-        "path": "/assets/music/song2.mp3",
+        "path": "assets/music/song2.mp3",
         "artist": "Pháo ft KAIZ Remix",
         "thumb": "assets/images/img-thumb2.jpg",
         "lyricArr": [
@@ -140,7 +140,7 @@
         "id": 3,
         "name": "Độ Tộc 2",
         "image": "assets/images/img3.jpg",
-        "path": "/assets/music/song3.mp3",
+        "path": "assets/music/song3.mp3",
         "artist": "Masew, Độ Mixi, Phúc Du, Pháo",
         "thumb": "assets/images/img-thumb3.jpg",
         "lyricArr": [
@@ -219,7 +219,7 @@
         "id": 4,
         "name": "See Tình Remix",
         "image": "assets/images/img4.jpg",
-        "path": "/assets/music/song4.mp3",
+        "path": "assets/music/song4.mp3",
         "artist": "Cucak Remix",
         "thumb": "assets/images/img-thumb4.jpg",
         "lyricArr": [
@@ -288,7 +288,7 @@
         "id": 5,
         "name": "Ưng Quá Chừng",
         "image": "assets/images/img5.jpg",
-        "path": "/assets/music/song5.mp3",
+        "path": "assets/music/song5.mp3",
         "artist": "AMEE",
         "thumb": "assets/images/img-thumb5.jpg",
         "lyricArr": [
@@ -316,7 +316,7 @@
         "id": 6,
         "name": "多想还小",
         "image": "assets/images/img6.jpg",
-        "path": "/assets/music/song6.mp3",
+        "path": "assets/music/song6.mp3",
         "artist": "姜晨艾凝",
         "thumb": "assets/images/img-thumb6.jpg",
         "lyricArr": [
@@ -368,7 +368,7 @@
         "id": 7,
         "name": "Xuôi Dòng Cửu Long",
         "image": "assets/images/img7.jpg",
-        "path": "/assets/music/song7.mp3",
+        "path": "assets/music/song7.mp3",
         "artist": "Diệu Kiên",
         "thumb": "assets/images/img-thumb7.jpg",
         "lyricArr": [
@@ -431,7 +431,7 @@
         "id": 8,
         "name": "Cưa Là Đổ",
         "image": "assets/images/img8.jpg",
-        "path": "/assets/music/song8.mp3",
+        "path": "assets/music/song8.mp3",
         "artist": "Phát Hồ, X2X, Đại Mèo",
         "thumb": "assets/images/img-thumb8.jpg",
         "lyricArr": [
@@ -529,7 +529,7 @@
         "id": 9,
         "name": "Vui Lắm Nha Remix",
         "image": "assets/images/img9.jpg",
-        "path": "/assets/music/song9.mp3",
+        "path": "assets/music/song9.mp3",
         "artist": "Hương Ly, Jombie, Đại Mèo",
         "thumb": "assets/images/img-thumb9.jpg",
         "lyricArr": [
@@ -587,7 +587,7 @@
         "id": 10,
         "name": "Chờ Trông Ai",
         "image": "assets/images/img10.jpg",
-        "path": "/assets/music/song10.mp3",
+        "path": "assets/music/song10.mp3",
         "artist": "Nal ft CT",
         "thumb": "assets/images/img-thumb10.jpg",
         "lyricArr": [
