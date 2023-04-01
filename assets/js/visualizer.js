@@ -1,6 +1,12 @@
+let contexClass = (window.AudioContext ||
+    window.webkitAudioContext ||
+    window.mozAudioContext ||
+    window.oAudioContext ||
+    window.msAudioContext);
+let context = new contexClass()
+
 function visualizer() {
     // Audio
-    let context = new AudioContext()
 
     // When song pause:
     audio.addEventListener('pause', () => {
