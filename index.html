@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet"  >
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/6.6.1/wavesurfer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/6.6.1/plugin/wavesurfer.cursor.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/player.css">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+
+    <title>KingMusic - Music Player | Karaoke Online</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header"></div>
+        <div class="main">
+            <ul class="playlist"></ul>
+        </div>
+        <!-- Player container -->
+        <div class="player">
+            <!-- Visualizer container -->
+            <div class="visualizer__background--img">
+                <div class="visualizer vertical">
+                    <div class="visualizer__cd--animate">
+                        <canvas id="visualizer" class="visualizer__wrap"></canvas>
+                        <div class="visualizer__fullscreen--show">
+                            <div class="visualizer__cd--info">
+                                <h1 class="visualizer__cd--name"></h1>
+                                <h3 class="visualizer__cd--artist"></h3>
+                            </div>
+                            <div class="visualizer__progress--wrap">
+                                <input type="range" class="visualizer__progress" value="0" min="0" max="100">
+                                </input>
+                                <span>0%</span>
+                            </div>
+                            <div class="visualizer__controls--btn">
+                                <div class="visualizer__control--prev control__btn--icon visualizer__setting--icon" title="Prev">
+                                    <i class="bi bi-skip-start"></i>
+                                </div>
+                                <div class="visualizer__control--play control__btn--icon visualizer__setting--icon active" title="Play">
+                                    <i class="bi bi-play-circle"></i>
+                                </div>
+                                <div class="visualizer__control--pause control__btn--icon visualizer__setting--icon" title="Pause">
+                                    <i class="bi bi-pause-circle"></i>
+                                </div>
+                                <div class="visualizer__control--next control__btn--icon visualizer__setting--icon" title="Next">
+                                    <i class="bi bi-skip-end"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lyrics vertical active">
+                    </div>
+                    <div class="visualizer__setting">
+                        <div class="visualizer__player--toggle control__btn--icon visualizer__setting--icon"
+                            title="Press F to show/hide player controls">
+                            <i class="bi bi-toggles"></i>
+                        </div>
+                        <div class="waveform__icon--color control__btn--icon visualizer__setting--icon"
+                            title="Click to change waveform color">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <div class="lyrics__icon--font control__btn--icon visualizer__setting--icon"
+                            title="Click to change lyric font">
+                            <i class="bi bi-file-font"></i>
+                        </div>
+                        <div class="lyrics__icon--toggle control__btn--icon visualizer__setting--icon"
+                            title="Click to hide/show lyric">
+                            <i class="bi bi-journal-text"></i>
+                            <i class="bi bi-journal-x"></i>
+                        </div>
+                        <div class="lyrics__icon--align control__btn--icon visualizer__setting--icon"
+                            title="Press A to align items">
+                            <i class="bi bi-columns-gap"></i>
+                            <i class="bi bi-view-list"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Playing container -->
+            <div class="playing">
+                <div class="grid">
+                    <div class="row">
+                        <!-- Playing information -->
+                        <div class="playing__info col l-3">
+                            <div class="playing__thumb--img" title="Click to play/pause">
+                            </div>
+                            <div class="playing__desc--text">
+                                <marquee behavior="smooth" scrolldelay="120" direction="left"
+                                    class="playing__song--name">2 Phút Hơn
+                                </marquee>
+                                <p class="playing__artist--name">Pháo ft Kaiz Remix</p>
+                            </div>
+                        </div>
+
+                        <!-- Playing controls-->
+                        <div class="playing__controls col l-6">
+
+                            <!-- Playing icons -->
+                            <div class="controls__wrap">
+
+                                <!-- Shuffle button -->
+                                <div class="control__btn--icon shuffle__btn" title="Shuffle">
+                                    <i class="bi bi-shuffle"></i>
+                                </div>
+
+                                <!-- Prev button -->
+                                <div class="control__btn--icon prev__btn" title="Prev">
+                                    <i class="bi bi-skip-start-fill"></i>
+                                </div>
+
+                                <!-- Play button -->
+                                <div class="control__btn--icon active play__btn" title="Press SPACE to play / pause">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                                <!-- Pause button -->
+                                <div class="control__btn--icon pause__btn" title="Press SPACE to play / pause">
+                                    <i class="bi bi-pause-circle-fill"></i>
+                                </div>
+                                <!-- Next button -->
+                                <div class="control__btn--icon next__btn" title="Next">
+                                    <i class="bi bi-skip-end-fill"></i>
+                                </div>
+
+                                <!-- Repeat button -->
+                                <div class="control__btn--icon repeat__btn" title="Repeat">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </div>
+
+                            </div>
+
+                            <!-- Playing waveform -->
+                            <div class="progress__wrap">
+                                <!-- Audio tag -->
+                                <audio id="audio" src=""></audio>
+                                <!-- Waveform -->
+                                <div id="waveform" class="playing__progress--waveform">
+                                    <!-- <p class="playing__notify--loading"></p> -->
+                                    <div class="lds-ellipsis playing__notify--loading">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Playing timeline -->
+                            <div class="timeline__wrap">
+                                <span class="playing__current--duration playing__timeline--duration">00 : 00</span>
+                                <span class="playing__total--duration playing__timeline--duration">04 : 20</span>
+                            </div>
+                        </div>
+
+                        <!-- Playing additional-->
+                        <div class="playing__additional col l-3">
+
+                            <!-- Volume container -->
+                            <div class="volume__wrap">
+                                <div class="control__btn--icon volume__btn" title="Press M to mute / unmute">
+                                    <i class="bi bi-volume-up btn__vol--lound"></i>
+                                    <i class="bi bi-volume-mute btn__vol--mute"></i>
+                                    <!-- <i class="bi bi-volume-mute"></i> -->
+                                </div>
+
+                                <input type="range" class="playing__progress--volume" min="0" max="100" step="1">
+                                <p class="playing__volume--value"></p>
+                            </div>
+
+                            <!-- Visualizer button -->
+                            <div class="visualizer__btn control__btn--icon" title="Press E to show/hide visualizer">
+                                <i class="bi bi-disc"></i>
+                            </div>
+
+                            <!-- Playlist button -->
+                            <div class="control__btn--icon playlist__btn" title="Press L to show playlist">
+                                <i class="bi bi-music-note-list"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./assets/js/visualizer.js"></script>
+<script src="./assets/js/main.js"></script>
+
+</html>
