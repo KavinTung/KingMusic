@@ -1,7 +1,17 @@
-let context = new AudioContext()
+// Audio
 
-    function visualizer() {
-    // Audio
+let context = new (window.AudioContext || window.webkitAudioContext)()
+unlockAudioContext(context);
+
+let src = context.createMediaElementSource(audio)
+let analyser = context.createAnalyser()
+src.connect(analyser)
+analyser.connect(context.destination)
+analyser.fftSize = 2048
+let bufferLength = analyser.frequencyBinCount
+let dataArray = new Uint8Array(bufferLength)
+
+function visualizer() {
 
     // When song pause:
     audio.addEventListener('pause', () => {
@@ -12,14 +22,6 @@ let context = new AudioContext()
     audio.addEventListener('play', () => {
         context.resume()
     })
-
-    let src = context.createMediaElementSource(audio)
-    let analyser = context.createAnalyser()
-    src.connect(analyser)
-    analyser.connect(context.destination)
-    analyser.fftSize = 2048
-    let bufferLength = analyser.frequencyBinCount
-    let dataArray = new Uint8Array(bufferLength)
 
     // Canvas:
     let canvas = document.querySelector("#visualizer")
@@ -109,7 +111,21 @@ let context = new AudioContext()
     draw()
 }
 
+function unlockAudioContext(audioCtx) {
+    if (audioCtx.state === 'suspended') {
+        let events = ['touchstart', 'touchend', 'mousedown', 'keydown'];
+        let unlock = function unlock() {
+            events.forEach(function (event) {
+                document.body.removeEventListener(event, unlock)
+            });
+            audioCtx.resume();
+        };
 
+        events.forEach(function (event) {
+            document.body.addEventListener(event, unlock, false)
+        });
+    }
+}
 
 
 
