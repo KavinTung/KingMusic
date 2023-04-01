@@ -369,6 +369,7 @@
 .player .lyrics {
     position: relative;
     width: 700px;
+    height: 150px;
     text-align: center;
     color: var(--text-color-default);
     font-size: 24px;

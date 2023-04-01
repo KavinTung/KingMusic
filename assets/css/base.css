@@ -33,7 +33,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--text-color-default);
-    background-image: url(/assets/images/maxresdefault.jpg);
+    background-image: url(assets/images/maxresdefault.jpg);
 }
 
 .wrapper {
