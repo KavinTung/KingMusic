@@ -237,7 +237,7 @@ const app = {
 
         // Listen for play button click event:
         btnPlay.addEventListener('click', () => {
-            audio.play()
+            this.wavesurfer.play()
         })
 
         // Listen for pause button click event:
@@ -825,9 +825,10 @@ const app = {
 
     // Play music:
     playMusic: function () {
-        this.wavesurfer.on('ready', () => {
-            this.wavesurfer.play()
-        })
+        // this.wavesurfer.on('ready', () => {
+        //     this.wavesurfer.play()
+        // })
+        audio.play()
     },
 
     // Random number function:
