@@ -33,7 +33,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--text-color-default);
-    background-image: url(https://lateblm.github.io/KingMusic/assets/css/assets/images/maxresdefault.jpg);
+    background-image: url(https://lateblm.github.io/KingMusic/assets/images/maxresdefault.jpg);
 }
 
 .wrapper {
