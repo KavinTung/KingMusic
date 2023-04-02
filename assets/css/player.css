@@ -311,16 +311,28 @@
 }
 
 .player .visualizer.active.vertical .visualizer__fullscreen--show,
-.player .visualizer .visualizer__fullscreen--show {
+.player .visualizer.active.horizontal .visualizer__controls--btn,
+.player .visualizer.active.horizontal .visualizer__progress--wrap {
     display: none;
 }
 
-.player .visualizer .visualizer__fullscreen--show.active {
+.player .visualizer.active.vertical.full .visualizer__fullscreen--show.active {
     display: block;
+    width: 100%;
 }
 
-.player .visualizer.active.horizontal .visualizer__fullscreen--show {
+.player .visualizer.active.horizontal.full .visualizer__fullscreen--show.active {
     display: block;
+    width: 100%;
+}
+
+.player .visualizer.active.horizontal.full .visualizer__progress--wrap {
+    display: block;
+    width: 100%;
+}
+
+.player .visualizer.active.horizontal.full .visualizer__controls--btn {
+    display: flex;
     width: 100%;
 }
 
@@ -400,8 +412,7 @@
     color: var(--text--color-default);
     opacity: 1;
     transition: all 0.5s ease;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .lyrics .current__line.changed {

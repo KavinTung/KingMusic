@@ -67,7 +67,7 @@
         left: 0;
         right: 0;
         height: calc(var(--player-height) + var(--player-mobile-bonus-height));
-        background-color: #333;
+        /* background-color: #333; */
         padding: 6px 24px 24px 24px;
     }
 
@@ -138,9 +138,14 @@
     .pause__mobile--btn.active {
         display: block;
     }
+
     .play__mobile--btn,
     .pause__mobile--btn {
         display: none;
+    }
+    .shuffle__mobile--btn.active,
+    .repeat__mobile--btn.active {
+        color: var(--color-primary);
     }
 
     /* Playlist CSS */
@@ -151,6 +156,7 @@
         left: -100% !important;
         height: 100%;
     }
+
     .playlist.show {
         left: 0 !important;
     }
@@ -186,4 +192,10 @@
         display: none !important;
     }
 
+}
+
+@media (min-width: 740px) {
+    .hide-pc {
+        display: none !important;
+    }
 }

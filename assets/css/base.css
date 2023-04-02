@@ -31,10 +31,7 @@ html {
 
 body {
     background-color: var(--bg-color-default);
-    background-repeat: no-repeat;
-    background-size: cover;
     color: var(--text-color-default);
-    /* background-image: url(https://lateblm.github.io/KingMusic/assets/images/maxresdefault.jpg); */
 }
 
 .wrapper {
@@ -94,7 +91,7 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 80px;
     height: 4px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(128, 128, 128, 0.2);
     border-radius: 5px;
     background-image: linear-gradient(var(--text-color-default), var(--text-color-default));
     background-repeat: no-repeat;

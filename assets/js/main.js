@@ -27,6 +27,10 @@ const btnMbVisualizer = $('.visualizer__mobile--btn')
 const btnMbAlignToggle = $('.align__mobile--btn')
 const btnMbPlayBtn = $('.play__mobile--btn')
 const btnMbPauseBtn = $('.pause__mobile--btn')
+const btnMbNextBtn = $('.next__mobile--btn')
+const btnMbPrevBtn = $('.prev__mobile--btn')
+const btnMbRepeatBtn = $('.repeat__mobile--btn')
+const btnMbShuffleBtn = $('.shuffle__mobile--btn')
 
 // Song information
 const audio = document.getElementById('audio')
@@ -35,6 +39,8 @@ const audioArtist = $('.playing__artist--name')
 const audioName = $('.playing__song--name')
 const totalDurationElm = $('.playing__total--duration')
 const currentDurationElm = $('.playing__current--duration')
+const mBtotalDurationElm = $('.timeline__mobile--total')
+const mBcurrentDurationElm = $('.timeline__mobile--current')
 const visualizerAnimate = $('.visualizer__cd--animate')
 const cdName = $('.visualizer__cd--name')
 const cdArtist = $('.visualizer__cd--artist')
@@ -60,6 +66,7 @@ const loadingNotifyElm = $('.playing__notify--loading')
 const playListWrap = $('.playlist')
 const progressBar = $('.visualizer__progress')
 const progressPercentText = $('.visualizer__progress--wrap > span')
+const mBprogressBar = $('.playing__mobile--progress')
 
 // Additional:
 const musicApi = './assets/json/db.json'
@@ -302,16 +309,70 @@ const app = {
             this.prevSong()
         })
 
+        // Listen for mobile next button click event:
+        btnMbNextBtn.addEventListener('click', () => {
+            this.nextSong()
+        })
+
+        // Listen for mobile prev button click event:
+        btnMbPrevBtn.addEventListener('click', () => {
+            this.prevSong()
+        })
+
         // Listen for repeat button click event:
         btnRepeat.addEventListener('click', () => {
-            btnRepeat.classList.toggle('active')
-            this.isRepeat = btnRepeat.getAttribute('class').includes('active')
+            // btnRepeat.classList.toggle('active')
+            // this.isRepeat = btnRepeat.getAttribute('class').includes('active')
+            if(this.isRepeat === false) {
+                btnMbRepeatBtn.classList.add('active')
+                btnRepeat.classList.add('active')
+                this.isRepeat = true
+            } else {
+                btnMbRepeatBtn.classList.remove('active')
+                btnRepeat.classList.remove('active')
+                this.isRepeat = false
+            }
+        })
+
+        // Listen for repeat mobile button click event:
+        btnMbRepeatBtn.addEventListener('click', () => {
+            // btnMbRepeatBtn.classList.toggle('active')
+            // this.isRepeat = btnMbRepeatBtn.getAttribute('class').includes('active')
+            if(this.isRepeat === false) {
+                btnMbRepeatBtn.classList.add('active')
+                btnRepeat.classList.add('active')
+                this.isRepeat = true
+            } else {
+                btnMbRepeatBtn.classList.remove('active')
+                btnRepeat.classList.remove('active')
+                this.isRepeat = false
+            }
         })
 
         // Listen for shuffle button click event:
         btnShuffle.addEventListener('click', () => {
-            btnShuffle.classList.toggle('active')
-            this.isShuffle = btnShuffle.getAttribute('class').includes('active')
+            if(this.isShuffle === false) {
+                btnMbShuffleBtn.classList.add('active')
+                btnShuffle.classList.add('active')
+                this.isShuffle = true
+            } else {
+                btnMbShuffleBtn.classList.remove('active')
+                btnShuffle.classList.remove('active')
+                this.isShuffle = false
+            }
+        })
+
+        // Listen for shuffle mobile button click event:
+        btnMbShuffleBtn.addEventListener('click', () => {
+            if(this.isShuffle === false) {
+                btnMbShuffleBtn.classList.add('active')
+                btnShuffle.classList.add('active')
+                this.isShuffle = true
+            } else {
+                btnMbShuffleBtn.classList.remove('active')
+                btnShuffle.classList.remove('active')
+                this.isShuffle = false
+            }
         })
 
         // Listen for volume button click event:
@@ -336,7 +397,6 @@ const app = {
 
         })
 
-
         // Listen for volume oninput:
         volProgress.addEventListener('input', (e) => {
             btnVolume.classList.remove('active')
@@ -354,6 +414,11 @@ const app = {
         // Listen for progress bar oninput:
         progressBar.addEventListener('input', () => {
             this.wavesurfer.seekTo(progressBar.value / 100)
+        })
+
+        //Listen for progress mobile bar oninput:
+        mBprogressBar.addEventListener('input', () => {
+            this.wavesurfer.seekTo(mBprogressBar.value / 100)
         })
 
         // Listen for audioThum click event:
@@ -434,6 +499,7 @@ const app = {
         this.wavesurfer.on('ready', () => {
             // Render total duration:
             this.renderTime(this.wavesurfer.getDuration(), totalDurationElm)
+            this.renderTime(this.wavesurfer.getDuration(), mBtotalDurationElm)
 
         })
 
@@ -552,12 +618,15 @@ const app = {
             // Render current time:
             let currentTime = this.wavesurfer.getCurrentTime()
             this.renderTime(currentTime, currentDurationElm)
+            this.renderTime(currentTime, mBcurrentDurationElm)
             this.updateLyric(currentTime, this.lyricElm, this.lyricArr)
             let percent = parseInt(this.wavesurfer.getCurrentTime() * 100 / this.wavesurfer.getDuration())
             progressBar.style.backgroundSize = `${percent}%`
             progressBar.value = percent
             progressPercentText.textContent = `${percent}%`
             progressPercentText.style.left = `calc(${percent}% - 0.5rem)`
+            mBprogressBar.style.backgroundSize = `${percent}%`
+            mBprogressBar.value = percent
         })
 
         // When finish a song:
