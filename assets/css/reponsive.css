@@ -15,7 +15,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: calc(var(--player-height) + var(--player-mobile-bonus-height));
+        /* height: calc(var(--player-height) + var(--player-mobile-bonus-height)); */
         background-color: #333;
         padding: 12px 24px 24px 24px;
     }
@@ -47,7 +47,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 18px 0;
+        margin: 12px 0 18px;
     }
 
     .mobile__control--btn {
@@ -78,7 +78,8 @@
 
     /* Playlist CSS */
     .playlist {
-        height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height));
+        /* height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height)); */
+        height: calc(100vh - 164px);
     }
 
     /* Lyric CSS */
