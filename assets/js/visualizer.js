@@ -1,17 +1,18 @@
-// Audio
 
-let context = new (window.AudioContext || window.webkitAudioContext)()
-unlockAudioContext(context);
-
-let src = context.createMediaElementSource(audio)
-let analyser = context.createAnalyser()
-src.connect(analyser)
-analyser.connect(context.destination)
-analyser.fftSize = 2048
-let bufferLength = analyser.frequencyBinCount
-let dataArray = new Uint8Array(bufferLength)
 
 function visualizer() {
+
+    // Audio
+    let context = new (window.AudioContext || window.webkitAudioContext)()
+    unlockAudioContext(context);
+
+    let src = context.createMediaElementSource(audio)
+    let analyser = context.createAnalyser()
+    src.connect(analyser)
+    analyser.connect(context.destination)
+    analyser.fftSize = 2048
+    let bufferLength = analyser.frequencyBinCount
+    let dataArray = new Uint8Array(bufferLength)
 
     // When song pause:
     audio.addEventListener('pause', () => {
@@ -111,6 +112,7 @@ function visualizer() {
     draw()
 }
 
+// Unlock The Audio Context On IOS:
 function unlockAudioContext(audioCtx) {
     if (audioCtx.state === 'suspended') {
         let events = ['touchstart', 'touchend', 'mousedown', 'keydown'];

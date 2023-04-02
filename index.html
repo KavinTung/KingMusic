@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet"  >
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
@@ -51,16 +51,20 @@
                                 <span>0%</span>
                             </div>
                             <div class="visualizer__controls--btn">
-                                <div class="visualizer__control--prev control__btn--icon visualizer__setting--icon" title="Prev">
+                                <div class="visualizer__control--prev control__btn--icon visualizer__setting--icon"
+                                    title="Prev">
                                     <i class="bi bi-skip-start"></i>
                                 </div>
-                                <div class="visualizer__control--play control__btn--icon visualizer__setting--icon active" title="Play">
+                                <div class="visualizer__control--play control__btn--icon visualizer__setting--icon active"
+                                    title="Play">
                                     <i class="bi bi-play-circle"></i>
                                 </div>
-                                <div class="visualizer__control--pause control__btn--icon visualizer__setting--icon" title="Pause">
+                                <div class="visualizer__control--pause control__btn--icon visualizer__setting--icon"
+                                    title="Pause">
                                     <i class="bi bi-pause-circle"></i>
                                 </div>
-                                <div class="visualizer__control--next control__btn--icon visualizer__setting--icon" title="Next">
+                                <div class="visualizer__control--next control__btn--icon visualizer__setting--icon"
+                                    title="Next">
                                     <i class="bi bi-skip-end"></i>
                                 </div>
                             </div>
@@ -95,11 +99,11 @@
                 </div>
             </div>
             <!-- Playing container -->
-            <div class="playing">
+            <div class="playing hide-mobile">
                 <div class="grid">
                     <div class="row">
                         <!-- Playing information -->
-                        <div class="playing__info col l-3 hide-mobile">
+                        <div class="playing__info col l-3">
                             <div class="playing__thumb--img" title="Click to play/pause">
                             </div>
                             <div class="playing__desc--text">
@@ -111,8 +115,7 @@
                         </div>
 
                         <!-- Playing controls-->
-                        <div class="playing__controls col l-6 m-6 c-9">
-
+                        <div class="playing__controls col l-6">
                             <!-- Playing icons -->
                             <div class="controls__wrap">
 
@@ -170,7 +173,7 @@
                         </div>
 
                         <!-- Playing additional-->
-                        <div class="playing__additional col l-3 m-3 c-3">
+                        <div class="playing__additional col l-3">
 
                             <!-- Volume container -->
                             <div class="volume__wrap hide-mobile">
@@ -180,7 +183,8 @@
                                     <!-- <i class="bi bi-volume-mute"></i> -->
                                 </div>
 
-                                <input type="range" class="playing__progress--volume hide-mobile" min="0" max="100" step="1">
+                                <input type="range" class="playing__progress--volume hide-mobile" min="0" max="100"
+                                    step="1">
                                 <p class="playing__volume--value"></p>
                             </div>
 
@@ -195,6 +199,41 @@
                             </div>
 
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="playing__mobile hide-pc">
+                <div class="playing__mobile--progress">
+                    <span class="progress__mobile--current">00:00</span>
+                    <input type="range" class="progress__mobile--timeline">
+                    <span class="progress__mobile--total">04:20</span>
+                </div>
+                <div class="playing__mobile--controls">
+                    <div class="mobile__control--btn shuffle__mobile--btn">
+                        <i class="bi bi-shuffle"></i>
+                    </div>
+                    <div class="mobile__control--btn prev__mobile--btn">
+                        <i class="bi bi-skip-start-fill"></i>
+                    </div>
+                    <div class="mobile__control--btn play__mobile--btn">
+                        <i class="bi bi-play-circle"></i>
+                    </div>
+                    <!-- <div class="mobile__control--btn pause__mobile--btn">
+                        <i class="bi bi-pause-circle"></i>
+                    </div> -->
+                    <div class="mobile__control--btn next__mobile--btn">
+                        <i class="bi bi-skip-end-fill"></i>
+                    </div>
+                    <div class="mobile__control--btn repeat__mobile--btn">
+                        <i class="bi bi-arrow-repeat"></i>
+                    </div>
+                </div>
+                <div class="mobile__setting--controls">
+                    <div class="mobile__control--btn visualizer__mobile--btn">
+                        <i class="bi bi-disc"></i>
+                    </div>
+                    <div class="mobile__control--btn playlist__mobile--btn">
+                        <i class="bi bi-music-note-list"></i>
                     </div>
                 </div>
             </div>

@@ -3,17 +3,64 @@
     .hide-mobile {
         display: none !important;
     }
-    .player {
-        padding: 24px;
+
+    /* Playing */
+    .playing__mobile {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: var(--player-height);
+        background-color: #333;
+        padding: 12px 24px 8px 24px;
     }
-    .playing {
-        top: calc(100% - 150px);
+
+    /* Progress timeline */
+    .playing__mobile--progress {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
-    .player .visualizer__wrap {
-        width: 300px;
-        height: 300px;
+    .progress__mobile--timeline {
+        flex: 1;
+        height: 4px !important;
     }
-    .player .visualizer .visualizer__setting {
-        display: none !important;
+    .progress__mobile--timeline:hover {
+        height: 4px !important;
     }
+    .progress__mobile--current,
+    .progress__mobile--total {
+        font-size: 1.2rem;
+    }
+
+    /* Playing controls */
+    .playing__mobile--controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 18px 0;
+    }
+    .mobile__control--btn {
+        font-size: 1.8rem;
+        opacity: 0.8;
+    }
+    .playing__mobile--controls .repeat__mobile--btn {
+        font-size: 2rem;
+    }
+    .playing__mobile--controls .play__mobile--btn,
+    .playing__mobile--controls .pause__mobile--btn {
+        font-size: 4.2rem;
+        opacity: 1;
+    }
+    .playing__mobile--controls .next__mobile--btn,
+    .playing__mobile--controls .prev__mobile--btn {
+        font-size: 3.2rem;
+        opacity: 1;
+    }
+    .mobile__setting--controls {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }

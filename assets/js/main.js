@@ -710,7 +710,7 @@ const app = {
         if (minute < 10) {
             minute = `0${minute}`
         }
-        return elmNode.innerHTML = `${minute} : ${second}`
+        return elmNode.textContent = `${minute} : ${second}`
     },
 
     // Convert time [minute, seconds] to seconds:
