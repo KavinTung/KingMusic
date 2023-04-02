@@ -24,6 +24,7 @@ const btnVisualizerPrev = $('.visualizer__control--prev')
 // Button Mobile:
 const btnMbPlaylist = $('.playlist__mobile--btn')
 const btnMbVisualizer = $('.visualizer__mobile--btn')
+const btnMbAlignToggle = $('.align__mobile--btn')
 
 // Song information
 const audio = document.getElementById('audio')
@@ -351,6 +352,13 @@ const app = {
             lyricsElmWrap.classList.toggle('vertical')
             visualizerContainer.classList.toggle('horizontal')
             visualizerContainer.classList.toggle('vertical')
+        })
+
+        // Listen for align mobile btn click event:
+        btnMbAlignToggle.addEventListener('click', () => {
+            visualizerAnimate.classList.toggle('hide')
+            lyricsElmWrap.classList.toggle('horizontal')
+            lyricsElmWrap.classList.toggle('vertical')
         })
 
         // Listen for font btn click event:

@@ -1,18 +1,27 @@
+// Audio
+let context = new (window.AudioContext || window.webkitAudioContext)()
+let src = context.createMediaElementSource(audio)
+let analyser = context.createAnalyser()
+let bufferLength = analyser.frequencyBinCount
+let dataArray = new Uint8Array(bufferLength)
 
+// Canvas:
+let canvas = document.querySelector("#visualizer")
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+let ctx = canvas.getContext("2d")
+let cdThumb = new Image()
 
+// Visualizer:
 function visualizer() {
 
-    // Audio
-    let context = new (window.AudioContext || window.webkitAudioContext)()
     unlockAudioContext(context);
 
-    let src = context.createMediaElementSource(audio)
-    let analyser = context.createAnalyser()
+    // Connect audio to output:
     src.connect(analyser)
     analyser.connect(context.destination)
     analyser.fftSize = 2048
-    let bufferLength = analyser.frequencyBinCount
-    let dataArray = new Uint8Array(bufferLength)
+
 
     // When song pause:
     audio.addEventListener('pause', () => {
@@ -23,13 +32,6 @@ function visualizer() {
     audio.addEventListener('play', () => {
         context.resume()
     })
-
-    // Canvas:
-    let canvas = document.querySelector("#visualizer")
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-    let ctx = canvas.getContext("2d")
-    let cdThumb = new Image()
 
     // Scale track image with energy:
     function getAverageEnergy() {
@@ -67,10 +69,10 @@ function visualizer() {
     }
     update()
 
+    let strokeStyle = 'transparent'
 
     // Draw canvas:
     function draw() {
-
         // Get request frame and get byte on time:
         requestAnimationFrame(draw)
         analyser.getByteTimeDomainData(dataArray)
@@ -95,17 +97,13 @@ function visualizer() {
         }
         ctx.lineTo(canvas.width, canvas.height / 2)
 
+        if (app.wavesurfer.isPlaying()) {
+            strokeStyle = `rgba(255,255,255, 0.6)`
+        } else {
+            strokeStyle = `transparent`
+        }
 
-        // When song pause:
-        audio.addEventListener('pause', () => {
-            ctx.strokeStyle = `transparent`
-        })
-
-        // When song play:
-        audio.addEventListener('play', () => {
-            ctx.strokeStyle = `rgba(255,255,255, 0.6)`
-        })
-
+        ctx.strokeStyle = strokeStyle
         ctx.stroke()
 
     }

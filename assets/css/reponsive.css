@@ -17,7 +17,7 @@
         right: 0;
         height: calc(var(--player-height) + var(--player-mobile-bonus-height));
         background-color: #333;
-        padding: 12px 24px 30px 24px;
+        padding: 12px 24px var(--player-mobile-bonus-height) 24px;
     }
 
     /* Progress timeline */
@@ -84,6 +84,7 @@
     /* Lyric CSS */
     .lyrics {
         width: 100% !important;
+        transition: all 0.3s ease !important;
     }
 
     /* Visualizer CSS */
@@ -97,6 +98,9 @@
     .visualizer__wrap {
         width: 260px !important;
         height: 260px !important;
+    }
+    .visualizer__cd--animate.hide {
+        display: none !important;
     }
 
 }
