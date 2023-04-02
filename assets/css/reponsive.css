@@ -2,7 +2,7 @@
 @media (max-width: 739px) {
 
     body {
-        height: 1000px;
+        /* height: 1000px; */
     }
 
     h5 {
@@ -12,6 +12,51 @@
 
     .hide-mobile {
         display: none !important;
+    }
+
+    /* Modal volume */
+    .modal__mobile--volume {
+        position: fixed;
+        z-index: 1000;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        height: 125px;
+        background-color: rgba(50, 50, 50, 0.5);
+        backdrop-filter: blur(15px);
+        border-radius: 3px;
+        text-align: center !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: none;
+    }
+
+    .modal__mobile--volume.active {
+        display: flex;
+    }
+
+    .mobile__volume--wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile__volume--title {
+        position: absolute;
+        top: 0;
+        font-size: 1.6rem;
+    }
+
+    .mobile__volume--progress {
+        margin: 0;
+        height: 3px !important;
+        width: 80% !important;
+    }
+
+    .mobile__volume--progress:hover {
+        height: 3px !important;
     }
 
     /* Playing */
@@ -81,9 +126,18 @@
         justify-content: space-between;
     }
 
+    .visualizer__mobile--btn.active,
+    .align__mobile--btn.active,
+    .playlist__mobile--btn.active,
+    .volume__mobile--btn.active {
+        color: var(--color-primary);
+    }
+
     /* Playlist CSS */
     .playlist {
         height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height));
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
     }
 
     /* Lyric CSS */
@@ -91,6 +145,7 @@
         width: 100% !important;
         transition: all 0.3s ease !important;
     }
+
     .lyrics .current__line {
         font-size: 18px;
         transition: all 0.3s ease;
@@ -102,13 +157,16 @@
         padding: 0 24px;
         height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height)) !important;
     }
+
     .visualizer__setting {
         display: none !important;
     }
+
     .visualizer__wrap {
         width: 260px !important;
         height: 260px !important;
     }
+
     .visualizer__cd--animate.hide {
         display: none !important;
     }

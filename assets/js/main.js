@@ -42,6 +42,9 @@ const lyricsElmWrap = $('.lyrics')
 // Volume
 const volProgress = $('.playing__progress--volume')
 const volValue = $('.playing__volume--value')
+const volMbBtn = $('.volume__mobile--btn')
+const volMbProgress = $('.mobile__volume--progress')
+const volMbModal = $('.modal__mobile--volume')
 
 // Visualizer:
 const visualizerContainer = $('.visualizer')
@@ -210,6 +213,7 @@ const app = {
         btnMbPlaylist.addEventListener('click', () => {
             playListWrap.classList.toggle('show')
             btnPlayList.classList.toggle('active')
+            btnMbPlaylist.classList.toggle('active')
         })
 
         // Listen for playlist song click and hover event:
@@ -304,14 +308,38 @@ const app = {
             this.muteFunc()
         })
 
-        // Listen for volume onchange:
+        // Listen for volume mobile button click event:
+        volMbBtn.addEventListener('click', () => {
+            volMbBtn.classList.add('active')
+            volMbModal.classList.toggle('active')
+            volMbProgress.addEventListener('change', () => {
+                timeout = 2000
+                setTimeout(() => {
+                    if (volMbModal.getAttribute('class').includes('active')) {
+                        volMbModal.classList.remove('active')
+                        volMbBtn.classList.remove('active')
+                    }
+                }, timeout)
+            })
+
+        })
+
+
+        // Listen for volume oninput:
         volProgress.addEventListener('input', (e) => {
             btnVolume.classList.remove('active')
             this.volume = Number(e.target.value)
             this.setVolumeFunc(this.volume)
         })
 
-        // Listen for progress bar onchange:
+        // Listen for volume mobile oninput:
+        volMbProgress.addEventListener('input', (e) => {
+            btnVolume.classList.remove('active')
+            this.volume = Number(e.target.value)
+            this.setVolumeFunc(this.volume)
+        })
+
+        // Listen for progress bar oninput:
         progressBar.addEventListener('input', () => {
             this.wavesurfer.seekTo(progressBar.value / 100)
         })
@@ -333,6 +361,7 @@ const app = {
             btnVisualizer.classList.toggle('active')
             visualizerContainer.classList.toggle('active')
             visualizerBackground.classList.toggle('active')
+            btnMbVisualizer.classList.toggle('active')
         })
 
         // Listen for visualizer audio click event:
@@ -359,6 +388,7 @@ const app = {
             visualizerAnimate.classList.toggle('hide')
             lyricsElmWrap.classList.toggle('horizontal')
             lyricsElmWrap.classList.toggle('vertical')
+            btnMbAlignToggle.classList.toggle('active')
         })
 
         // Listen for font btn click event:
