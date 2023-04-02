@@ -5,6 +5,11 @@
         height: 1000px;
     }
 
+    h5 {
+        margin: 0;
+        padding: 12px 0;
+    }
+
     .hide-mobile {
         display: none !important;
     }
