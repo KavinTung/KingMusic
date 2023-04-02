@@ -25,6 +25,8 @@ const btnVisualizerPrev = $('.visualizer__control--prev')
 const btnMbPlaylist = $('.playlist__mobile--btn')
 const btnMbVisualizer = $('.visualizer__mobile--btn')
 const btnMbAlignToggle = $('.align__mobile--btn')
+const btnMbPlayBtn = $('.play__mobile--btn')
+const btnMbPauseBtn = $('.pause__mobile--btn')
 
 // Song information
 const audio = document.getElementById('audio')
@@ -270,6 +272,16 @@ const app = {
             this.wavesurfer.pause()
         })
 
+        // Listen for mobile play button click event:
+        btnMbPlayBtn.addEventListener('click', () => {
+            this.wavesurfer.play()
+        })
+
+        // Listen for mobile pause button click event:
+        btnMbPauseBtn.addEventListener('click', () => {
+            this.wavesurfer.pause()
+        })
+
         // Listen for next button click event:
         btnNext.addEventListener('click', () => {
             this.nextSong()
@@ -310,7 +322,7 @@ const app = {
 
         // Listen for volume mobile button click event:
         volMbBtn.addEventListener('click', () => {
-            volMbBtn.classList.add('active')
+            volMbBtn.classList.toggle('active')
             volMbModal.classList.toggle('active')
             volMbProgress.addEventListener('change', () => {
                 timeout = 2000
@@ -483,6 +495,8 @@ const app = {
             btnPause.classList.add('active')
             btnVisualizerPlay.classList.remove('active')
             btnVisualizerPause.classList.add('active')
+            btnMbPlayBtn.classList.remove('active')
+            btnMbPauseBtn.classList.add('active')
             playingInfoWrap.style.opacity = 1
             totalDurationElm.style.opacity = 1
             currentDurationElm.style.opacity = 1
@@ -521,6 +535,8 @@ const app = {
             btnPause.classList.remove('active')
             btnVisualizerPlay.classList.add('active')
             btnVisualizerPause.classList.remove('active')
+            btnMbPlayBtn.classList.add('active')
+            btnMbPauseBtn.classList.remove('active')
             playingInfoWrap.style.opacity = 0.8
             totalDurationElm.style.opacity = 0.8
             currentDurationElm.style.opacity = 0.8
