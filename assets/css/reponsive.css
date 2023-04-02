@@ -15,7 +15,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        /* height: calc(var(--player-height) + var(--player-mobile-bonus-height)); */
+        height: calc(var(--player-height) + var(--player-mobile-bonus-height));
         background-color: #333;
         padding: 12px 24px 24px 24px;
     }
@@ -47,7 +47,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 12px 0 18px;
+        margin: 0 0 24px;
     }
 
     .mobile__control--btn {
@@ -78,8 +78,7 @@
 
     /* Playlist CSS */
     .playlist {
-        /* height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height)); */
-        height: calc(100vh - 164px);
+        height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height));
     }
 
     /* Lyric CSS */
@@ -92,6 +91,7 @@
     .visualizer {
         width: 100% !important;
         padding: 0 24px;
+        height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height)) !important;
     }
     .visualizer__setting {
         display: none !important;
