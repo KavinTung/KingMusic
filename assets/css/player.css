@@ -311,6 +311,7 @@
 }
 
 .player .visualizer.active.vertical .visualizer__fullscreen--show,
+.player .visualizer.vertical .visualizer__fullscreen--show,
 .player .visualizer.active.horizontal .visualizer__controls--btn,
 .player .visualizer.active.horizontal .visualizer__progress--wrap {
     display: none;

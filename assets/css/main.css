@@ -8,7 +8,7 @@
     background-color: rgba(50, 50, 50, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px) ;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
     padding-top: 24px;
     z-index: 1;
     overflow-y: scroll;
@@ -36,7 +36,7 @@
 }
 
 .song__wrap:hover {
-    background-color: rgba(50, 50, 50, 0.5) !important;
+    background-color: rgba(128, 128, 128, 0.5) !important;
 }
 
 .song__wrap .song__thumb {

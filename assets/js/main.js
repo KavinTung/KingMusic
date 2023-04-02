@@ -68,7 +68,7 @@ const progressBar = $('.visualizer__progress')
 const progressPercentText = $('.visualizer__progress--wrap > span')
 const mBprogressBar = $('.playing__mobile--progress')
 
-// Additional:
+// Music API:
 const musicApi = './assets/json/db.json'
 
 
@@ -213,7 +213,8 @@ const app = {
         })
 
         // Listen for playlist button click event:
-        btnPlayList.addEventListener('click', () => {
+        btnPlayList.addEventListener('click', (e) => {
+            e.stopImmediatePropagation()
             playListWrap.classList.toggle('show')
             btnPlayList.classList.toggle('active')
         })
@@ -241,21 +242,6 @@ const app = {
                 // Play music:
                 this.playMusic()
 
-                // Filter all element have data-id === trackId
-                let elmPlayings = [...songListElm].filter((elmNode) => {
-                    return elmNode.getAttribute('data-id') === this.trackId
-                })
-
-                // Remove background color for all element not play:
-                songListElm.forEach(item => {
-                    item.style.backgroundColor = 'transparent'
-                })
-
-                // Set background for all element now playing:
-                elmPlayings.forEach(item => {
-                    // item.style.backgroundColor = 'rgba(50,50,50,0.5)'
-                    item.style.backgroundColor = 'rgba(128,128,128,0.5)'
-                })
             })
         })
 
@@ -489,11 +475,24 @@ const app = {
             visualizerControls.classList.toggle('active')
         })
 
+        // Stop ImmediatePropagation for playlist container:
+        playListWrap.addEventListener('click', (e) => {
+            e.stopImmediatePropagation()
+        })
+
+        // Hide playlist when click document:
+        document.addEventListener('click', () => {
+            if(playListWrap.getAttribute('class').includes('show')) {
+                playListWrap.classList.remove('show')
+            }
+        })
 
     },
 
     // Handle music events:
     handleMusicEvents: function () {
+
+        const songListElm = $$('.song__wrap')
 
         // When audio loaded:
         this.wavesurfer.on('ready', () => {
@@ -556,6 +555,25 @@ const app = {
             songPauseBtn.forEach((item) => {
                 item.style.opacity = '0'
             })
+
+            // Set background color for song nowplaying:
+
+            // Filter all element have data-id === trackId:
+            let elmPlayings = [...songListElm].filter((elmNode) => {
+                return Number(elmNode.getAttribute('data-id')) === Number(this.trackId)
+            })
+
+            // Remove background color for all element not play:
+            songListElm.forEach(item => {
+                item.style.backgroundColor = 'transparent'
+            })
+
+            // Set background for all element now playing:
+            elmPlayings.forEach(item => {
+                gsap.to(playListWrap, { duration: 0.8, scrollTo: {y: item.offsetTop} });
+                item.style.backgroundColor = 'rgba(128,128,128,0.5)'
+            })
+
 
             btnPlay.classList.remove('active')
             btnPause.classList.add('active')
@@ -627,6 +645,8 @@ const app = {
             progressPercentText.style.left = `calc(${percent}% - 0.5rem)`
             mBprogressBar.style.backgroundSize = `${percent}%`
             mBprogressBar.value = percent
+
+
         })
 
         // When finish a song:
@@ -801,6 +821,7 @@ const app = {
         this.songImage = this.dataList[songIndex].image
         this.songThumb = this.dataList[songIndex].thumb
         this.songArtist = this.dataList[songIndex].artist
+        this.trackId = this.dataList[songIndex].id
         this.lyricArr = this.convertLyric(this.dataList[songIndex].lyricArr)
 
         // Set audio information:
