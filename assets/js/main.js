@@ -21,6 +21,10 @@ const btnVisualizerPause = $('.visualizer__control--pause')
 const btnVisualizerNext = $('.visualizer__control--next')
 const btnVisualizerPrev = $('.visualizer__control--prev')
 
+// Button Mobile:
+const btnMbPlaylist = $('.playlist__mobile--btn')
+const btnMbVisualizer = $('.visualizer__mobile--btn')
+
 // Song information
 const audio = document.getElementById('audio')
 const audioThumb = $('.playing__thumb--img')
@@ -201,6 +205,12 @@ const app = {
             btnPlayList.classList.toggle('active')
         })
 
+        // Listen for playlist mobile button click event:
+        btnMbPlaylist.addEventListener('click', () => {
+            playListWrap.classList.toggle('show')
+            btnPlayList.classList.toggle('active')
+        })
+
         // Listen for playlist song click and hover event:
         songListElm.forEach((elmNode) => {
             elmNode.addEventListener('click', () => {
@@ -312,6 +322,13 @@ const app = {
 
         // Listen for visualizer button click event:
         btnVisualizer.addEventListener('click', () => {
+            btnVisualizer.classList.toggle('active')
+            visualizerContainer.classList.toggle('active')
+            visualizerBackground.classList.toggle('active')
+        })
+
+        // Listen for visualizer mobile button click event:
+        btnMbVisualizer.addEventListener('click', () => {
             btnVisualizer.classList.toggle('active')
             visualizerContainer.classList.toggle('active')
             visualizerBackground.classList.toggle('active')
@@ -436,7 +453,7 @@ const app = {
             visualizerAnimate.style.filter = 'brightness(1)'
             visualizerAnimate.style.opacity = 1
             visualizerAnimate.style.transform = 'scale(1)'
-            audioVisualizer.style.boxShadow = `0 0 10px ${this.randomColor()}`
+            audioVisualizer.style.boxShadow = `0 0 5px ${this.randomColor()}`
 
         })
 

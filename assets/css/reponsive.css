@@ -15,28 +15,31 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: calc(var(--player-height) + 24px);
+        height: calc(var(--player-height) + var(--player-mobile-bonus-height));
         background-color: #333;
-        padding: 12px 24px 24px 24px;
+        padding: 12px 24px 30px 24px;
     }
 
     /* Progress timeline */
     .playing__mobile--progress {
+        width: 100% !important;
+        height: 3px !important;
+        margin: 0 !important;
+    }
+
+    .playing__mobile--progress:hover {
+        height: 3px !important;
+    }
+
+    .playing__mobile--timeline {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        width: 100%;
     }
-    .progress__mobile--timeline {
-        flex: 1;
-        height: 4px !important;
-    }
-    .progress__mobile--timeline:hover {
-        height: 4px !important;
-    }
-    .progress__mobile--current,
-    .progress__mobile--total {
-        font-size: 1.2rem;
+
+    .timeline__mobile--current,
+    .timeline__mobile--total {
+        font-size: 1.1rem;
+        color: var(--color-gray);
     }
 
     /* Playing controls */
@@ -46,26 +49,54 @@
         justify-content: space-between;
         margin: 18px 0;
     }
+
     .mobile__control--btn {
         font-size: 1.8rem;
         opacity: 0.8;
     }
+
     .playing__mobile--controls .repeat__mobile--btn {
         font-size: 2rem;
     }
+
     .playing__mobile--controls .play__mobile--btn,
     .playing__mobile--controls .pause__mobile--btn {
         font-size: 4.8rem;
         opacity: 1;
     }
+
     .playing__mobile--controls .next__mobile--btn,
     .playing__mobile--controls .prev__mobile--btn {
         font-size: 3.2rem;
         opacity: 1;
     }
+
     .mobile__setting--controls {
         display: flex;
         justify-content: space-between;
+    }
+
+    /* Playlist CSS */
+    .playlist {
+        height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height));
+    }
+
+    /* Lyric CSS */
+    .lyrics {
+        width: 100% !important;
+    }
+
+    /* Visualizer CSS */
+    .visualizer {
+        width: 100% !important;
+        padding: 0 24px;
+    }
+    .visualizer__setting {
+        display: none !important;
+    }
+    .visualizer__wrap {
+        width: 260px !important;
+        height: 260px !important;
     }
 
 }
