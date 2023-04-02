@@ -83,7 +83,7 @@
 
     /* Playlist CSS */
     .playlist {
-        height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height));
+        height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height));
     }
 
     /* Lyric CSS */
@@ -96,7 +96,7 @@
     .visualizer {
         width: 100% !important;
         padding: 0 24px;
-        height: calc(100vh - var(--player-height) - var(--player-mobile-bonus-height)) !important;
+        height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height)) !important;
     }
     .visualizer__setting {
         display: none !important;
