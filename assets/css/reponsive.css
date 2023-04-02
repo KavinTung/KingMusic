@@ -1,5 +1,8 @@
 /* Mobile */
 @media (max-width: 739px) {
+    body {
+        height: 1000px;
+    }
     .hide-mobile {
         display: none !important;
     }
@@ -12,7 +15,7 @@
         right: 0;
         height: var(--player-height);
         background-color: #333;
-        padding: 12px 24px 8px 24px;
+        padding: 12px 24px 12px 24px;
     }
 
     /* Progress timeline */
