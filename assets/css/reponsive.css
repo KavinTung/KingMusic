@@ -1,8 +1,10 @@
 /* Mobile */
 @media (max-width: 739px) {
+
     body {
         height: 1000px;
     }
+
     .hide-mobile {
         display: none !important;
     }
@@ -13,9 +15,9 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: var(--player-height);
+        height: calc(var(--player-height) + 24px);
         background-color: #333;
-        padding: 12px 24px 12px 24px;
+        padding: 12px 24px 24px 24px;
     }
 
     /* Progress timeline */
@@ -53,7 +55,7 @@
     }
     .playing__mobile--controls .play__mobile--btn,
     .playing__mobile--controls .pause__mobile--btn {
-        font-size: 4.2rem;
+        font-size: 4.8rem;
         opacity: 1;
     }
     .playing__mobile--controls .next__mobile--btn,
