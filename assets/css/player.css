@@ -410,13 +410,11 @@
 }
 
 .lyrics .current__line.show {
-    font-size: 20px;
     color: var(--color-white);
     opacity: 1;
 }
 
 .lyrics .current__line.showed {
-    font-size: 20px;
     color: var(--color-white);
     opacity: 0.15;
 }

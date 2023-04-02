@@ -22,7 +22,7 @@
         right: 0;
         height: calc(var(--player-height) + var(--player-mobile-bonus-height));
         background-color: #333;
-        padding: 12px 24px 24px 24px;
+        padding: 6px 24px 24px 24px;
     }
 
     /* Progress timeline */
@@ -90,6 +90,10 @@
     .lyrics {
         width: 100% !important;
         transition: all 0.3s ease !important;
+    }
+    .lyrics .current__line {
+        font-size: 18px;
+        transition: all 0.3s ease;
     }
 
     /* Visualizer CSS */
