@@ -214,13 +214,14 @@ const app = {
 
         // Listen for playlist button click event:
         btnPlayList.addEventListener('click', (e) => {
-            // e.stopImmediatePropagation()
+            e.stopImmediatePropagation()
             playListWrap.classList.toggle('show')
             btnPlayList.classList.toggle('active')
         })
 
         // Listen for playlist mobile button click event:
-        btnMbPlaylist.addEventListener('click', () => {
+        btnMbPlaylist.addEventListener('click', (e) => {
+            e.stopImmediatePropagation()
             playListWrap.classList.toggle('show')
             btnPlayList.classList.toggle('active')
             btnMbPlaylist.classList.toggle('active')
@@ -476,16 +477,18 @@ const app = {
         })
 
         // Stop ImmediatePropagation for playlist container:
-        // playListWrap.addEventListener('click', (e) => {
-        //     e.stopImmediatePropagation()
-        // })
+        playListWrap.addEventListener('click', (e) => {
+            e.stopImmediatePropagation()
+        })
 
         // Hide playlist when click document:
-        // document.addEventListener('click', () => {
-        //     if(playListWrap.getAttribute('class').includes('show')) {
-        //         playListWrap.classList.remove('show')
-        //     }
-        // })
+        document.addEventListener('click', () => {
+            if(playListWrap.getAttribute('class').includes('show')) {
+                playListWrap.classList.remove('show')
+                btnPlayList.classList.remove('active')
+                btnMbPlaylist.classList.remove('active')
+            }
+        })
 
     },
 
