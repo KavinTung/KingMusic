@@ -1,16 +1,18 @@
 :root {
     --color-white: #fff;
-    --color-black: #333;
+    --color-black: #292929;
     --color-gray: #777;
     --color-primary: #E42256;
     --text-color-default: #ccc;
     /* --bg-image-default: linear-gradient(345deg, rgba(19, 15, 29, 1) 0%, rgba(35, 37, 47, 1) 100%); */
     --bg-color-default: rgba(35, 37, 47, 1);
+    --bg-color-default: #292929;
     --visualizer-bg: #25272f1b;
-    --visualizer-blur: 5px;
-    --player-height: 130px;
+    --visualizer-blur: 15px;
+    --player-height: 120px;
     --player-mobile-bonus-height: 30px;
     --playlist-width: 300px;
+    --main-section-padding: 60px;
 }
 
 * {
@@ -60,6 +62,11 @@ h5 {
 
 p {
     margin: 0;
+}
+
+.text__heading {
+    font-family: 'Oswald', sans-serif;
+    color: var(--color-white);
 }
 
 /* Controls icon button */
@@ -157,6 +164,46 @@ input[type="range"]::-moz-range-thumb:hover {
 
 input[type="range"]::-ms-thumb:hover {
     background: #fff;
+}
+
+
+/* Input Type Checkbox */
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+.crossfade__wrap label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 30px;
+	height: 15px;
+	background: grey;
+	display: block;
+	border-radius: 35px;
+	position: relative;
+}
+
+.crossfade__wrap label:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	border-radius: 35px;
+	transition: all 0.3s ease;
+}
+
+input:checked + label {
+	background: var(--color-primary);
+}
+
+input:checked + label:after {
+	left: 100%;
+	transform: translateX(-100%);
 }
 
 /* Scrollbar */
@@ -425,3 +472,160 @@ input[type="range"]::-ms-thumb:hover {
     display: block;
 }
 
+
+/* Modal Upload */
+
+.modal__upload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+.modal__upload.active {
+    display: block;
+}
+
+.upload__wrap {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: var(--color-black);
+}
+
+.upload__wrap--mediafile {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 48px;
+    border: 1px dashed rgba(175, 255, 50, 0.3);
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.upload__wrap--mediafile i {
+    font-size: 2.4rem;
+}
+
+.upload__wrap--mediafile .form__group {
+    margin: 0;
+}
+
+.mediafile__label--music {
+    display: flex;
+    width: 160px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.mediafile__label--image {
+    display: flex;
+    width: 160px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.mediafile__label--music:hover,
+.mediafile__label--image:hover {
+    opacity: 1;
+    color: greenyellow;
+}
+
+.music__file--text,
+.image__file--text {
+    color: greenyellow;
+    text-align: center;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.upload__heading {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 48px;
+    font-size: 2.4rem;
+}
+
+.form__group {
+    margin-bottom: 32px;
+}
+
+.form__group label {
+    min-width: 100px;
+    font-size: 1.3rem;
+    color: var(--text-color-default);
+    padding: 0 6px;
+}
+
+.form__group input[type="text"] {
+    width: 100%;
+    padding: 10px 10px 4px 12px;
+    outline: none;
+    background-color: transparent;
+    color: var(--text-color-default);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    border: none;
+    border-bottom: 1px solid var(--color-gray);
+    opacity: 0.6;
+}
+
+.form__group input[type="file"] {
+    display: none;
+}
+
+.form__group input[type="text"]:focus {
+    border-bottom: 1px solid rgba(175, 255, 50, 0.5);
+    opacity: 1;
+}
+
+.upload__btn {
+    min-width: 120px;
+    padding: 12px;
+    align-self: center;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.upload__btn:hover {
+    opacity: 0.8;
+}
+
+.modal__close--icon {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+
+.error__message {
+    margin: 4px 24px;
+    display: block;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}

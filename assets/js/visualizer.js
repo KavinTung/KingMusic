@@ -14,7 +14,7 @@ let cdThumb = new Image()
 
 // Visualizer:
 function visualizer() {
-
+    // Unlock The Audio Context On IOS (Mobile):
     unlockAudioContext(context);
 
     // Connect audio to output:
@@ -58,7 +58,7 @@ function visualizer() {
         requestAnimationFrame(update)
 
         // Load image:
-        cdThumb.src = app.songImage
+        cdThumb.src = player.songImage
 
         // Draw image to canvas:
         ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -97,7 +97,7 @@ function visualizer() {
         }
         ctx.lineTo(canvas.width, canvas.height / 2)
 
-        if (app.wavesurfer.isPlaying()) {
+        if (player.wavesurfer.isPlaying()) {
             strokeStyle = `rgba(255,255,255, 0.6)`
         } else {
             strokeStyle = `transparent`

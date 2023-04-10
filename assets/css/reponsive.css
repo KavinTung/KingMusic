@@ -1,10 +1,6 @@
 /* Mobile */
 @media (max-width: 739px) {
 
-    body {
-        /* height: 1000px; */
-    }
-
     h5 {
         margin: 0;
         padding: 12px 0;
@@ -67,10 +63,9 @@
         left: 0;
         right: 0;
         height: calc(var(--player-height) + var(--player-mobile-bonus-height));
-        background-color: rgba(128, 128, 128, 0.2);
+        background-color: var(--bg-color-default);
         padding: 12px 24px 24px 24px;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        z-index: 10;
     }
 
     /* Progress timeline */
@@ -145,6 +140,7 @@
     .pause__mobile--btn {
         display: none;
     }
+
     .shuffle__mobile--btn.active,
     .repeat__mobile--btn.active {
         color: var(--color-primary);
@@ -193,6 +189,72 @@
 
     .visualizer__cd--animate.hide {
         display: none !important;
+    }
+
+
+    /* Wrapper */
+
+
+    /* Header CSS */
+    .header {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .header__search {
+        width: 90%;
+    }
+
+    .header__mobile--bars i {
+        display: block;
+        padding: 0;
+        margin-right: 6px;
+        font-size: 2.8rem;
+    }
+
+    /* Sidebar CSS */
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        padding-top: 70px;
+        width: 70%;
+        bottom: 0;
+        height: auto;
+        z-index: 11;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+
+    /* Main Content CSS */
+    .main {
+        left: 0;
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    /* Header User CSS */
+    .header__user {
+        margin-left: 12px;
+    }
+
+    .header__user .user__avatar {
+        width: 35px;
+        height: 35px;
+        padding-top: 35px;
+    }
+
+    /* Album CSS */
+    .album__wrap {
+        text-align: center;
+        padding: 8px 12px;
+    }
+
+    /* Song CSS */
+    .songs .song__wrap {
+        width: 100%;
+        padding: 8px 12px;
     }
 
 }
