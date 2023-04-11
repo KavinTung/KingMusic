@@ -2,10 +2,10 @@
     {
         "id": 1,
         "name": "Là Anh",
-        "image": "assets/images/img1.jpg",
+        "image": "assets/images/songs/img1.jpg",
         "path": "assets/music/song1.mp3",
         "artist": "Phạm Lịch, BMZ",
-        "thumb": "assets/images/img-thumb1.jpg",
+        "thumb": "assets/images/songs/img-thumb1.jpg",
         "lyricArr": [
             "[00:17.59]Cùng bên nhau mai sau",
             "[00:18.77]Là điều ước muốn lớn nhất",
@@ -88,10 +88,10 @@
     {
         "id": 2,
         "name": "2 Phút Hơn",
-        "image": "assets/images/img2.jpg",
+        "image": "assets/images/songs/img2.jpg",
         "path": "assets/music/song2.mp3",
         "artist": "Pháo ft KAIZ Remix",
-        "thumb": "assets/images/img-thumb2.jpg",
+        "thumb": "assets/images/songs/img-thumb2.jpg",
         "lyricArr": [
             "[00:04.19]Tay em đang run run",
             "[00:05.45]Nhưng anh thì cứ rót đi",
@@ -139,10 +139,10 @@
     {
         "id": 3,
         "name": "Độ Tộc 2",
-        "image": "assets/images/img3.jpg",
+        "image": "assets/images/songs/img3.jpg",
         "path": "assets/music/song3.mp3",
         "artist": "Masew, Độ Mixi, Phúc Du, Pháo",
-        "thumb": "assets/images/img-thumb3.jpg",
+        "thumb": "assets/images/songs/img-thumb3.jpg",
         "lyricArr": [
             "[00:00.06]Bài hát: Độ Tộc 2",
             "[00:02.66]Ca sĩ: Masew, Độ Mixi, Phúc Du, Pháo",
@@ -218,10 +218,10 @@
     {
         "id": 4,
         "name": "See Tình Remix",
-        "image": "assets/images/img4.jpg",
+        "image": "assets/images/songs/img4.jpg",
         "path": "assets/music/song4.mp3",
         "artist": "Cucak Remix",
-        "thumb": "assets/images/img-thumb4.jpg",
+        "thumb": "assets/images/songs/img-thumb4.jpg",
         "lyricArr": [
             "[00:00.16](Uầy uầy uây uây)",
             "[00:03.85](Anh ơi anh à)",
@@ -287,10 +287,10 @@
     {
         "id": 5,
         "name": "Ưng Quá Chừng",
-        "image": "assets/images/img5.jpg",
+        "image": "assets/images/songs/img5.jpg",
         "path": "assets/music/song5.mp3",
         "artist": "AMEE",
-        "thumb": "assets/images/img-thumb5.jpg",
+        "thumb": "assets/images/songs/img-thumb5.jpg",
         "lyricArr": [
             "[00:16.20]Sao hôm nay, lại cứ ngẩn ngơ thế này?",
             "[00:19.68]Sao mà bây giờ đây, vũ trụ em chỉ thấy anh thôi đấy",
@@ -315,10 +315,10 @@
     {
         "id": 6,
         "name": "多想还小",
-        "image": "assets/images/img6.jpg",
+        "image": "assets/images/songs/img6.jpg",
         "path": "assets/music/song6.mp3",
         "artist": "姜晨艾凝",
-        "thumb": "assets/images/img-thumb6.jpg",
+        "thumb": "assets/images/songs/img-thumb6.jpg",
         "lyricArr": [
             "[00:00.00]多想还小-豆包",
             "[00:00.66]作词：十二兄",
@@ -367,10 +367,10 @@
     {
         "id": 7,
         "name": "Xuôi Dòng Cửu Long",
-        "image": "assets/images/img7.jpg",
+        "image": "assets/images/songs/img7.jpg",
         "path": "assets/music/song7.mp3",
         "artist": "Diệu Kiên",
-        "thumb": "assets/images/img-thumb7.jpg",
+        "thumb": "assets/images/songs/img-thumb7.jpg",
         "lyricArr": [
             "[00:27.46]Ai xuôi về phương Nam",
             "[00:29.06]Lắng nghe tiếng đàn bên sông",
@@ -424,16 +424,15 @@
             "[02:57.21]Đồng lúa mây trời ngời xanh",
             "[03:00.00]Cửu Long nghiêng mình đón người qua",
             "[03:02.38]Mảnh đất ân tình"
-
         ]
     },
     {
         "id": 8,
         "name": "Cưa Là Đổ",
-        "image": "assets/images/img8.jpg",
+        "image": "assets/images/songs/img8.jpg",
         "path": "assets/music/song8.mp3",
         "artist": "Phát Hồ, X2X, Đại Mèo",
-        "thumb": "assets/images/img-thumb8.jpg",
+        "thumb": "assets/images/songs/img-thumb8.jpg",
         "lyricArr": [
             "[00:03.48] Đôi mắt long lanh như là bồ câu",
             "[00:05.23] Singer như anh cũng phải điên đầu",
@@ -528,10 +527,10 @@
     {
         "id": 9,
         "name": "Vui Lắm Nha Remix",
-        "image": "assets/images/img9.jpg",
+        "image": "assets/images/songs/img9.jpg",
         "path": "assets/music/song9.mp3",
         "artist": "Hương Ly, Jombie, Đại Mèo",
-        "thumb": "assets/images/img-thumb9.jpg",
+        "thumb": "assets/images/songs/img-thumb9.jpg",
         "lyricArr": [
             "[00:00.58]Mình ở bên nhau cuộc đời vui lắm nha",
             "[00:03.88]Cột dây tơ duyên hai đứa thương tới già",
@@ -586,10 +585,10 @@
     {
         "id": 10,
         "name": "Chờ Trông Ai",
-        "image": "assets/images/img10.jpg",
+        "image": "assets/images/songs/img10.jpg",
         "path": "assets/music/song10.mp3",
         "artist": "Nal ft CT",
-        "thumb": "assets/images/img-thumb10.jpg",
+        "thumb": "assets/images/songs/img-thumb10.jpg",
         "lyricArr": [
             "[00:06.73] Chờ trông ai",
             "[00:08.32] Đêm nay sáng trăng",
@@ -672,10 +671,10 @@
     {
         "id": 11,
         "name": "Havana Remix",
-        "image": "assets/images/img11.jpg",
+        "image": "assets/images/songs/img11.jpg",
         "path": "assets/music/song11.mp3",
         "artist": "Camila Cabello ft Daddy Yankee",
-        "thumb": "assets/images/img-thumb11.jpg",
+        "thumb": "assets/images/songs/img-thumb11.jpg",
         "lyricArr": [
             "[00:00.00]Bài hát: Havana (Remix)",
             "[00:02.00]Ca sĩ: Camila Cabello, Daddy Yankee",
@@ -767,7 +766,65 @@
             "[03:08.53]My heart is in Havana ",
             "[03:10.90]Havana ooh na-na"
         ]
+    },
+    {
+        "id": 12,
+        "name": "Đừng Lo Nhé! Có Anh Đây",
+        "image": "assets/images/songs/img12.jpg",
+        "path": "assets/music/song12.mp3",
+        "artist": "Thiên Tú",
+        "thumb": "assets/images/songs/img-thumb12.jpg",
+        "lyricArr": [
+            "[00:00.00] ...",
+            "[00:20.57] Trái tim anh đây chỉ có chân tình",
+            "[00:24.60] Vì yêu em anh đâu cần toan tính",
+            "[00:29.15] Tuy giờ đây anh còn đang trắng tay",
+            "[00:33.43] Nhưng vì em sẽ có ngày đổi thay",
+            "[00:37.91] Mất trăm năm đôi mình mới chung thuyền",
+            "[00:42.20] Một ngàn năm ta mới về chung lối",
+            "[00:46.74] Nên người ơi em cần chi lắng lo",
+            "[00:51.05] Bên cạnh anh em sẽ vẹn duyên nồng",
+            "[00:57.99] Nếu mai sau anh và em có già",
+            "[01:02.30] Đừng lo nhé có anh đây mà",
+            "[01:06.76] Nếu em thấy những khoảng trống trong lòng",
+            "[01:11.05] Thì đừng lo có anh luôn đợi mong",
+            "[01:15.58] Nếu mai sau duyên chẳng như ý nguyện",
+            "[01:20.11] Những tổn thương để mình anh nhận hết",
+            "[01:24.12] Bởi vì anh chỉ muốn thấy em cười",
+            "[01:28.32] Dù có ra sao cũng thấy vui lòng",
+            "[01:34.80] Trái tim anh đây chỉ có chân tình",
+            "[01:38.86] Vì yêu em anh đâu cần toan tính",
+            "[01:43.39] Tuy giờ đây anh còn đang trắng tay",
+            "[01:47.71] Nhưng vì em sẽ có ngày đổi thay",
+            "[01:52.19] Mất trăm năm đôi mình mới chung thuyền",
+            "[01:56.50] Một ngàn năm ta mới về chung lối",
+            "[02:00.76] Nên người ơi em cần chi lắng lo",
+            "[02:05.31] Bên cạnh anh em sẽ vẹn duyên nồng",
+            "[02:23.15] Hah hah hah hah hah hah",
+            "[02:27.65] Nếu mai sau anh và em có già",
+            "[02:31.97] Đừng lo nhé có anh đây mà",
+            "[02:36.24] Nếu em thấy những khoảng trống trong lòng",
+            "[02:40.52] Thì đừng lo có anh luôn đợi mong",
+            "[02:45.09] Nếu mai sau duyên chẳng như ý nguyện",
+            "[02:49.40] Những tổn thương để mình anh nhận hết",
+            "[02:53.60] Bởi vì anh chỉ muốn thấy em cười",
+            "[02:57.79] Dù có ra sao cũng thấy vui lòng",
+            "[03:04.08] Trái tim anh đây chỉ có chân tình",
+            "[03:08.45] Vì yêu em anh đâu cần toan tính",
+            "[03:12.96] Tuy giờ đây anh còn đang trắng tay",
+            "[03:17.24] Nhưng vì em sẽ có ngày đổi thay",
+            "[03:21.44] Mất trăm năm đôi mình mới chung thuyền",
+            "[03:25.96] Một ngàn năm ta mới về chung lối",
+            "[03:30.26] Nên người ơi em cần chi lắng lo",
+            "[03:34.60] Bên cạnh anh em sẽ vẹn duyên nồng",
+            "[03:41.27] Trái tim anh đây chỉ có chân tình",
+            "[03:45.60] Vì yêu em anh đâu cần toan tính",
+            "[03:49.90] Tuy giờ đây anh còn đang trắng tay",
+            "[03:54.25] Nhưng vì em sẽ có ngày đổi thay",
+            "[03:58.72] Mất trăm năm đôi mình mới chung thuyền",
+            "[04:02.98] Một ngàn năm ta mới về chung lối",
+            "[04:07.29] Nên người ơi em cần chi lắng lo",
+            "[04:11.84] Bên cạnh anh em sẽ vẹn duyên nồng"
+        ]
     }
-
-
 ]

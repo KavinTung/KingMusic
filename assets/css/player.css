@@ -447,7 +447,7 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px) ;
     transition: all 0.3s ease;
-    padding-top: 24px;
+    padding: 24px 0;
     z-index: 1001;
     overflow-y: scroll;
 }

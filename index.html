@@ -22,12 +22,13 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/player.css">
     <link rel="stylesheet" href="./assets/css/reponsive.css">
-    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/logo/favicon.png" type="image/x-icon">
 
     <title>KingMusic - Music Player | Karaoke Online</title>
 </head>
 
 <body>
+    <!-- Wrapper -->
     <div class="wrapper">
         <!-- Header -->
         <div class="header">
@@ -223,6 +224,26 @@
                                         <img class="banner__item--img" src="assets/images/banner/12.jpg">
                                     </div>
                                 </div>
+                                <div class="col l-4 c-12 banner__item">
+                                    <div class="banner__item--wrap">
+                                        <img class="banner__item--img" src="assets/images/banner/13.jpg">
+                                    </div>
+                                </div>
+                                <div class="col l-4 c-12 banner__item">
+                                    <div class="banner__item--wrap">
+                                        <img class="banner__item--img" src="assets/images/banner/14.jpg">
+                                    </div>
+                                </div>
+                                <div class="col l-4 c-12 banner__item">
+                                    <div class="banner__item--wrap">
+                                        <img class="banner__item--img" src="assets/images/banner/15.jpg">
+                                    </div>
+                                </div>
+                                <div class="col l-4 c-12 banner__item">
+                                    <div class="banner__item--wrap">
+                                        <img class="banner__item--img" src="assets/images/banner/16.jpg">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <span class="banner__prev--btn control__btn--icon"><i class="bi bi-chevron-left"></i></span>
@@ -271,8 +292,8 @@
                     <!-- Songs -->
                     <div class="songs">
                         <h1 class="song__heading text__heading">Trendy Song</h1>
-                        <div class="row">
-                            <div class="song__wrap col l-4 c-12" data-id="8" title="">
+                        <div class="row song__test">
+                            <!-- <div class="song__wrap col l-4 c-12" data-id="8" title="">
                                 <div class="song__thumb">
                                     <img src="assets/images/img-thumb8.jpg" alt="" class="song__thumb--img">
                                     <div class="playing__bars--animation" data-id="8">
@@ -499,7 +520,7 @@
                                 <div class="song__option">
                                     <i class="bi bi-three-dots"></i>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- Album -->
@@ -615,8 +636,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Playlist -->
     <ul class="playlist"></ul>
-    <!-- Player container -->
+
+    <!-- Player -->
     <div class="player">
         <!-- Visualizer container -->
         <div class="visualizer__background--img">
@@ -825,7 +849,8 @@
             </div>
         </div>
     </div>
-    </div>
+
+    <!-- Volume Controls Mobile -->
     <div class="modal__mobile--volume hide-pc">
         <h2 class="mobile__volume--title">Volume</h2>
         <div class="mobile__volume--wrap">
@@ -836,6 +861,8 @@
             <span>50%</span>
         </div>
     </div>
+
+    <!-- Upload Modal -->
     <div class="modal__upload">
         <div class="upload__wrap">
             <div class="modal__close--icon control__btn--icon"><i class="bi bi-x"></i></div>
@@ -870,12 +897,14 @@
             <button class="upload__btn">Upload</button>
         </div>
     </div>
+
 </body>
 
 <script src="./assets/js/player.js"></script>
 <script src="./assets/js/visualizer.js"></script>
 <script src="./assets/js/banner.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="./assets/js/search.js"></script>
 <script src="./assets/js/upload.js"></script>
+<script src="./assets/js/main.js"></script>
 
 </html>

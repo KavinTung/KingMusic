@@ -1112,5 +1112,4 @@ const player = {
     },
 
 }
-
 player.start()

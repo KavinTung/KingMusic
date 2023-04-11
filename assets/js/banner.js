@@ -70,7 +70,6 @@ const banner = {
         gsap.to(parentElement, { duration: duration, scrollTo: { x: scrollValue } })
     }
 }
-
 banner.start()
 
 

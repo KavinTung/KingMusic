@@ -272,6 +272,11 @@
         width: 90%;
     }
 
+    /* Artist CSS */
+    .artist__item--img {
+        /* width: 120px; */
+    }
+
 }
 
 @media (min-width: 740px) {
