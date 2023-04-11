@@ -56,7 +56,6 @@ const volMbModal = $('.modal__mobile--volume')
 
 // Visualizer:
 const visualizerContainer = $('.visualizer')
-const visualizerBackground = $('.visualizer__background--img')
 const visualizerControls = $('.visualizer__fullscreen--show')
 
 // Playing:
@@ -173,7 +172,6 @@ const player = {
         //         case 'KeyE': // Visualizer
         //             btnVisualizer.classList.toggle('active')
         //             visualizerContainer.classList.toggle('active')
-        //             visualizerBackground.classList.toggle('active')
         //             break;
         //         case 'Space': // Play/Pause
         //             if (this.wavesurfer.isPlaying()) {
@@ -443,14 +441,12 @@ const player = {
         btnVisualizer.addEventListener('click', () => {
             btnVisualizer.classList.toggle('active')
             visualizerContainer.classList.toggle('active')
-            visualizerBackground.classList.toggle('active')
         })
 
         // Listen for visualizer mobile button click event:
         btnMbVisualizer.addEventListener('click', () => {
             btnVisualizer.classList.toggle('active')
             visualizerContainer.classList.toggle('active')
-            visualizerBackground.classList.toggle('active')
             btnMbVisualizer.classList.toggle('active')
         })
 
@@ -628,7 +624,7 @@ const player = {
             // Set background for all element now playing:
             elmPlayings.forEach(item => {
                 gsap.to(playListWrap, { duration: 0.8, scrollTo: { y: item.offsetTop } });
-                item.style.backgroundColor = 'rgba(128,128,128,0.5)'
+                item.style.backgroundColor = '#434343'
             })
 
 

@@ -192,7 +192,6 @@
         display: none !important;
     }
 
-
     /* Header CSS */
     .header {
         width: 100%;
@@ -250,6 +249,7 @@
         text-align: center;
         padding: 8px 12px;
     }
+
     .album__desc--name {
         margin-bottom: 0;
     }
@@ -259,8 +259,14 @@
         width: 100%;
         padding: 8px 12px;
     }
+
     .songs .song__info--name {
         margin-bottom: 0;
+    }
+
+    /* Artist CSS */
+    .artist__item--img {
+        /* width: 120px; */
     }
 
     /* Upload Modal */
@@ -270,11 +276,6 @@
 
     .upload__wrap {
         width: 90%;
-    }
-
-    /* Artist CSS */
-    .artist__item--img {
-        /* width: 120px; */
     }
 
 }

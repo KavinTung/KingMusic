@@ -209,22 +209,6 @@
 
 /* Visualizer CSS */
 
-.player .visualizer__background--img {
-    /* position: relative; */
-    bottom: -100vh;
-    /* background-image: url(/assets/images/tiger.jpg); */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: all 0.3s ease;
-    /* width: 100vw; */
-    /* height: 100vh; */
-}
-
-.player .visualizer__background--img.active {
-    /* bottom: 0; */
-}
-
 .player .visualizer {
     position: fixed;
     top: 150%;
@@ -471,6 +455,7 @@
     padding: 6px 16px;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 6px;
 }
 
 .song__wrap {
@@ -478,7 +463,7 @@
 }
 
 .song__wrap:hover {
-    background-color: rgba(128, 128, 128, 0.5) !important;
+    background-color: #434343 !important;
 }
 
 .song__wrap .song__thumb {

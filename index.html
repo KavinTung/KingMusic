@@ -642,70 +642,70 @@
 
     <!-- Player -->
     <div class="player">
+
         <!-- Visualizer container -->
-        <div class="visualizer__background--img">
-            <div class="visualizer vertical">
-                <div class="visualizer__cd--animate">
-                    <canvas id="visualizer" class="visualizer__wrap"></canvas>
-                    <div class="visualizer__fullscreen--show">
-                        <div class="visualizer__cd--info">
-                            <h1 class="visualizer__cd--name"></h1>
-                            <h3 class="visualizer__cd--artist"></h3>
+        <div class="visualizer vertical">
+            <div class="visualizer__cd--animate">
+                <canvas id="visualizer" class="visualizer__wrap"></canvas>
+                <div class="visualizer__fullscreen--show">
+                    <div class="visualizer__cd--info">
+                        <h1 class="visualizer__cd--name"></h1>
+                        <h3 class="visualizer__cd--artist"></h3>
+                    </div>
+                    <div class="visualizer__progress--wrap">
+                        <input type="range" class="visualizer__progress" value="0" min="0" max="100">
+                        </input>
+                        <span>0%</span>
+                    </div>
+                    <div class="visualizer__controls--btn">
+                        <div class="visualizer__control--prev control__btn--icon visualizer__setting--icon"
+                            title="Prev">
+                            <i class="bi bi-skip-start"></i>
                         </div>
-                        <div class="visualizer__progress--wrap">
-                            <input type="range" class="visualizer__progress" value="0" min="0" max="100">
-                            </input>
-                            <span>0%</span>
+                        <div class="visualizer__control--play control__btn--icon visualizer__setting--icon active"
+                            title="Play">
+                            <i class="bi bi-play-circle"></i>
                         </div>
-                        <div class="visualizer__controls--btn">
-                            <div class="visualizer__control--prev control__btn--icon visualizer__setting--icon"
-                                title="Prev">
-                                <i class="bi bi-skip-start"></i>
-                            </div>
-                            <div class="visualizer__control--play control__btn--icon visualizer__setting--icon active"
-                                title="Play">
-                                <i class="bi bi-play-circle"></i>
-                            </div>
-                            <div class="visualizer__control--pause control__btn--icon visualizer__setting--icon"
-                                title="Pause">
-                                <i class="bi bi-pause-circle"></i>
-                            </div>
-                            <div class="visualizer__control--next control__btn--icon visualizer__setting--icon"
-                                title="Next">
-                                <i class="bi bi-skip-end"></i>
-                            </div>
+                        <div class="visualizer__control--pause control__btn--icon visualizer__setting--icon"
+                            title="Pause">
+                            <i class="bi bi-pause-circle"></i>
                         </div>
-                    </div>
-                </div>
-                <div class="lyrics vertical active">
-                </div>
-                <div class="visualizer__setting">
-                    <div class="visualizer__player--toggle control__btn--icon visualizer__setting--icon"
-                        title="Press F to show/hide player controls">
-                        <i class="bi bi-toggles"></i>
-                    </div>
-                    <div class="waveform__icon--color control__btn--icon visualizer__setting--icon"
-                        title="Click to change waveform color">
-                        <i class="bi bi-palette"></i>
-                    </div>
-                    <div class="lyrics__icon--font control__btn--icon visualizer__setting--icon"
-                        title="Click to change lyric font">
-                        <i class="bi bi-file-font"></i>
-                    </div>
-                    <div class="lyrics__icon--toggle control__btn--icon visualizer__setting--icon"
-                        title="Click to hide/show lyric">
-                        <i class="bi bi-journal-text"></i>
-                        <i class="bi bi-journal-x"></i>
-                    </div>
-                    <div class="lyrics__icon--align control__btn--icon visualizer__setting--icon"
-                        title="Press A to align items">
-                        <i class="bi bi-columns-gap"></i>
-                        <i class="bi bi-view-list"></i>
+                        <div class="visualizer__control--next control__btn--icon visualizer__setting--icon"
+                            title="Next">
+                            <i class="bi bi-skip-end"></i>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="lyrics vertical active">
+            </div>
+            <div class="visualizer__setting">
+                <div class="visualizer__player--toggle control__btn--icon visualizer__setting--icon"
+                    title="Press F to show/hide player controls">
+                    <i class="bi bi-toggles"></i>
+                </div>
+                <div class="waveform__icon--color control__btn--icon visualizer__setting--icon"
+                    title="Click to change waveform color">
+                    <i class="bi bi-palette"></i>
+                </div>
+                <div class="lyrics__icon--font control__btn--icon visualizer__setting--icon"
+                    title="Click to change lyric font">
+                    <i class="bi bi-file-font"></i>
+                </div>
+                <div class="lyrics__icon--toggle control__btn--icon visualizer__setting--icon"
+                    title="Click to hide/show lyric">
+                    <i class="bi bi-journal-text"></i>
+                    <i class="bi bi-journal-x"></i>
+                </div>
+                <div class="lyrics__icon--align control__btn--icon visualizer__setting--icon"
+                    title="Press A to align items">
+                    <i class="bi bi-columns-gap"></i>
+                    <i class="bi bi-view-list"></i>
+                </div>
+            </div>
         </div>
-        <!-- Playing container -->
+
+        <!-- Playing container (PC) -->
         <div class="playing hide-mobile">
             <div class="grid">
                 <div class="row">
@@ -807,6 +807,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Playing container (Mobile) -->
         <div class="playing__mobile hide-pc">
             <input type="range" class="playing__mobile--progress" value="0" min="0" max="100">
             <div class="playing__mobile--timeline">
