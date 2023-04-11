@@ -64,7 +64,6 @@
         bottom: 0;
         /* height: calc(var(--player-height) + var(--player-mobile-bonus-height)); */
         height: auto;
-        min-height: 150px;
         background-color: var(--bg-color-default);
         padding: 12px 24px 24px 24px;
         z-index: 50;
@@ -259,6 +258,11 @@
     .songs .song__wrap {
         width: 100%;
         padding: 8px 12px;
+    }
+
+    /* Upload Modal */
+    .upload__wrap {
+        width: 90%;
     }
 
 }
