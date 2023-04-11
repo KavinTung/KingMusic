@@ -62,7 +62,6 @@
         left: 0;
         right: 0;
         bottom: 0;
-        /* height: calc(var(--player-height) + var(--player-mobile-bonus-height)); */
         height: auto;
         background-color: var(--bg-color-default);
         padding: 12px 24px 24px 24px;
@@ -194,9 +193,6 @@
     }
 
 
-    /* Wrapper */
-
-
     /* Header CSS */
     .header {
         width: 100%;
@@ -215,6 +211,17 @@
         font-size: 2.8rem;
     }
 
+    /* Header User CSS */
+    .header__user {
+        margin-left: 12px;
+    }
+
+    .header__user .user__avatar {
+        width: 35px;
+        height: 35px;
+        padding-top: 35px;
+    }
+
     /* Sidebar CSS */
     .sidebar {
         position: fixed;
@@ -226,6 +233,7 @@
         height: auto;
         z-index: 51;
     }
+
     .sidebar.active {
         left: 0;
     }
@@ -235,17 +243,6 @@
         left: 0;
         width: 100%;
         padding: 0 24px;
-    }
-
-    /* Header User CSS */
-    .header__user {
-        margin-left: 12px;
-    }
-
-    .header__user .user__avatar {
-        width: 35px;
-        height: 35px;
-        padding-top: 35px;
     }
 
     /* Album CSS */
@@ -261,6 +258,10 @@
     }
 
     /* Upload Modal */
+    .modal__upload {
+        z-index: 1002;
+    }
+
     .upload__wrap {
         width: 90%;
     }
