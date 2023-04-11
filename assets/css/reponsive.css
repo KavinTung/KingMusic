@@ -62,7 +62,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        max-height: calc(var(--player-height) + var(--player-mobile-bonus-height));
+        /* max-height: calc(var(--player-height) + var(--player-mobile-bonus-height)); */
         background-color: var(--bg-color-default);
         padding: 12px 24px 24px 24px;
         z-index: 50;
