@@ -74,6 +74,7 @@
         width: 100% !important;
         height: 4px !important;
         margin: 0 !important;
+        margin-top: 4px !important;
     }
 
     .playing__mobile--progress:hover {
