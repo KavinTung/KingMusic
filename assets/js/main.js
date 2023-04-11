@@ -70,8 +70,6 @@ const app = {
             search.reloadSongElements()
         }
 
-
     }
 }
 app.start()
-
