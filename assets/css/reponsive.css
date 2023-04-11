@@ -63,7 +63,8 @@
         right: 0;
         bottom: 0;
         /* height: calc(var(--player-height) + var(--player-mobile-bonus-height)); */
-        max-height: 150px;
+        height: auto;
+        min-height: 150px;
         background-color: var(--bg-color-default);
         padding: 12px 24px 24px 24px;
         z-index: 50;
@@ -178,7 +179,6 @@
         padding: 0 24px;
         z-index: 53 !important;
         height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height)) !important;
-        margin-bottom: 150px;
     }
 
     .visualizer__setting {

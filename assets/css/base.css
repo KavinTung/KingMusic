@@ -37,7 +37,6 @@ body {
 }
 
 .wrapper {
-    /* background-image: var(--bg-image-default); */
     transition: all 0.3s ease;
 }
 
