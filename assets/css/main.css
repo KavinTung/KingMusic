@@ -1,14 +1,12 @@
 /* Main Section */
 .main {
     position: relative;
-    /* transform: translateX(240px); */
     left: 240px;
     padding: 0 var(--main-section-padding);
     width: calc(100% - 240px);
     margin-top: 70px;
     margin-bottom: 150px;
     background-color: var(--bg-color-default);
-
 }
 
 /* Sidebar CSS */
