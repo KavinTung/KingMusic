@@ -251,7 +251,7 @@
         padding: 8px 12px;
     }
     .album__desc--name {
-        margin-bottom: 3px;
+        margin-bottom: 0;
     }
 
     /* Song CSS */
@@ -260,7 +260,7 @@
         padding: 8px 12px;
     }
     .songs .song__info--name {
-        margin-bottom: 3px;
+        margin-bottom: 0;
     }
 
     /* Upload Modal */
