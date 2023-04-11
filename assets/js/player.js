@@ -1053,12 +1053,10 @@ const player = {
                 if (currentVol >= targetVol) {
                     clearInterval(intervalId)
                     currentVol = targetVol
-                    // this.wavesurfer.setVolume(currentVol / 100)
-                    audio.volume = (currentVol / 100)
+                    this.wavesurfer.setVolume(currentVol / 100)
                 } else {
                     currentVol += valueChange
-                    audio.volume = (currentVol / 100)
-                    // this.wavesurfer.setVolume(currentVol / 100)
+                    this.wavesurfer.setVolume(currentVol / 100)
                 }
             }, 10)
         }
@@ -1077,8 +1075,7 @@ const player = {
                         isDone = true
                         resolve(isDone)
                     }
-                    audio.volume = (currentVol / 100)
-                    // this.wavesurfer.setVolume(currentVol / 100)
+                    this.wavesurfer.setVolume(currentVol / 100)
                 }
             }, 10)
         })

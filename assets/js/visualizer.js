@@ -1,19 +1,22 @@
-// Audio
-let context = new (window.AudioContext || window.webkitAudioContext)()
-let src = context.createMediaElementSource(audio)
-let analyser = context.createAnalyser()
-let bufferLength = analyser.frequencyBinCount
-let dataArray = new Uint8Array(bufferLength)
 
-// Canvas:
-let canvas = document.querySelector("#visualizer")
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
-let ctx = canvas.getContext("2d")
-let cdThumb = new Image()
 
 // Visualizer:
 function visualizer() {
+
+    // Audio
+    let context = new (window.AudioContext || window.webkitAudioContext)()
+    let src = context.createMediaElementSource(audio)
+    let analyser = context.createAnalyser()
+    let bufferLength = analyser.frequencyBinCount
+    let dataArray = new Uint8Array(bufferLength)
+
+    // Canvas:
+    let canvas = document.querySelector("#visualizer")
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    let ctx = canvas.getContext("2d")
+    let cdThumb = new Image()
+
     // Unlock The Audio Context On IOS (Mobile):
     unlockAudioContext(context);
 
