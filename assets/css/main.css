@@ -478,11 +478,18 @@ hr {
     font-size: 1.5rem;
     color: var(--color-white);
     margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 
 .album__desc--artist {
     font-size: 1.2rem;
     color: var(--color-gray);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
 }
 
 .album__thumb {

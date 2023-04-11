@@ -250,11 +250,17 @@
         text-align: center;
         padding: 8px 12px;
     }
+    .album__desc--name {
+        margin-bottom: 3px;
+    }
 
     /* Song CSS */
     .songs .song__wrap {
         width: 100%;
         padding: 8px 12px;
+    }
+    .songs .song__info--name {
+        margin-bottom: 3px;
     }
 
     /* Upload Modal */

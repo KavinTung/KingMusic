@@ -1072,6 +1072,7 @@ const player = {
                     currentVol -= valueChange
                     if (currentVol <= 0) {
                         currentVol = 0
+                        clearInterval(intervalId)
                         isDone = true
                         resolve(isDone)
                     }
