@@ -1054,10 +1054,11 @@ const player = {
                 if (currentVol >= targetVol) {
                     clearInterval(intervalId)
                     currentVol = targetVol
+                    this.wavesurfer.setVolume(currentVol / 100)
                 } else {
                     currentVol += valueChange
+                    this.wavesurfer.setVolume(currentVol / 100)
                 }
-                this.wavesurfer.setVolume(currentVol / 100)
             }, 10)
         }
     },
