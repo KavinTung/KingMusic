@@ -177,7 +177,7 @@
         width: 100% !important;
         padding: 0 24px;
         z-index: 53 !important;
-        height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height) - 2px) !important;
+        height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height) - 4px) !important;
     }
 
     .visualizer__setting {
