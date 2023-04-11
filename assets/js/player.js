@@ -697,13 +697,12 @@ const player = {
             this.renderTime(currentTime, mBcurrentDurationElm)
             this.updateLyric(currentTime, this.lyricElm, this.lyricArr)
             let percent = parseInt(this.wavesurfer.getCurrentTime() * 100 / this.wavesurfer.getDuration())
-            progressBar.style.backgroundSize = `${percent}%`
+            progressBar.style.backgroundSize = `${percent}% 100%`
             progressBar.value = percent
             progressPercentText.textContent = `${percent}%`
             progressPercentText.style.left = `calc(${percent}% - 0.5rem)`
-            mBprogressBar.style.backgroundSize = `${percent}%`
+            mBprogressBar.style.backgroundSize = `${percent}% 100%`
             mBprogressBar.value = percent
-            // Test:
 
         })
 
