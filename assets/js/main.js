@@ -166,6 +166,7 @@ window.onload = function () {
                 </div>
             </li>
             `
+
     reloadSongElements()
     handleSearch()
 }

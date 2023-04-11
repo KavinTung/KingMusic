@@ -231,7 +231,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: calc(100vh - var(--player-height));
+    height: calc(100% - var(--player-height));
     background-color: var(--visualizer-bg);
     backdrop-filter: blur(var(--visualizer-blur));
     -webkit-backdrop-filter: blur(var(--visualizer-blur));
