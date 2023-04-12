@@ -160,65 +160,65 @@ const player = {
         let songListElm = $$('.song__wrap')
 
         // Listen for keyboard keydown event:
-        // document.addEventListener('keydown', (e) => {
-        //     switch (e.code) {
-        //         case 'KeyL': // Playlist
-        //             playListWrap.classList.toggle('show')
-        //             btnPlayList.classList.toggle('active')
-        //             break;
-        //         case 'KeyM': // Mute/Unmute
-        //             this.muteFunc()
-        //             break;
-        //         case 'KeyE': // Visualizer
-        //             btnVisualizer.classList.toggle('active')
-        //             visualizerContainer.classList.toggle('active')
-        //             break;
-        //         case 'Space': // Play/Pause
-        //             if (this.wavesurfer.isPlaying()) {
-        //                 this.changeVolumeSmoothDown(0, this.volume, this.crossFadeTime)
-        //                     .then(() => {
-        //                         this.wavesurfer.pause()
-        //                     })
-        //             } else {
-        //                 this.wavesurfer.play()
-        //             }
-        //             break;
-        //         case 'ArrowRight': // Seek forward 10s
-        //             this.seekAudio(10)
-        //             break;
-        //         case 'ArrowLeft':  // Seek backwrad 10s
-        //             this.seekAudio(-10)
-        //             break;
-        //         case 'ArrowUp':  // Volume Up + 5%
-        //             this.volume = (this.wavesurfer.getVolume() * 100) + 5
-        //             if (this.volume >= 100) {
-        //                 this.volume = 100
-        //             }
-        //             this.setVolumeFunc(this.volume)
-        //             break;
-        //         case 'ArrowDown':  // Volume Up - 5%
-        //             this.volume = (this.wavesurfer.getVolume() * 100) - 5
-        //             if (this.volume < 0) {
-        //                 this.volume = 0
-        //             }
-        //             this.setVolumeFunc(this.volume)
-        //             break;
-        //         case 'KeyA': // Align Lyrics and CD Animate
-        //             lyricsElmWrap.classList.toggle('horizontal')
-        //             lyricsElmWrap.classList.toggle('vertical')
-        //             visualizerContainer.classList.toggle('horizontal')
-        //             visualizerContainer.classList.toggle('vertical')
-        //             break;
-        //         case 'KeyF': // Full screen mode
-        //             playingContainer.classList.toggle('hide')
-        //             visualizerContainer.classList.toggle('full')
-        //             playListWrap.classList.toggle('full')
-        //             visualizerControls.classList.toggle('active')
-        //             break;
-        //         default:
-        //             break;
-        //     }
-        // })
+        document.addEventListener('keydown', (e) => {
+            switch (e.code) {
+                case 'KeyL': // Playlist
+                    playListWrap.classList.toggle('show')
+                    btnPlayList.classList.toggle('active')
+                    break;
+                case 'KeyM': // Mute/Unmute
+                    this.muteFunc()
+                    break;
+                case 'KeyE': // Visualizer
+                    btnVisualizer.classList.toggle('active')
+                    visualizerContainer.classList.toggle('active')
+                    break;
+                case 'Space': // Play/Pause
+                    if (this.wavesurfer.isPlaying()) {
+                        this.changeVolumeSmoothDown(0, this.volume, this.crossFadeTime)
+                            .then(() => {
+                                this.wavesurfer.pause()
+                            })
+                    } else {
+                        this.wavesurfer.play()
+                    }
+                    break;
+                case 'ArrowRight': // Seek forward 10s
+                    this.seekAudio(10)
+                    break;
+                case 'ArrowLeft':  // Seek backwrad 10s
+                    this.seekAudio(-10)
+                    break;
+                case 'ArrowUp':  // Volume Up + 5%
+                    this.volume = (this.wavesurfer.getVolume() * 100) + 5
+                    if (this.volume >= 100) {
+                        this.volume = 100
+                    }
+                    this.setVolumeFunc(this.volume)
+                    break;
+                case 'ArrowDown':  // Volume Up - 5%
+                    this.volume = (this.wavesurfer.getVolume() * 100) - 5
+                    if (this.volume < 0) {
+                        this.volume = 0
+                    }
+                    this.setVolumeFunc(this.volume)
+                    break;
+                case 'KeyA': // Align Lyrics and CD Animate
+                    lyricsElmWrap.classList.toggle('horizontal')
+                    lyricsElmWrap.classList.toggle('vertical')
+                    visualizerContainer.classList.toggle('horizontal')
+                    visualizerContainer.classList.toggle('vertical')
+                    break;
+                case 'KeyF': // Full screen mode
+                    playingContainer.classList.toggle('hide')
+                    visualizerContainer.classList.toggle('full')
+                    playListWrap.classList.toggle('full')
+                    visualizerControls.classList.toggle('active')
+                    break;
+                default:
+                    break;
+            }
+        })
 
         // Listen for playlist button click event:
         btnPlayList.addEventListener('click', (e) => {

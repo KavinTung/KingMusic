@@ -36,7 +36,7 @@
 
 .sidebar__item {
     padding: 10px 25px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
     cursor: pointer;
 }
@@ -47,6 +47,7 @@
 
 .sidebar__item i {
     margin-right: 8px;
+    font-size: 1.6rem;
 }
 
 .sidebar__heading {
@@ -346,6 +347,7 @@ hr {
 /* Banner CSS */
 .banner {
     position: relative;
+    margin: 24px 0;
 }
 
 .banner__slider {
@@ -358,7 +360,6 @@ hr {
 }
 
 .banner__item--wrap {
-    margin-top: 24px;
     padding-left: 12px !important;
     padding-right: 12px !important;
 }

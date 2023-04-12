@@ -21,7 +21,7 @@ function visualizer() {
     // Connect audio to output:
     src.connect(analyser)
     analyser.connect(context.destination)
-    analyser.fftSize = 2048
+    analyser.fftSize = 512
 
 
     // When song pause:
@@ -50,7 +50,7 @@ function visualizer() {
 
     function scaleImage() {
         const scaledValue = getEnergyScale()
-        const scaleFactor = (scaledValue / 255) + 0.5
+        const scaleFactor = scaledValue / 255 * 0.5 + 0.8
         canvas.style.transform = `scale(${scaleFactor})`
     }
 

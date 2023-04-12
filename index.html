@@ -54,11 +54,16 @@
                     </ul>
                 </div>
             </div>
+
             <div class="header__content--right">
                 <div class="header__user">
+                    <!-- User Avatar -->
                     <div class="user__avatar">
                     </div>
+
+                    <!-- User Setting -->
                     <div class="user__setting">
+                        <!-- Cross Fade Audio -->
                         <div class="user__setting--crossfade">
                             <div class="crossfade__wrap">
                                 <p class="crossfade__setting--text">Crossfade audio:</p>
@@ -69,8 +74,13 @@
                             <p class="crossfade__setting--value">0.5 s</p>
                         </div>
                         <ul class="user__setting--list">
-                            <li class="user__setting--item user__setting--avatar"><i
-                                    class="bi bi-person-bounding-box"></i>Change avatar</li>
+
+                            <!-- User Change Avatar -->
+                            <label for="change-avt" class="user__setting--item user__setting--avatar"><i
+                                    class="bi bi-person-bounding-box"></i>Change avatar</label>
+                            <input type="file" id="change-avt">
+
+                            <!-- User Upload Music-->
                             <li class="user__setting--item user__setting--upload"><i
                                     class="bi bi-cloud-arrow-up"></i>Upload your music</li>
                             <hr>
@@ -84,7 +94,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">
-                <svg class="logo__svg--img" xmlns="http://www.w3.org/2000/svg" width="160" height="80"
+                <svg class="logo__svg--img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 936 266">
                     <g fill="none" fill-rule="evenodd">
                         <g>
@@ -253,7 +263,7 @@
                     <div class="artist">
                         <h1 class="artist__heading text__heading">Top Artist</h1>
                         <div class="artist__wrap">
-                            <div class="artist__item--wrap">
+                            <!-- <div class="artist__item--wrap">
                                 <img class="artist__item--img" src="assets/images/artist/chi-dan.png">
                             </div>
                             <div class="artist__item--wrap">
@@ -264,7 +274,7 @@
                             </div>
                             <div class="artist__item--wrap">
                                 <img class="artist__item--img" src="assets/images/artist/karik.png">
-                            </div>
+                            </div> -->
                             <div class="artist__item--wrap">
                                 <img class="artist__item--img" src="assets/images/artist/mr-siro.png">
                             </div>
@@ -295,7 +305,7 @@
                         <div class="row song__test">
                             <!-- <div class="song__wrap col l-4 c-12" data-id="8" title="">
                                 <div class="song__thumb">
-                                    <img src="assets/images/img-thumb8.jpg" alt="" class="song__thumb--img">
+                                    <img src="assets/images/songs/img-thumb8.jpg" alt="" class="song__thumb--img">
                                     <div class="playing__bars--animation" data-id="8">
                                         <span></span><span></span><span></span><span></span><span></span>
                                     </div>
@@ -736,11 +746,11 @@
                             </div>
 
                             <!-- Play button -->
-                            <div class="control__btn--icon active play__btn" title="Press SPACE to play / pause">
+                            <div class="control__btn--icon active play__btn" title="Click to play">
                                 <i class="bi bi-play-circle-fill"></i>
                             </div>
                             <!-- Pause button -->
-                            <div class="control__btn--icon pause__btn" title="Press SPACE to play / pause">
+                            <div class="control__btn--icon pause__btn" title="Click to pause">
                                 <i class="bi bi-pause-circle-fill"></i>
                             </div>
                             <!-- Next button -->
@@ -783,7 +793,7 @@
 
                         <!-- Volume container -->
                         <div class="volume__wrap hide-mobile">
-                            <div class="control__btn--icon volume__btn" title="Press M to mute / unmute">
+                            <div class="control__btn--icon volume__btn" title="Click to mute / unmute">
                                 <i class="bi bi-volume-up btn__vol--lound"></i>
                                 <i class="bi bi-volume-mute btn__vol--mute"></i>
                             </div>
@@ -794,12 +804,12 @@
                         </div>
 
                         <!-- Visualizer button -->
-                        <div class="visualizer__btn control__btn--icon" title="Press E to show/hide visualizer">
+                        <div class="visualizer__btn control__btn--icon" title="Click show/hide visualizer">
                             <i class="bi bi-disc"></i>
                         </div>
 
                         <!-- Playlist button -->
-                        <div class="control__btn--icon playlist__btn" title="Press L to show playlist">
+                        <div class="control__btn--icon playlist__btn" title="Click to show/hide playlist">
                             <i class="bi bi-music-note-list"></i>
                         </div>
 

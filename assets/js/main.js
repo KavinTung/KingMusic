@@ -2,6 +2,7 @@
 // Header user:
 const userSetting = $('.user__setting')
 const userAvatar = $('.user__avatar')
+const userChangeAvatarElm = $('#change-avt')
 
 // Mobile Button:
 const btnMbToggleSideBar = $('.header__mobile--bars')
@@ -22,6 +23,11 @@ const app = {
             userSetting.classList.toggle('active')
         })
 
+        // Listen for User Avatar Input File Change:
+        userChangeAvatarElm.addEventListener('change', (e) => {
+            userAvatar.style.backgroundImage = `url(${URL.createObjectURL(e.target.files[0])})`
+        })
+
         // Stp Propagation for User Setting Wrap:
         userSetting.addEventListener('click', (e) => {
             e.stopPropagation()
@@ -36,13 +42,14 @@ const app = {
         btnMbToggleSideBar.addEventListener('click', () => {
             sideBarElm.classList.toggle('active')
         })
+
     },
 
     // Render Trendy Songs:
     renderSongs: function () {
 
         window.onload = function() {
-            dataList = [...player.dataList].slice(0,12)
+            let dataList = [...player.dataList].slice(0,12)
             let htmls = dataList.map((song, index) => {
                 return `<div class="song__wrap col l-4 c-12" data-id="${song.id}" title="${song.name}">
                     <div class="song__thumb">
