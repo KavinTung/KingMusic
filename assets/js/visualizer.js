@@ -50,7 +50,7 @@ function visualizer() {
 
     function scaleImage() {
         const scaledValue = getEnergyScale()
-        const scaleFactor = scaledValue / 255 * 0.5 + 0.8
+        const scaleFactor = (scaledValue / 255)* 0.8 + 0.8
         canvas.style.transform = `scale(${scaleFactor})`
     }
 
