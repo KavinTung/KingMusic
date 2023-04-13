@@ -75,7 +75,9 @@ function visualizer() {
     // Draw canvas:
     function draw() {
         // Get request frame and get byte on time:
-        requestAnimationFrame(draw)
+        if(window.innerWidth > 739) {
+            requestAnimationFrame(draw)
+        }
         analyser.getByteTimeDomainData(dataArray)
 
         // Draw wave to canvas:
@@ -108,7 +110,9 @@ function visualizer() {
         ctx.stroke()
 
     }
-    draw()
+    if(window.innerWidth > 739) {
+        draw()
+    }
 }
 
 // Unlock The Audio Context On IOS:
