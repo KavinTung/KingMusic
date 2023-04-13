@@ -194,6 +194,16 @@
         display: none !important;
     }
 
+    .visualizer__fullscreen--show {
+        display: block !important;
+    }
+    .visualizer__fullscreen--show .visualizer__progress--wrap {
+        display: none;
+    }
+    .visualizer__fullscreen--show .visualizer__controls--btn {
+        display: none;
+    }
+
     /* Header CSS */
     .header {
         width: 100%;
