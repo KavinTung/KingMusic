@@ -30,6 +30,7 @@
 <body>
     <!-- Wrapper -->
     <div class="wrapper">
+
         <!-- Header -->
         <div class="header">
             <div class="header__content--left">
@@ -48,7 +49,8 @@
                 </div>
                 <!-- Search Input -->
                 <div class="header__search">
-                    <input type="text" class="header__search--input" placeholder="Song name, artist...">
+                    <input type="text" class="header__search--input" spellcheck="false"
+                        placeholder="Song name, artist...">
                     <div class="control__btn--icon"><i class="bi bi-search"></i></div>
                     <ul class="search__suggest--list">
                     </ul>
@@ -91,11 +93,11 @@
                 </div>
             </div>
         </div>
+
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">
-                <svg class="logo__svg--img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 936 266">
+                <svg class="logo__svg--img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 936 266">
                     <g fill="none" fill-rule="evenodd">
                         <g>
                             <g>
@@ -123,7 +125,7 @@
                 </svg>
             </div>
             <ul class="sidebar__list">
-                <li class="sidebar__item">
+                <li class="sidebar__item active">
                     <i class="bi bi-house"></i>
                     <span>Home</span>
                 </li>
@@ -135,24 +137,24 @@
                     <i class="bi bi-disc"></i>
                     <span>Album</span>
                 </li>
-                <li class="sidebar__item">
+                <li class="sidebar__item disable">
                     <i class="bi bi-people"></i>
                     <span>Artists</span>
                 </li>
-                <li class="sidebar__item">
+                <li class="sidebar__item disable">
                     <i class="bi bi-play-btn"></i>
                     <span>Videos</span>
                 </li>
                 <hr style="width: 90%;">
-                <li class="sidebar__item">
+                <li class="sidebar__item disable">
                     <i class="bi bi-music-note-list"></i>
                     <span>Your Playlist</span>
                 </li>
-                <li class="sidebar__item">
+                <li class="sidebar__item disable">
                     <i class="bi bi-stopwatch"></i>
                     <span>Recently Played</span>
                 </li>
-                <li class="sidebar__item">
+                <li class="sidebar__item disable">
                     <i class="bi bi-file-earmark-play"></i>
                     <span>Local Files</span>
                 </li>
@@ -166,6 +168,7 @@
             </ul>
 
         </div>
+
         <!-- Main Section -->
         <div class="main">
             <div class="grid">
@@ -263,7 +266,7 @@
                     <div class="artist">
                         <h1 class="artist__heading text__heading">Top Artist</h1>
                         <div class="artist__wrap">
-                            <!-- <div class="artist__item--wrap">
+                            <div class="artist__item--wrap">
                                 <img class="artist__item--img" src="assets/images/artist/chi-dan.png">
                             </div>
                             <div class="artist__item--wrap">
@@ -274,7 +277,7 @@
                             </div>
                             <div class="artist__item--wrap">
                                 <img class="artist__item--img" src="assets/images/artist/karik.png">
-                            </div> -->
+                            </div>
                             <div class="artist__item--wrap">
                                 <img class="artist__item--img" src="assets/images/artist/mr-siro.png">
                             </div>
@@ -302,614 +305,298 @@
                     <!-- Songs -->
                     <div class="songs">
                         <h1 class="song__heading text__heading">Trendy Song</h1>
-                        <div class="row song__test">
-                            <!-- <div class="song__wrap col l-4 c-12" data-id="8" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/songs/img-thumb8.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="8">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="8">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="8">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
+                        <div class="row song__list">
+                        </div>
+                    </div>
+                    <!-- Album Detail Container -->
+                    <div class="album__container">
+                        <h1 class="album__detail--heading text__heading">Album Hot</h1>
+                        <!-- Album Detail -->
+                        <div class="row album__detail">
+                            <!-- Album Wrap Details -->
+                            <div class="album__wrap album__detail--wrap col l-3">
 
-                                <div class="song__info">
-                                    <p class="song__info--name">Havana Remix</p>
-                                    <p class="song__info--artist">Camila Cabello ft Daddy Yankee</p>
-                                </div>
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
                             </div>
-                            <div class="song__wrap col l-4 c-12" data-id="9" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb9.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="9">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="9">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="9">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
+                            <!-- Songs Wrap Details -->
+                            <div class="album__detail--list col l-9">
 
-                                <div class="song__info">
-                                    <p class="song__info--name">Chờ Trông Ai</p>
-                                    <p class="song__info--artist">Nal ft CT</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
                             </div>
-                            <div class="song__wrap col l-4 c-12" data-id="10" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb10.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="10">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="10">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="10">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Havana Remix</p>
-                                    <p class="song__info--artist">Camila Cabello ft Daddy Yankee</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div>
-                            <div class="song__wrap col l-4 c-12" data-id="11" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb11.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="11">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="11">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="11">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Chờ Trông Ai</p>
-                                    <p class="song__info--artist">Nal ft CT</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div>
-                            <div class="song__wrap col l-4 c-12" data-id="2" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb2.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="2">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="2">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="2">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Havana Remix</p>
-                                    <p class="song__info--artist">Camila Cabello ft Daddy Yankee</p>
-                                </div>
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div>
-                            <div class="song__wrap col l-4 c-12" data-id="3" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb3.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="3">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="3">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="3">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Chờ Trông Ai</p>
-                                    <p class="song__info--artist">Nal ft CT</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div>
-                            <div class="song__wrap col l-4 c-12" data-id="4" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb4.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="4">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="4">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="4">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Havana Remix</p>
-                                    <p class="song__info--artist">Camila Cabello ft Daddy Yankee</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div>
-                            <div class="song__wrap col l-4 c-12" data-id="5" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb5.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="5">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="5">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="5">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Chờ Trông Ai</p>
-                                    <p class="song__info--artist">Nal ft CT</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div>
-                            <div class="song__wrap col l-4 c-12" data-id="6" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb6.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="6">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="6">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="6">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Havana Remix</p>
-                                    <p class="song__info--artist">Camila Cabello ft Daddy Yankee</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div>
-                            <div class="song__wrap col l-4 c-12" data-id="7" title="">
-                                <div class="song__thumb">
-                                    <img src="assets/images/img-thumb7.jpg" alt="" class="song__thumb--img">
-                                    <div class="playing__bars--animation" data-id="7">
-                                        <span></span><span></span><span></span><span></span><span></span>
-                                    </div>
-                                    <div class="playing__button--play control__btn--icon" data-id="7">
-                                        <i class="bi bi-play-fill"></i>
-                                    </div>
-                                    <div class="playing__button--pause control__btn--icon" data-id="7">
-                                        <i class="bi bi-pause-fill"></i>
-                                    </div>
-                                </div>
-
-                                <div class="song__info">
-                                    <p class="song__info--name">Chờ Trông Ai</p>
-                                    <p class="song__info--artist">Nal ft CT</p>
-                                </div>
-
-                                <div class="song__option">
-                                    <i class="bi bi-three-dots"></i>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <!-- Album -->
                     <div class="album">
-                        <h1 class="album__heading text__heading">Album Hot</h1>
-                        <div class="row">
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img" src="assets/images/album/album1.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">Nguôi Ngoai</p>
-                                    <p class="album__desc--artist">NB3 Hoài Bão</p>
-                                </div>
-                            </div>
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img"
-                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/f/a/a/b/faab8a4cc9c86a893dd49869d255d520.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">Trăng Chờ</p>
-                                    <p class="album__desc--artist">DANHKA</p>
-                                </div>
-                            </div>
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img"
-                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/7/a/7/7/7a7778775a4146cbd8266e7cd332e948.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">999 Đóa Hồng</p>
-                                    <p class="album__desc--artist">Đặng Thanh Tuyền</p>
-                                </div>
-                            </div>
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img"
-                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/3/6/c/0/36c04a84c9d580012f2f7b5a31ee123c.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">Lý Do Là Vậy</p>
-                                    <p class="album__desc--artist">Hana Cẩm Tiên ft TVK</p>
-                                </div>
-                            </div>
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img"
-                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/a/8/b/b/a8bb31669881200bd7d6f1e0160ce2de.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">Mệt Rồi Thì Thôi</p>
-                                    <p class="album__desc--artist">Phùng Ngọc Huy</p>
-                                </div>
-                            </div>
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img"
-                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/6/a/4/c/6a4ce837f7d0ae3c9da686b9a7c95f4e.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">Bao Nhiêu Chân Thành Là Đủ</p>
-                                    <p class="album__desc--artist">Hồ Nhất Huy</p>
-                                </div>
-                            </div>
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img"
-                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/e/f/a/a/efaa92bff1afe290f7031acc3ece95bd.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">Những Thứ Trước Mắt Là Anh</p>
-                                    <p class="album__desc--artist">Phạm Lịch</p>
-                                </div>
-                            </div>
-                            <div class="album__wrap col l-3 c-6">
-                                <div class="album__thumb">
-                                    <img class="album__thumb--img"
-                                        src="https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_webp/cover/1/d/3/1/1d31ada467e072bc72e32b21f1f30403.jpg">
-                                    <div class="control__btn--icon album__thumb--icon">
-                                        <i class="bi bi-play-circle"></i>
-                                    </div>
-                                </div>
-                                <div class="album__desc">
-                                    <p class="album__desc--name">Bốn Chia Ba Bằng Mấy</p>
-                                    <p class="album__desc--artist">Hồ Gia Hùng</p>
-                                </div>
-                            </div>
+                        <h1 class="album__heading text__heading">Top Album</h1>
+                        <div class="row album__list">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Playlist -->
-    <ul class="playlist"></ul>
-
-    <!-- Player -->
-    <div class="player">
-
-        <!-- Visualizer container -->
-        <div class="visualizer vertical">
-            <div class="visualizer__cd--animate">
-                <canvas id="visualizer" class="visualizer__wrap"></canvas>
-                <div class="visualizer__fullscreen--show">
-                    <div class="visualizer__cd--info">
-                        <h1 class="visualizer__cd--name"></h1>
-                        <h3 class="visualizer__cd--artist"></h3>
-                    </div>
-                    <div class="visualizer__progress--wrap">
-                        <input type="range" class="visualizer__progress" value="0" min="0" max="100">
-                        </input>
-                        <span>0%</span>
-                    </div>
-                    <div class="visualizer__controls--btn">
-                        <div class="visualizer__control--prev control__btn--icon visualizer__setting--icon"
-                            title="Prev">
-                            <i class="bi bi-skip-start"></i>
-                        </div>
-                        <div class="visualizer__control--play control__btn--icon visualizer__setting--icon active"
-                            title="Play">
-                            <i class="bi bi-play-circle"></i>
-                        </div>
-                        <div class="visualizer__control--pause control__btn--icon visualizer__setting--icon"
-                            title="Pause">
-                            <i class="bi bi-pause-circle"></i>
-                        </div>
-                        <div class="visualizer__control--next control__btn--icon visualizer__setting--icon"
-                            title="Next">
-                            <i class="bi bi-skip-end"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="lyrics vertical active">
-            </div>
-            <div class="visualizer__setting">
-                <div class="visualizer__player--toggle control__btn--icon visualizer__setting--icon"
-                    title="Press F to show/hide player controls">
-                    <i class="bi bi-toggles"></i>
-                </div>
-                <div class="waveform__icon--color control__btn--icon visualizer__setting--icon"
-                    title="Click to change waveform color">
-                    <i class="bi bi-palette"></i>
-                </div>
-                <div class="lyrics__icon--font control__btn--icon visualizer__setting--icon"
-                    title="Click to change lyric font">
-                    <i class="bi bi-file-font"></i>
-                </div>
-                <div class="lyrics__icon--toggle control__btn--icon visualizer__setting--icon"
-                    title="Click to hide/show lyric">
-                    <i class="bi bi-journal-text"></i>
-                    <i class="bi bi-journal-x"></i>
-                </div>
-                <div class="lyrics__icon--align control__btn--icon visualizer__setting--icon"
-                    title="Press A to align items">
-                    <i class="bi bi-columns-gap"></i>
-                    <i class="bi bi-view-list"></i>
                 </div>
             </div>
         </div>
 
-        <!-- Playing container (PC) -->
-        <div class="playing hide-mobile">
-            <div class="grid">
-                <div class="row">
-                    <!-- Playing information -->
-                    <div class="playing__info col l-3">
-                        <div class="playing__thumb--img" title="Click to play/pause">
+        <!-- Playlist -->
+        <ul class="playlist"></ul>
+
+        <!-- Player -->
+        <div class="player">
+
+            <!-- Visualizer container -->
+            <div class="visualizer vertical">
+                <div class="visualizer__cd--animate">
+                    <canvas id="visualizer" class="visualizer__wrap"></canvas>
+                    <div class="visualizer__fullscreen--show">
+                        <div class="visualizer__cd--info">
+                            <h1 class="visualizer__cd--name"></h1>
+                            <h3 class="visualizer__cd--artist"></h3>
                         </div>
-                        <div class="playing__desc--text">
-                            <!-- <marquee behavior="smooth" scrolldelay="120" direction="left" class="playing__song--name"></marquee> -->
-                            <p class="playing__song--name"></p>
-                            <p class="playing__artist--name"></p>
+                        <div class="visualizer__progress--wrap">
+                            <input type="range" class="visualizer__progress" value="0" min="0" max="100">
+                            </input>
+                            <span>0%</span>
+                        </div>
+                        <div class="visualizer__controls--btn">
+                            <div class="visualizer__control--prev control__btn--icon visualizer__setting--icon"
+                                title="Prev">
+                                <i class="bi bi-skip-start"></i>
+                            </div>
+                            <div class="visualizer__control--play control__btn--icon visualizer__setting--icon active"
+                                title="Play">
+                                <i class="bi bi-play-circle"></i>
+                            </div>
+                            <div class="visualizer__control--pause control__btn--icon visualizer__setting--icon"
+                                title="Pause">
+                                <i class="bi bi-pause-circle"></i>
+                            </div>
+                            <div class="visualizer__control--next control__btn--icon visualizer__setting--icon"
+                                title="Next">
+                                <i class="bi bi-skip-end"></i>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="lyrics vertical active">
+                </div>
+                <div class="visualizer__setting">
+                    <div class="visualizer__player--toggle control__btn--icon visualizer__setting--icon"
+                        title="Click to show/hide player controls">
+                        <i class="bi bi-toggles"></i>
+                    </div>
+                    <div class="waveform__icon--color control__btn--icon visualizer__setting--icon"
+                        title="Click to change waveform color">
+                        <i class="bi bi-palette"></i>
+                    </div>
+                    <div class="lyrics__icon--font control__btn--icon visualizer__setting--icon"
+                        title="Click to change lyric font">
+                        <i class="bi bi-file-font"></i>
+                    </div>
+                    <div class="lyrics__icon--toggle control__btn--icon visualizer__setting--icon"
+                        title="Click to hide/show lyric">
+                        <i class="bi bi-journal-text"></i>
+                        <i class="bi bi-journal-x"></i>
+                    </div>
+                    <div class="lyrics__icon--align control__btn--icon visualizer__setting--icon"
+                        title="Click to align items">
+                        <i class="bi bi-columns-gap"></i>
+                        <i class="bi bi-view-list"></i>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Playing controls-->
-                    <div class="playing__controls col l-6">
-                        <!-- Playing icons -->
-                        <div class="controls__wrap">
-
-                            <!-- Shuffle button -->
-                            <div class="control__btn--icon shuffle__btn" title="Shuffle">
-                                <i class="bi bi-shuffle"></i>
+            <!-- Playing container (PC) -->
+            <div class="playing hide-mobile">
+                <div class="grid">
+                    <div class="row">
+                        <!-- Playing information -->
+                        <div class="playing__info col l-3">
+                            <div class="playing__thumb--img" title="Click to play/pause">
                             </div>
-
-                            <!-- Prev button -->
-                            <div class="control__btn--icon prev__btn" title="Prev">
-                                <i class="bi bi-skip-start-fill"></i>
+                            <div class="playing__desc--text">
+                                <!-- <marquee behavior="smooth" scrolldelay="120" direction="left" class="playing__song--name"></marquee> -->
+                                <p class="playing__song--name"></p>
+                                <p class="playing__artist--name"></p>
                             </div>
-
-                            <!-- Play button -->
-                            <div class="control__btn--icon active play__btn" title="Click to play">
-                                <i class="bi bi-play-circle-fill"></i>
-                            </div>
-                            <!-- Pause button -->
-                            <div class="control__btn--icon pause__btn" title="Click to pause">
-                                <i class="bi bi-pause-circle-fill"></i>
-                            </div>
-                            <!-- Next button -->
-                            <div class="control__btn--icon next__btn" title="Next">
-                                <i class="bi bi-skip-end-fill"></i>
-                            </div>
-
-                            <!-- Repeat button -->
-                            <div class="control__btn--icon repeat__btn" title="Repeat">
-                                <i class="bi bi-arrow-repeat"></i>
-                            </div>
-
                         </div>
 
-                        <!-- Playing waveform -->
-                        <div class="progress__wrap">
-                            <!-- Audio tag -->
-                            <audio id="audio" src=""></audio>
-                            <!-- Waveform -->
-                            <div id="waveform" class="playing__progress--waveform">
-                                <!-- <p class="playing__notify--loading"></p> -->
-                                <div class="lds-ellipsis playing__notify--loading">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                        <!-- Playing controls-->
+                        <div class="playing__controls col l-6">
+                            <!-- Playing icons -->
+                            <div class="controls__wrap">
+
+                                <!-- Shuffle button -->
+                                <div class="control__btn--icon shuffle__btn" title="Shuffle">
+                                    <i class="bi bi-shuffle"></i>
+                                </div>
+
+                                <!-- Prev button -->
+                                <div class="control__btn--icon prev__btn" title="Prev">
+                                    <i class="bi bi-skip-start-fill"></i>
+                                </div>
+
+                                <!-- Play button -->
+                                <div class="control__btn--icon active play__btn" title="Click to play">
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                                <!-- Pause button -->
+                                <div class="control__btn--icon pause__btn" title="Click to pause">
+                                    <i class="bi bi-pause-circle-fill"></i>
+                                </div>
+                                <!-- Next button -->
+                                <div class="control__btn--icon next__btn" title="Next">
+                                    <i class="bi bi-skip-end-fill"></i>
+                                </div>
+
+                                <!-- Repeat button -->
+                                <div class="control__btn--icon repeat__btn" title="Repeat">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </div>
+
+                            </div>
+
+                            <!-- Playing waveform -->
+                            <div class="progress__wrap">
+                                <!-- Audio tag -->
+                                <audio id="audio" src=""></audio>
+                                <!-- Waveform -->
+                                <div id="waveform" class="playing__progress--waveform">
+                                    <!-- <p class="playing__notify--loading"></p> -->
+                                    <div class="lds-ellipsis playing__notify--loading">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Playing timeline -->
+                            <div class="timeline__wrap">
+                                <span class="playing__current--duration playing__timeline--duration">00 : 00</span>
+                                <span class="playing__total--duration playing__timeline--duration">00 : 00</span>
+                            </div>
                         </div>
 
-                        <!-- Playing timeline -->
-                        <div class="timeline__wrap">
-                            <span class="playing__current--duration playing__timeline--duration">00 : 00</span>
-                            <span class="playing__total--duration playing__timeline--duration">00 : 00</span>
-                        </div>
-                    </div>
+                        <!-- Playing additional-->
+                        <div class="playing__additional col l-3">
 
-                    <!-- Playing additional-->
-                    <div class="playing__additional col l-3">
+                            <!-- Volume container -->
+                            <div class="volume__wrap hide-mobile">
+                                <div class="control__btn--icon volume__btn" title="Click to mute / unmute">
+                                    <i class="bi bi-volume-up btn__vol--lound"></i>
+                                    <i class="bi bi-volume-mute btn__vol--mute"></i>
+                                </div>
 
-                        <!-- Volume container -->
-                        <div class="volume__wrap hide-mobile">
-                            <div class="control__btn--icon volume__btn" title="Click to mute / unmute">
-                                <i class="bi bi-volume-up btn__vol--lound"></i>
-                                <i class="bi bi-volume-mute btn__vol--mute"></i>
+                                <input type="range" class="playing__progress--volume hide-mobile" min="0" max="100"
+                                    step="1">
+                                <p class="playing__volume--value"></p>
                             </div>
 
-                            <input type="range" class="playing__progress--volume hide-mobile" min="0" max="100"
-                                step="1">
-                            <p class="playing__volume--value"></p>
-                        </div>
+                            <!-- Visualizer button -->
+                            <div class="visualizer__btn control__btn--icon" title="Click show/hide visualizer">
+                                <i class="bi bi-disc"></i>
+                            </div>
 
-                        <!-- Visualizer button -->
-                        <div class="visualizer__btn control__btn--icon" title="Click show/hide visualizer">
-                            <i class="bi bi-disc"></i>
-                        </div>
+                            <!-- Playlist button -->
+                            <div class="control__btn--icon playlist__btn" title="Click to show/hide playlist">
+                                <i class="bi bi-music-note-list"></i>
+                            </div>
 
-                        <!-- Playlist button -->
-                        <div class="control__btn--icon playlist__btn" title="Click to show/hide playlist">
-                            <i class="bi bi-music-note-list"></i>
                         </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Playing container (Mobile) -->
+            <div class="playing__mobile hide-pc">
+                <input type="range" class="playing__mobile--progress" value="0" min="0" max="100">
+                <div class="playing__mobile--timeline">
+                    <span class="timeline__mobile--current">00 : 00</span>
+                    <span class="timeline__mobile--total">00 : 00</span>
+                </div>
+                <div class="playing__mobile--controls">
+                    <div class="mobile__control--btn shuffle__mobile--btn">
+                        <i class="bi bi-shuffle"></i>
+                    </div>
+                    <div class="mobile__control--btn prev__mobile--btn">
+                        <i class="bi bi-skip-start-fill"></i>
+                    </div>
+                    <div class="mobile__control--btn play__mobile--btn active">
+                        <i class="bi bi-play-circle"></i>
+                    </div>
+                    <div class="mobile__control--btn pause__mobile--btn">
+                        <i class="bi bi-pause-circle"></i>
+                    </div>
+                    <div class="mobile__control--btn next__mobile--btn">
+                        <i class="bi bi-skip-end-fill"></i>
+                    </div>
+                    <div class="mobile__control--btn repeat__mobile--btn">
+                        <i class="bi bi-arrow-repeat"></i>
+                    </div>
+                </div>
+                <div class="mobile__setting--controls">
+                    <div class="mobile__control--btn visualizer__mobile--btn">
+                        <i class="bi bi-disc"></i>
+                    </div>
+                    <div class="mobile__control--btn align__mobile--btn">
+                        <i class="bi bi-view-list"></i>
+                    </div>
+                    <div class="mobile__control--btn volume__mobile--btn">
+                        <i class="bi bi-volume-up btn__vol--lound"></i>
+                    </div>
+                    <div class="mobile__control--btn playlist__mobile--btn">
+                        <i class="bi bi-music-note-list"></i>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Playing container (Mobile) -->
-        <div class="playing__mobile hide-pc">
-            <input type="range" class="playing__mobile--progress" value="0" min="0" max="100">
-            <div class="playing__mobile--timeline">
-                <span class="timeline__mobile--current">00 : 00</span>
-                <span class="timeline__mobile--total">00 : 00</span>
-            </div>
-            <div class="playing__mobile--controls">
-                <div class="mobile__control--btn shuffle__mobile--btn">
-                    <i class="bi bi-shuffle"></i>
+        <!-- Volume Controls Mobile -->
+        <div class="modal__mobile--volume hide-pc">
+            <h2 class="mobile__volume--title">Volume</h2>
+            <div class="mobile__volume--wrap">
+                <div class="mobile__control--btn">
+                    <i class="bi bi-volume-up"></i>
                 </div>
-                <div class="mobile__control--btn prev__mobile--btn">
-                    <i class="bi bi-skip-start-fill"></i>
-                </div>
-                <div class="mobile__control--btn play__mobile--btn active">
-                    <i class="bi bi-play-circle"></i>
-                </div>
-                <div class="mobile__control--btn pause__mobile--btn">
-                    <i class="bi bi-pause-circle"></i>
-                </div>
-                <div class="mobile__control--btn next__mobile--btn">
-                    <i class="bi bi-skip-end-fill"></i>
-                </div>
-                <div class="mobile__control--btn repeat__mobile--btn">
-                    <i class="bi bi-arrow-repeat"></i>
-                </div>
-            </div>
-            <div class="mobile__setting--controls">
-                <div class="mobile__control--btn visualizer__mobile--btn">
-                    <i class="bi bi-disc"></i>
-                </div>
-                <div class="mobile__control--btn align__mobile--btn">
-                    <i class="bi bi-view-list"></i>
-                </div>
-                <div class="mobile__control--btn volume__mobile--btn">
-                    <i class="bi bi-volume-up btn__vol--lound"></i>
-                </div>
-                <div class="mobile__control--btn playlist__mobile--btn">
-                    <i class="bi bi-music-note-list"></i>
-                </div>
+                <input type="range" class="mobile__volume--progress" min="0" max="100" value="0">
+                <span>50%</span>
             </div>
         </div>
-    </div>
 
-    <!-- Volume Controls Mobile -->
-    <div class="modal__mobile--volume hide-pc">
-        <h2 class="mobile__volume--title">Volume</h2>
-        <div class="mobile__volume--wrap">
-            <div class="mobile__control--btn">
-                <i class="bi bi-volume-up"></i>
-            </div>
-            <input type="range" class="mobile__volume--progress" min="0" max="100" value="0">
-            <span>50%</span>
-        </div>
-    </div>
-
-    <!-- Upload Modal -->
-    <div class="modal__upload">
-        <div class="upload__wrap">
-            <div class="modal__close--icon control__btn--icon"><i class="bi bi-x"></i></div>
-            <h1 class="upload__heading">Upload your music !</h1>
-            <div class="upload__wrap--mediafile">
-                <div class="form__group">
-                    <label class="mediafile__label--music" for="song-audio">
-                        <i class="bi bi-cloud-arrow-up-fill"></i>
-                        <h3>Upload music</h3>
-                        <p class="music__file--text"></p>
-                    </label>
-                    <input type="file" id="song-audio" accept="audio/mp3, audio/wav" title="Upload song">
+        <!-- Upload Modal -->
+        <div class="modal__upload">
+            <div class="upload__wrap">
+                <div class="modal__close--icon control__btn--icon"><i class="bi bi-x"></i></div>
+                <h1 class="upload__heading">Upload your music !</h1>
+                <div class="upload__wrap--mediafile">
+                    <div class="form__group">
+                        <label class="mediafile__label--music" for="song-audio">
+                            <i class="bi bi-cloud-arrow-up-fill"></i>
+                            <h3>Upload music</h3>
+                            <p class="music__file--text"></p>
+                        </label>
+                        <input type="file" id="song-audio" accept="audio/mp3, audio/wav" title="Upload song">
+                    </div>
+                    <div class="form__group">
+                        <label class="mediafile__label--image" for="song-img">
+                            <i class="bi bi-cloud-arrow-up-fill"></i>
+                            <h3>Upload image</h3>
+                            <p class="image__file--text"></p>
+                        </label>
+                        <input type="file" id="song-img" accept="image/jpeg, image/png" title="Upload image">
+                    </div>
                 </div>
                 <div class="form__group">
-                    <label class="mediafile__label--image" for="song-img">
-                        <i class="bi bi-cloud-arrow-up-fill"></i>
-                        <h3>Upload image</h3>
-                        <p class="image__file--text"></p>
-                    </label>
-                    <input type="file" id="song-img" accept="image/jpeg, image/png" title="Upload image">
+                    <label for="song-name" spellcheck="false">Song name</label>
+                    <input type="text" id="song-name">
                 </div>
+                <div class="form__group">
+                    <label for="song-artist" spellcheck="false">Artist name</label>
+                    <input type="text" id="song-artist">
+                    <!-- <span class="error__message">Check your information !</span> -->
+                </div>
+                <button class="upload__btn">Upload</button>
             </div>
-            <div class="form__group">
-                <label for="song-name" spellcheck="false">Song name</label>
-                <input type="text" id="song-name">
-            </div>
-            <div class="form__group">
-                <label for="song-artist" spellcheck="false">Artist name</label>
-                <input type="text" id="song-artist">
-                <!-- <span class="error__message">Check your information !</span> -->
-            </div>
-            <button class="upload__btn">Upload</button>
         </div>
     </div>
-
 </body>
 
 <script src="./assets/js/player.js"></script>

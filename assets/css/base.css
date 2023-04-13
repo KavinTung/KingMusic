@@ -8,7 +8,7 @@
     --bg-color-default: rgba(35, 37, 47, 1);
     --bg-color-default: #292929;
     --visualizer-bg: #25272f1b;
-    --visualizer-blur: 15px;
+    --visualizer-blur: 25px;
     --player-height: 120px;
     --player-mobile-bonus-height: 30px;
     --playlist-width: 300px;
@@ -224,12 +224,13 @@ input[type="file"] {
 
 ::-webkit-scrollbar {
     width: 4px;
-    background-color: #f5f5f529;
-    display: none;
+    background-color: transparent;
+    border-radius: 10px;
+    /* display: none; */
 }
 
 ::-webkit-scrollbar-thumb {
-    /* border-radius: 10px; */
+    border-radius: 10px;
     background-color: #f5f5f529;
     /* display: none; */
 }

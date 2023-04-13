@@ -167,7 +167,7 @@
     }
 
     .lyrics .current__line {
-        font-size: 18px;
+        font-size: 1.6rem;
         transition: all 0.3s ease;
     }
 

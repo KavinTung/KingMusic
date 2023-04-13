@@ -5,6 +5,7 @@
         "image": "assets/images/songs/img1.jpg",
         "path": "assets/music/song1.mp3",
         "artist": "HuyR ft Tuấn Cry",
+        "album": "HuyR - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb1.jpg",
         "lyricArr": [
             "[00:00.00]Bài hát: Cặp Đôi Số 10",
@@ -84,6 +85,7 @@
         "image": "assets/images/songs/img2.jpg",
         "path": "assets/music/song2.mp3",
         "artist": "Pháo ft KAIZ Remix",
+        "album": "Nhạc Việt Thịnh Hành Thế Giới",
         "thumb": "assets/images/songs/img-thumb2.jpg",
         "lyricArr": [
             "[00:04.19]Tay em đang run run",
@@ -135,6 +137,7 @@
         "image": "assets/images/songs/img3.jpg",
         "path": "assets/music/song3.mp3",
         "artist": "Masew, Độ Mixi, Phúc Du, Pháo",
+        "album": "Masew - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb3.jpg",
         "lyricArr": [
             "[00:00.06]Bài hát: Độ Tộc 2",
@@ -213,7 +216,8 @@
         "name": "See Tình Remix",
         "image": "assets/images/songs/img4.jpg",
         "path": "assets/music/song4.mp3",
-        "artist": "Cucak Remix",
+        "artist": "Hoàng Thùy Linh ft Cucak Remix",
+        "album": "Nhạc Việt Thịnh Hành Thế Giới",
         "thumb": "assets/images/songs/img-thumb4.jpg",
         "lyricArr": [
             "[00:00.16](Uầy uầy uây uây)",
@@ -826,6 +830,7 @@
         "image": "assets/images/songs/img13.jpg",
         "path": "assets/music/song13.mp3",
         "artist": "HuyR ft Tùng Viu ft Quang Đăng",
+        "album": "HuyR - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb13.jpg",
         "lyricArr": [
             "[00:13.91] Son môi em đánh",
@@ -942,6 +947,7 @@
         "image": "assets/images/songs/img14.jpg",
         "path": "assets/music/song14.mp3",
         "artist": "HuyR ft Tùng Viu",
+        "album": "HuyR - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb14.jpg",
         "lyricArr": [
             "[00:00.00]Bài Hát: Cô Gái M52",
@@ -1036,6 +1042,7 @@
         "image": "assets/images/songs/img15.jpg",
         "path": "assets/music/song15.mp3",
         "artist": "HuyR",
+        "album": "HuyR - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb15.jpg",
         "lyricArr": [
             "[00:16.98] Anh thanh niên năm nay",
@@ -1151,6 +1158,7 @@
         "image": "assets/images/songs/img16.jpg",
         "path": "assets/music/song16.mp3",
         "artist": "HuyR",
+        "album": "HuyR - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb16.jpg",
         "lyricArr": [
             "[00:16.44] Em đã lỡ yêu ai mà",
@@ -1245,6 +1253,7 @@
         "image": "assets/images/songs/img18.jpg",
         "path": "assets/music/song18.mp3",
         "artist": "HuyR ft Tuấn Cry",
+        "album": "HuyR - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb18.jpg",
         "lyricArr": [
             "[00:20.50]Tôi đã thương em lâu rồi, sao em chẳng nhận ra",
@@ -1318,6 +1327,7 @@
         "image": "assets/images/songs/img19.jpg",
         "path": "assets/music/song19.mp3",
         "artist": "Masew ft B Ray",
+        "album": "Masew - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb19.jpg",
         "lyricArr": [
             "[00:15.29]Ma bae ma bae",
@@ -1375,6 +1385,7 @@
         "image": "assets/images/songs/img20.jpg",
         "path": "assets/music/song20.mp3",
         "artist": "Masew ft Khoi Vu",
+        "album": "Masew - Tuyển Tập Những Bài Hát Hay Nhất",
         "thumb": "assets/images/songs/img-thumb20.jpg",
         "lyricArr": [
             "[00:00.00]...",

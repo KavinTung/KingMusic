@@ -383,23 +383,28 @@
     outline: none;
 }
 
+.player .lyrics::-webkit-scrollbar {
+    display: none;
+}
+
 .player .lyrics.active {
     opacity: 1;
 }
 
-.player .lyrics.active.vertical{
+.player .lyrics.active.vertical {
     height: 150px;
 }
 
-.player .lyrics.active.horizontal{
+.player .lyrics.active.horizontal {
     height: 500px;
 }
 
 .lyrics .current__line {
-    font-size: 20px;
+    font-size: 2rem;
     color: var(--text--color-default);
+    text-shadow: 0 0 5px var(--color-black);
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.3s linear;
     font-weight: 500;
 }
 
@@ -409,6 +414,7 @@
 }
 
 .lyrics .current__line.show {
+    text-shadow: 0 0 5px var(--color-black);
     color: var(--color-white);
     opacity: 1;
 }
@@ -429,9 +435,9 @@
     width: var(--playlist-width);
     background-color: #303030;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px) ;
+    -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease;
-    padding: 24px 0;
+    padding: 48px 0;
     z-index: 1001;
     overflow-y: scroll;
 }
@@ -521,4 +527,3 @@
 .song__option {
     align-self: bottom;
 }
-

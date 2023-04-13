@@ -6,12 +6,11 @@ const headerSearchElm = $('.header__search')
 const search = {
     start: function () {
         this.handleShowSuggest()
-        // When website loaded:
-        window.addEventListener('load', () => {
-            this.renderSuggestElement()
-            this.reloadSongElements()
-            this.handleSearch()
-        })
+        player.handleSearch()
+        window.onload = function() {
+            search.renderSuggestElement(player.dataListLength)
+            player.reloadSongElements()
+        }
     },
 
     // Handle Show Suggest Function:
@@ -34,72 +33,6 @@ const search = {
         // Hide suggest when leave suggest list:
         suggestListElm.addEventListener('mouseout', () => {
             suggestListElm.classList.remove('selecting')
-        })
-    },
-
-    // Hanlde Search Function:
-    handleSearch: function () {
-        // Get song list:
-        data = [...player.dataList]
-
-        // Listen search input events:
-        searchInputElm.addEventListener('input', (e) => {
-            let keyword = e.target.value.trim()
-            if (keyword != '') {
-                // Filter with song name:
-                let songsFilter = data.filter((song) => {
-                    return song.name.toLowerCase().includes(`${e.target.value.toLowerCase()}`)
-                })
-
-                // Filter with artist name:
-                let artistsFilter = data.filter((song) => {
-                    return song.artist.toLowerCase().includes(`${e.target.value.toLowerCase()}`)
-                })
-
-                // Concat two array and remove duplicate song:
-                let songs = [...new Set(songsFilter.concat(artistsFilter))]
-
-                // If not founds:
-                if (songs.length === 0) {
-                    suggestListElm.innerHTML = `
-                <h2 style="text-align: center; font-weight: 400;" class="suggest--list--heading">Not Founds</h2>
-                `
-                } else {
-                    // Render songs match with input to suggest list:
-                    let htmls = songs.map((song) => {
-                        return this.renderSongsMatch(song)
-                    })
-                    suggestListElm.innerHTML = htmls
-                    this.reloadSongElements()
-                }
-
-            } else {
-                this.renderSuggestElement()
-                this.reloadSongElements()
-            }
-        })
-    },
-
-    // Reload Song Elements Function:
-    reloadSongElements: function () {
-        // Reload songs element:
-        let newSongListElm = $$('.song__wrap')
-        newSongListElm.forEach((elmNode) => {
-            elmNode.addEventListener('click', () => {
-
-                // Get trackId with data-id attribute:
-                player.trackId = elmNode.getAttribute('data-id')
-
-                // Get song index and set current track with trackId:
-                player.currentTrack = player.getSongIndex(player.dataList, player.trackId)
-
-                // Load music:
-                player.loadMusicHandle(player.currentTrack)
-
-                // Play music:
-                player.playMusic()
-
-            })
         })
     },
 
@@ -131,27 +64,28 @@ const search = {
         `
     },
 
-    // Render Suggest Element Functino:
-    renderSuggestElement: function () {
+    // Render Suggest Element Function:
+    renderSuggestElement: function (number) {
+        let songId = player.randomNumber(number)
         suggestListElm.innerHTML = `
             <h2 class="suggest--list--heading">Đề xuất cho bạn</h2>
-            <li class="song__wrap" data-id="8" title="">
+            <li class="song__wrap" data-id="${player.dataList[songId].id}" title="${player.dataList[songId].name}">
                 <div class="song__thumb">
-                    <img src="assets/images/songs/img-thumb8.jpg" alt="" class="song__thumb--img">
-                    <div class="playing__bars--animation" data-id="8">
+                    <img src="assets/images/songs/img-thumb${player.dataList[songId].id}.jpg" alt="" class="song__thumb--img">
+                    <div class="playing__bars--animation" data-id="${player.dataList[songId].id}">
                         <span></span><span></span><span></span><span></span><span></span>
                     </div>
-                    <div class="playing__button--play control__btn--icon" data-id="8">
+                    <div class="playing__button--play control__btn--icon" data-id="${player.dataList[songId].id}">
                         <i class="bi bi-play-fill"></i>
                     </div>
-                    <div class="playing__button--pause control__btn--icon" data-id="8">
+                    <div class="playing__button--pause control__btn--icon" data-id="${player.dataList[songId].id}">
                         <i class="bi bi-pause-fill"></i>
                     </div>
                 </div>
 
                 <div class="song__info">
-                    <p class="song__info--name">Cưa Là Đổ</p>
-                    <p class="song__info--artist">Phát Hồ, X2X, Đại Mèo</p>
+                    <p class="song__info--name">${player.dataList[songId].name}</p>
+                    <p class="song__info--artist">${player.dataList[songId].artist}</p>
                 </div>
                 <div class="song__option">
                     <i class="bi bi-three-dots"></i>

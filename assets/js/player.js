@@ -46,6 +46,8 @@ const cdName = $('.visualizer__cd--name')
 const cdArtist = $('.visualizer__cd--artist')
 const audioVisualizer = $('.visualizer__wrap')
 const lyricsElmWrap = $('.lyrics')
+const songListElm = $('.song__list')
+
 
 // Volume
 const volProgress = $('.playing__progress--volume')
@@ -143,6 +145,9 @@ const player = {
 
                 // Functions:
                 this.renderPlayList(this.dataList)
+                this.renderSongs(this.dataList, 12)
+                this.handleSearch()
+                this.reloadSongElements()
                 this.loadMusicHandle(this.currentTrack)
                 this.setVolumeFunc(this.volume)
                 this.handleEvents()
@@ -160,8 +165,8 @@ const player = {
         let songListElm = $$('.song__wrap')
 
         // Listen for keyboard keydown event:
-        // document.addEventListener('keydown', (e) => {
-        //     switch (e.code) {
+        document.addEventListener('keydown', (e) => {
+            switch (e.code) {
         //         case 'KeyL': // Playlist
         //             playListWrap.classList.toggle('show')
         //             btnPlayList.classList.toggle('active')
@@ -169,10 +174,10 @@ const player = {
         //         case 'KeyM': // Mute/Unmute
         //             this.muteFunc()
         //             break;
-        //         case 'KeyE': // Visualizer
-        //             btnVisualizer.classList.toggle('active')
-        //             visualizerContainer.classList.toggle('active')
-        //             break;
+                case 'Escape': // Visualizer
+                    btnVisualizer.classList.remove('active')
+                    visualizerContainer.classList.remove('active')
+                    break;
         //         case 'Space': // Play/Pause
         //             if (this.wavesurfer.isPlaying()) {
         //                 this.changeVolumeSmoothDown(0, this.volume, this.crossFadeTime)
@@ -215,10 +220,10 @@ const player = {
         //             playListWrap.classList.toggle('full')
         //             visualizerControls.classList.toggle('active')
         //             break;
-        //         default:
-        //             break;
-        //     }
-        // })
+                default:
+                    break;
+            }
+        })
 
         // Listen for playlist button click event:
         btnPlayList.addEventListener('click', (e) => {
@@ -623,7 +628,7 @@ const player = {
 
             // Set background for all element now playing:
             elmPlayings.forEach(item => {
-                gsap.to(playListWrap, { duration: 0.8, scrollTo: { y: item.offsetTop } });
+                gsap.to(playListWrap, { duration: 0.6, scrollTo: { y: item.offsetTop } });
                 item.style.backgroundColor = '#434343'
             })
 
@@ -642,7 +647,7 @@ const player = {
             visualizerAnimate.style.filter = 'brightness(1)'
             visualizerAnimate.style.opacity = 1
             visualizerAnimate.style.transform = 'scale(1)'
-            audioVisualizer.style.boxShadow = `0 0 5px ${this.randomColor()}`
+            audioVisualizer.style.boxShadow = `0 0 2px ${this.randomColor()}`
 
         })
 
@@ -774,6 +779,97 @@ const player = {
             `
         })
         playListWrap.innerHTML = htmls.join('')
+    },
+
+    // Render Trendy Songs (num Songs):
+    renderSongs: function (dataList, num) {
+        let htmls = dataList.slice(0, num).map((song) => {
+            return `<div class="song__wrap col l-4 c-12" data-id="${song.id}" title="${song.name}">
+                <div class="song__thumb">
+                    <img src="${song.thumb}" alt="${song.name}" class="song__thumb--img">
+                    <div class="playing__bars--animation" data-id="${song.id}">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="playing__button--play control__btn--icon" data-id="${song.id}">
+                        <i class="bi bi-play-fill"></i>
+                    </div>
+                    <div class="playing__button--pause control__btn--icon" data-id="${song.id}">
+                        <i class="bi bi-pause-fill"></i>
+                    </div>
+                </div>
+                <div class="song__info">
+                    <p class="song__info--name">${song.name}</p>
+                    <p class="song__info--artist">${song.artist}</p>
+                </div>
+                <div class="song__option">
+                    <i class="bi bi-three-dots"></i>
+                </div>
+            </div>`
+        })
+        songListElm.innerHTML = htmls.join('')
+    },
+
+    // Reload Song Elements Function:
+    reloadSongElements: function () {
+        // Reload songs element:
+        let newSongListElm = $$('.song__wrap')
+        newSongListElm.forEach((elmNode) => {
+            elmNode.addEventListener('click', () => {
+
+                // Get trackId with data-id attribute:
+                player.trackId = elmNode.getAttribute('data-id')
+
+                // Get song index and set current track with trackId:
+                player.currentTrack = player.getSongIndex(player.dataList, player.trackId)
+
+                // Load music:
+                player.loadMusicHandle(player.currentTrack)
+
+                // Play music:
+                player.playMusic()
+
+            })
+        })
+    },
+
+     // Hanlde Search Function:
+     handleSearch: function () {
+        // Listen search input events:
+        searchInputElm.addEventListener('input', (e) => {
+            let keyword = e.target.value.trim()
+            if (keyword != '') {
+                // Filter with song name:
+                let songsFilter = this.dataList.filter((song) => {
+                    return song.name.toLowerCase().includes(`${e.target.value.toLowerCase()}`)
+                })
+
+                // Filter with artist name:
+                let artistsFilter = this.dataList.filter((song) => {
+                    return song.artist.toLowerCase().includes(`${e.target.value.toLowerCase()}`)
+                })
+
+                // Concat two array and remove duplicate song:
+                let songs = [...new Set(songsFilter.concat(artistsFilter))]
+
+                // If not founds:
+                if (songs.length === 0) {
+                    suggestListElm.innerHTML = `
+                <h2 style="text-align: center; font-weight: 400;" class="suggest--list--heading">Not Founds</h2>
+                `
+                } else {
+                    // Render songs match with input to suggest list:
+                    let htmls = songs.map((song) => {
+                        return search.renderSongsMatch(song)
+                    })
+                    suggestListElm.innerHTML = htmls
+                    this.reloadSongElements()
+                }
+
+            } else {
+                search.renderSuggestElement(this.dataListLength)
+                this.reloadSongElements()
+            }
+        })
     },
 
     // Render lyrics function:
