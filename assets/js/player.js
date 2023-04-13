@@ -628,7 +628,7 @@ const player = {
 
             // Set background for all element now playing:
             elmPlayings.forEach(item => {
-                gsap.to(playListWrap, { duration: 0.6, scrollTo: { y: item.offsetTop } });
+                gsap.to(playListWrap, { duration: 0.6, scrollTo: { y: item.offsetTop } })
                 item.style.backgroundColor = '#434343'
             })
 

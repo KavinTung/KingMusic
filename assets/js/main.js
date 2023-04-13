@@ -16,10 +16,12 @@ const albumWrapDetailElm = $('.album__detail--wrap')
 const albumDetailListElm = $('.album__detail--list')
 const songsElm = $('.songs')
 const songHeadingElm = $('.song__heading')
+const songListElm = $$('.song__wrap')
 
 // Sidebar Elements:
 const sideBarItemElm = $$('.sidebar__item')
-const songListElm = $$('.song__wrap')
+
+// Album API:
 const albumAPI = 'assets/json/album.json'
 
 const app = {
@@ -44,6 +46,7 @@ const app = {
                 let albumId = Number(element.getAttribute('data-id'))
                 this.renderAlbumDetail(albumId, this.albumList, player.dataList)
                 player.reloadSongElements()
+                gsap.to(window, { duration: 0, scrollTo:"#albumScroll" })
             })
         })
 
@@ -74,7 +77,7 @@ const app = {
             sideBarElm.classList.toggle('active')
         })
 
-        // Song Wrap:
+        // Listen for Song List Click Events:
         songListElm.forEach((ele) => {
             ele.addEventListener('click', (e) => {
                 e.stopPropagation()
@@ -84,7 +87,7 @@ const app = {
             })
         })
 
-        // Sidebar:
+        // Listenter for Sidebar Item Click Event:
         sideBarItemElm.forEach((elm) => {
             elm.addEventListener('click', () => {
                 sideBarItemElm.forEach((elm) => {

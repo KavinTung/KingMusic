@@ -4,76 +4,84 @@ const bannerItemElm = $$('.banner__item')
 const btnBannerPrev = $('.banner__prev--btn')
 const btnBannerNext = $('.banner__next--btn')
 
-
 const banner = {
-    delta: bannerItemElm[0].clientWidth,
-    bannerItemElmLength: bannerItemElm.length,
-    scrollValue: 0,
+    currentIndex: 1,
     isScroll: false,
-    // On PC device:
-    max:  (bannerItemElm[0].clientWidth * bannerItemElm.length) - (bannerItemElm[0].clientWidth * 3),
-    start: function() {
-        // On mobile device:
-        if(window.innerWidth <= 739) {
-            this.max = (bannerItemElm[0].clientWidth * bannerItemElm.length) - (bannerItemElm[0].clientWidth * 1)
-        }
-        // Auto Show Sliders:
+    bannerItemElmLength: bannerItemElm.length,
+    start: function () {
+        this.handleEvents()
+        this.autoScrollBanner()
+    },
+    handleEvents: function () {
+        bannerWrapElm.addEventListener('mouseover', () => {
+            this.isScroll = true
+        })
+        bannerWrapElm.addEventListener('mouseout', () => {
+            this.isScroll = false
+        })
+        btnBannerPrev.addEventListener('mouseover', () => {
+            this.isScroll = true
+        })
+        btnBannerNext.addEventListener('mouseover', () => {
+            this.isScroll = true
+        })
+        btnBannerPrev.addEventListener('click', () => {
+            this.currentIndex = this.hanldeCurrentIndexPrev(this.currentIndex, this.bannerItemElmLength)
+            this.scrollFuntion(bannerWrapElm, `banner${this.currentIndex}`, 0.5)
+        })
+        btnBannerNext.addEventListener('click', () => {
+            this.currentIndex = this.hanldeCurrentIndexNext(this.currentIndex, this.bannerItemElmLength)
+            this.scrollFuntion(bannerWrapElm, `banner${this.currentIndex}`, 0.5)
+        })
+    },
+
+    autoScrollBanner: function () {
         setInterval(() => {
             if (this.isScroll) {
                 clearInterval()
             } else {
-                this.scrollValue += this.delta
-                if (this.scrollValue > this.max) {
-                    this.scrollValue = 0
-                }
-                this.scrollBanner(bannerWrapElm, this.scrollValue, 0.5)
+                this.currentIndex = this.hanldeCurrentIndexNext(this.currentIndex, this.bannerItemElmLength)
+                this.scrollFuntion(bannerWrapElm, `banner${this.currentIndex}`, 0.5)
             }
         }, 5000)
-
-        // Manual Show SLiders And Handle Events Function:
-        this.handleBannerEvent()
     },
 
-    // Manual Show SLiders And Handle Events Function:
-    handleBannerEvent: function () {
-
-        bannerWrapElm.addEventListener('mouseout', () => {
-            this.isScroll = false
-        })
-
-        bannerWrapElm.addEventListener('mouseover', () => {
-            this.isScroll = true
-        })
-
-        btnBannerNext.addEventListener('click', () => {
-            this.isScroll = true
-            this.scrollValue += this.delta
-            if (this.scrollValue > this.max) {
-                this.scrollValue = 0
-            }
-            this.scrollBanner(bannerWrapElm, this.scrollValue, 0.5)
-        })
-
-
-        btnBannerPrev.addEventListener('click', () => {
-            this.isScroll = true
-            this.scrollValue -= this.delta
-            if (this.scrollValue < 0) {
-                this.scrollValue = this.max
-            }
-            this.scrollBanner(bannerWrapElm, this.scrollValue, 0.5)
-        })
+    scrollFuntion: function (parentElement, scrollId, time) {
+        gsap.to(parentElement, { duration: time, scrollTo: `#${scrollId}` })
     },
 
-    // Scroll Banner Function:
-    scrollBanner: function (parentElement, scrollValue, duration) {
-        gsap.to(parentElement, { duration: duration, scrollTo: { x: scrollValue } })
+    hanldeCurrentIndexNext: function (index, length) {
+        if (window.innerWidth > 739) {
+            index++
+            if (index > length - 2) {
+                index = 1
+            }
+        } else {
+            index++
+            if (index > length) {
+                index = 1
+            }
+        }
+        return index
+    },
+
+    hanldeCurrentIndexPrev: function (index, length) {
+        if (window.innerWidth > 739) {
+            index--
+            if (index < 1) {
+                index = length - 2
+            }
+        } else {
+            index--
+            if (index < 1) {
+                index = length
+            }
+        }
+        return index
     }
+
 }
 banner.start()
-
-
-
 
 
 
