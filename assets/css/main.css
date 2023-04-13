@@ -602,7 +602,7 @@ hr {
 .album__detail .album__detail--list {
     padding: 0;
     margin-left: auto;
-    height: 300px;
+    max-height: 300px;
     overflow: hidden auto;
 }
 
@@ -628,4 +628,8 @@ hr {
 .album__detail .album__info {
     color: var(--color-gray);
     font-size: 1.2rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
