@@ -123,6 +123,11 @@
     .mobile__setting--controls {
         display: flex;
         justify-content: space-between;
+        margin: 0 -12px;
+    }
+
+    .mobile__setting--controls i {
+        padding: 12px;
     }
 
     .visualizer__mobile--btn.active,
@@ -153,7 +158,7 @@
         backdrop-filter: blur(10px);
         left: -100% !important;
         height: 100%;
-        transition: all 0.25s ease;
+        transition: none !important;
         padding: 24px 0;
     }
 
@@ -179,6 +184,7 @@
         z-index: 53 !important;
         background-color: var(--color-black) !important;
         height: calc(100% - var(--player-height) - var(--player-mobile-bonus-height) - 5px) !important;
+        transition: none!important;
     }
 
     .visualizer__setting {
@@ -224,6 +230,18 @@
         padding: 0;
         margin-right: 6px;
         font-size: 2.8rem;
+    }
+    .header__mobile--bars.active .bi-list {
+        display: none !important;
+    }
+    .header__mobile--bars.active .bi-x {
+        display: block !important;
+    }
+    .header__mobile--bars .bi-list {
+        display: block !important;
+    }
+    .header__mobile--bars .bi-x {
+        display: none !important;
     }
 
     /* Header User CSS */

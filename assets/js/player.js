@@ -46,7 +46,7 @@ const cdName = $('.visualizer__cd--name')
 const cdArtist = $('.visualizer__cd--artist')
 const audioVisualizer = $('.visualizer__wrap')
 const lyricsElmWrap = $('.lyrics')
-const songListElm = $('.song__list')
+const songListWrap = $('.song__list')
 
 
 // Volume
@@ -806,7 +806,7 @@ const player = {
                 </div>
             </div>`
         })
-        songListElm.innerHTML = htmls.join('')
+        songListWrap.innerHTML = htmls.join('')
     },
 
     // Reload Song Elements Function:

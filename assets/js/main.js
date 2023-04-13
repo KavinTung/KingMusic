@@ -19,6 +19,7 @@ const songHeadingElm = $('.song__heading')
 
 // Sidebar Elements:
 const sideBarItemElm = $$('.sidebar__item')
+const songListElm = $$('.song__wrap')
 const albumAPI = 'assets/json/album.json'
 
 const app = {
@@ -69,13 +70,25 @@ const app = {
 
         // Listen for Mobile Sidebar Click Events:
         btnMbToggleSideBar.addEventListener('click', () => {
+            btnMbToggleSideBar.classList.toggle('active')
             sideBarElm.classList.toggle('active')
+        })
+
+        // Song Wrap:
+        songListElm.forEach((ele) => {
+            ele.addEventListener('click', (e) => {
+                e.stopPropagation()
+                playListWrap.classList.remove('show')
+                btnPlayList.classList.remove('active')
+                btnMbPlaylist.classList.remove('active')
+            })
         })
 
         // Sidebar:
         sideBarItemElm.forEach((elm) => {
             elm.addEventListener('click', () => {
                 sideBarItemElm.forEach((elm) => {
+                    sideBarElm.classList.remove('active')
                     elm.classList.remove('active')
                 })
                 elm.classList.toggle('active')
