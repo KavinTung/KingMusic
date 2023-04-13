@@ -197,6 +197,9 @@
     .visualizer__fullscreen--show {
         display: block !important;
     }
+    .visualizer__fullscreen--show .visualizer__cd--name {
+        font-size: 2.4rem !important;
+    }
     .visualizer__fullscreen--show .visualizer__progress--wrap {
         display: none;
     }
