@@ -1217,7 +1217,11 @@ const player = {
     // Get Local Storage:
     getLocalStorageVariables: function () {
         // Get volume:
-        this.volume = localStorage.getItem('volume')
+        if (!localStorage.getItem('volume')) {
+            localStorage.setItem('volume', this.volume)
+        } else {
+            this.volume = localStorage.getItem('volume')
+        }
 
         // Get crossFadeTime:
         if (!localStorage.getItem('crossFadeTime')) {
