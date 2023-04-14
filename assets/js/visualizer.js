@@ -50,7 +50,7 @@ function visualizer() {
 
     function scaleImage() {
         const scaledValue = getEnergyScale()
-        const scaleFactor = (scaledValue / 255)* 0.8 + 0.8
+        const scaleFactor = (scaledValue / 255) * 0.8 + 0.8
         canvas.style.transform = `scale(${scaleFactor})`
     }
 
@@ -75,9 +75,7 @@ function visualizer() {
     // Draw canvas:
     function draw() {
         // Get request frame and get byte on time:
-        if(window.innerWidth > 739) {
-            requestAnimationFrame(draw)
-        }
+        requestAnimationFrame(draw)
         analyser.getByteTimeDomainData(dataArray)
 
         // Draw wave to canvas:
@@ -110,9 +108,7 @@ function visualizer() {
         ctx.stroke()
 
     }
-    if(window.innerWidth > 739) {
-        draw()
-    }
+    draw()
 }
 
 // Unlock The Audio Context On IOS:

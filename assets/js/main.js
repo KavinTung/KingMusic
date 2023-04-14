@@ -107,7 +107,7 @@ const app = {
             player.reloadSongElements()
             this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)
             player.reloadSongElements()
-
+            scrollTo(0,0)
         })
 
         sideBarItemElm[1].addEventListener('click', () => {
@@ -119,7 +119,7 @@ const app = {
             player.reloadSongElements()
             this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)
             player.reloadSongElements()
-
+            scrollTo(0,0)
         })
 
         sideBarItemElm[2].addEventListener('click', () => {
@@ -128,7 +128,7 @@ const app = {
             songsElm.style.display = 'none'
             this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)
             player.reloadSongElements()
-
+            scrollTo(0,0)
         })
 
     },

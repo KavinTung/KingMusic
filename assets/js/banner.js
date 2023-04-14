@@ -12,6 +12,7 @@ const banner = {
         this.handleEvents()
         this.autoScrollBanner()
     },
+    // Hanlde Events Function:
     handleEvents: function () {
         bannerWrapElm.addEventListener('mouseover', () => {
             this.isScroll = true
@@ -34,7 +35,7 @@ const banner = {
             this.scrollFuntion(bannerWrapElm, `banner${this.currentIndex}`, 0.5)
         })
     },
-
+    // Auto Scroll Banner Function:
     autoScrollBanner: function () {
         setInterval(() => {
             if (this.isScroll) {
@@ -45,11 +46,11 @@ const banner = {
             }
         }, 5000)
     },
-
+    // Scroll Funtion:
     scrollFuntion: function (parentElement, scrollId, time) {
         gsap.to(parentElement, { duration: time, scrollTo: `#${scrollId}` })
     },
-
+    // Hanlde Index Next Funtion:
     hanldeCurrentIndexNext: function (index, length) {
         if (window.innerWidth > 739) {
             index++
@@ -64,7 +65,7 @@ const banner = {
         }
         return index
     },
-
+    // Hanlde Index Prev Function:
     hanldeCurrentIndexPrev: function (index, length) {
         if (window.innerWidth > 739) {
             index--
