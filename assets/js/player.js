@@ -144,6 +144,7 @@ const player = {
                 this.dataListLength = this.dataList.length
 
                 // Functions:
+                this.getLocalStorageVariables()
                 this.renderPlayList(this.dataList)
                 this.renderSongs(this.dataList, 12)
                 this.handleSearch()
@@ -167,59 +168,59 @@ const player = {
         // Listen for keyboard keydown event:
         document.addEventListener('keydown', (e) => {
             switch (e.code) {
-        //         case 'KeyL': // Playlist
-        //             playListWrap.classList.toggle('show')
-        //             btnPlayList.classList.toggle('active')
-        //             break;
-        //         case 'KeyM': // Mute/Unmute
-        //             this.muteFunc()
-        //             break;
+                //         case 'KeyL': // Playlist
+                //             playListWrap.classList.toggle('show')
+                //             btnPlayList.classList.toggle('active')
+                //             break;
+                //         case 'KeyM': // Mute/Unmute
+                //             this.muteFunc()
+                //             break;
                 case 'Escape': // Visualizer
                     btnVisualizer.classList.remove('active')
                     visualizerContainer.classList.remove('active')
                     break;
-        //         case 'Space': // Play/Pause
-        //             if (this.wavesurfer.isPlaying()) {
-        //                 this.changeVolumeSmoothDown(0, this.volume, this.crossFadeTime)
-        //                     .then(() => {
-        //                         this.wavesurfer.pause()
-        //                     })
-        //             } else {
-        //                 this.wavesurfer.play()
-        //             }
-        //             break;
-        //         case 'ArrowRight': // Seek forward 10s
-        //             this.seekAudio(10)
-        //             break;
-        //         case 'ArrowLeft':  // Seek backwrad 10s
-        //             this.seekAudio(-10)
-        //             break;
-        //         case 'ArrowUp':  // Volume Up + 5%
-        //             this.volume = (this.wavesurfer.getVolume() * 100) + 5
-        //             if (this.volume >= 100) {
-        //                 this.volume = 100
-        //             }
-        //             this.setVolumeFunc(this.volume)
-        //             break;
-        //         case 'ArrowDown':  // Volume Up - 5%
-        //             this.volume = (this.wavesurfer.getVolume() * 100) - 5
-        //             if (this.volume < 0) {
-        //                 this.volume = 0
-        //             }
-        //             this.setVolumeFunc(this.volume)
-        //             break;
-        //         case 'KeyA': // Align Lyrics and CD Animate
-        //             lyricsElmWrap.classList.toggle('horizontal')
-        //             lyricsElmWrap.classList.toggle('vertical')
-        //             visualizerContainer.classList.toggle('horizontal')
-        //             visualizerContainer.classList.toggle('vertical')
-        //             break;
-        //         case 'KeyF': // Full screen mode
-        //             playingContainer.classList.toggle('hide')
-        //             visualizerContainer.classList.toggle('full')
-        //             playListWrap.classList.toggle('full')
-        //             visualizerControls.classList.toggle('active')
-        //             break;
+                //         case 'Space': // Play/Pause
+                //             if (this.wavesurfer.isPlaying()) {
+                //                 this.changeVolumeSmoothDown(0, this.volume, this.crossFadeTime)
+                //                     .then(() => {
+                //                         this.wavesurfer.pause()
+                //                     })
+                //             } else {
+                //                 this.wavesurfer.play()
+                //             }
+                //             break;
+                //         case 'ArrowRight': // Seek forward 10s
+                //             this.seekAudio(10)
+                //             break;
+                //         case 'ArrowLeft':  // Seek backwrad 10s
+                //             this.seekAudio(-10)
+                //             break;
+                //         case 'ArrowUp':  // Volume Up + 5%
+                //             this.volume = (this.wavesurfer.getVolume() * 100) + 5
+                //             if (this.volume >= 100) {
+                //                 this.volume = 100
+                //             }
+                //             this.setVolumeFunc(this.volume)
+                //             break;
+                //         case 'ArrowDown':  // Volume Up - 5%
+                //             this.volume = (this.wavesurfer.getVolume() * 100) - 5
+                //             if (this.volume < 0) {
+                //                 this.volume = 0
+                //             }
+                //             this.setVolumeFunc(this.volume)
+                //             break;
+                //         case 'KeyA': // Align Lyrics and CD Animate
+                //             lyricsElmWrap.classList.toggle('horizontal')
+                //             lyricsElmWrap.classList.toggle('vertical')
+                //             visualizerContainer.classList.toggle('horizontal')
+                //             visualizerContainer.classList.toggle('vertical')
+                //             break;
+                //         case 'KeyF': // Full screen mode
+                //             playingContainer.classList.toggle('hide')
+                //             visualizerContainer.classList.toggle('full')
+                //             playListWrap.classList.toggle('full')
+                //             visualizerControls.classList.toggle('active')
+                //             break;
                 default:
                     break;
             }
@@ -332,14 +333,16 @@ const player = {
         btnRepeat.addEventListener('click', () => {
             // btnRepeat.classList.toggle('active')
             // this.isRepeat = btnRepeat.getAttribute('class').includes('active')
-            if (this.isRepeat === false) {
+            if (!this.isRepeat || this.isRepeat === 'false') {
                 btnMbRepeatBtn.classList.add('active')
                 btnRepeat.classList.add('active')
                 this.isRepeat = true
+                localStorage.setItem('repeat', true)
             } else {
                 btnMbRepeatBtn.classList.remove('active')
                 btnRepeat.classList.remove('active')
                 this.isRepeat = false
+                localStorage.setItem('repeat', false)
             }
         })
 
@@ -347,40 +350,46 @@ const player = {
         btnMbRepeatBtn.addEventListener('click', () => {
             // btnMbRepeatBtn.classList.toggle('active')
             // this.isRepeat = btnMbRepeatBtn.getAttribute('class').includes('active')
-            if (this.isRepeat === false) {
+            if (!this.isRepeat || this.isRepeat === 'false') {
                 btnMbRepeatBtn.classList.add('active')
                 btnRepeat.classList.add('active')
                 this.isRepeat = true
+                localStorage.setItem('repeat', true)
             } else {
                 btnMbRepeatBtn.classList.remove('active')
                 btnRepeat.classList.remove('active')
                 this.isRepeat = false
+                localStorage.setItem('repeat', false)
             }
         })
 
         // Listen for shuffle button click event:
         btnShuffle.addEventListener('click', () => {
-            if (this.isShuffle === false) {
+            if (!this.isShuffle || this.isShuffle === 'false') {
                 btnMbShuffleBtn.classList.add('active')
                 btnShuffle.classList.add('active')
                 this.isShuffle = true
+                localStorage.setItem('shuffle', true)
             } else {
                 btnMbShuffleBtn.classList.remove('active')
                 btnShuffle.classList.remove('active')
                 this.isShuffle = false
+                localStorage.setItem('shuffle', false)
             }
         })
 
         // Listen for shuffle mobile button click event:
         btnMbShuffleBtn.addEventListener('click', () => {
-            if (this.isShuffle === false) {
+            if (!this.isShuffle || this.isShuffle === 'false') {
                 btnMbShuffleBtn.classList.add('active')
                 btnShuffle.classList.add('active')
                 this.isShuffle = true
+                localStorage.setItem('shuffle', true)
             } else {
                 btnMbShuffleBtn.classList.remove('active')
                 btnShuffle.classList.remove('active')
                 this.isShuffle = false
+                localStorage.setItem('shuffle', false)
             }
         })
 
@@ -540,6 +549,7 @@ const player = {
         // Listen for crossfade time range input event:
         crossFadeElm.addEventListener('input', (e) => {
             this.crossFadeTime = Number(e.target.value) * 1000
+            localStorage.setItem('crossFadeTime', this.crossFadeTime)
             crossFadeValueElm.textContent = e.target.value + ' s'
         })
 
@@ -648,7 +658,7 @@ const player = {
             visualizerAnimate.style.opacity = 1
             visualizerAnimate.style.transform = 'scale(1)'
             audioVisualizer.style.boxShadow = `0 0 2px ${this.randomColor()}`
-
+            localStorage.setItem('track', this.currentTrack)
         })
 
         // When audio pause:
@@ -694,17 +704,17 @@ const player = {
         this.wavesurfer.on('audioprocess', () => {
             // Render current time:
             let currentTime = this.wavesurfer.getCurrentTime()
+            let totalTime = this.wavesurfer.getDuration()
             this.renderTime(currentTime, currentDurationElm)
             this.renderTime(currentTime, mBcurrentDurationElm)
             this.updateLyric(currentTime, this.lyricElm, this.lyricArr)
-            let percent = parseInt(this.wavesurfer.getCurrentTime() * 100 / this.wavesurfer.getDuration())
+            let percent = parseInt(currentTime * 100 / totalTime)
             progressBar.style.backgroundSize = `${percent}% 100%`
             progressBar.value = percent
             progressPercentText.textContent = `${percent}%`
             progressPercentText.style.left = `calc(${percent}% - 0.5rem)`
             mBprogressBar.style.backgroundSize = `${percent}% 100%`
             mBprogressBar.value = percent
-
         })
 
         // When finish a song:
@@ -784,7 +794,7 @@ const player = {
     // Render Trendy Songs (num Songs):
     renderSongs: function (dataList, num) {
         let htmls = dataList.slice(0, num).map((song) => {
-            return `<div class="song__wrap col l-4 c-12" data-id="${song.id}" title="${song.name}">
+            return `<div class="song__wrap col l-4 m-6 c-12" data-id="${song.id}" title="${song.name}">
                 <div class="song__thumb">
                     <img src="${song.thumb}" alt="${song.name}" class="song__thumb--img">
                     <div class="playing__bars--animation" data-id="${song.id}">
@@ -832,8 +842,8 @@ const player = {
         })
     },
 
-     // Hanlde Search Function:
-     handleSearch: function () {
+    // Hanlde Search Function:
+    handleSearch: function () {
         // Listen search input events:
         searchInputElm.addEventListener('input', (e) => {
             let keyword = e.target.value.trim()
@@ -1106,6 +1116,7 @@ const player = {
         // Set the new volume:
         value = Math.floor(value)
         this.wavesurfer.setVolume(value / 100)
+        localStorage.setItem("volume", value)
         // Render value to HTML:
         volProgress.value = value
         volProgress.style.backgroundSize = `${value}% 100%`
@@ -1202,6 +1213,53 @@ const player = {
         })
         return dataElements
     },
+
+    // Get Local Storage:
+    getLocalStorageVariables: function () {
+        // Get volume:
+        this.volume = localStorage.getItem('volume')
+
+        // Get crossFadeTime:
+        if (!localStorage.getItem('crossFadeTime')) {
+            localStorage.setItem('crossFadeTime', 500)
+            this.crossFadeTime = localStorage.getItem('crossFadeTime')
+            crossFadeElm.value = this.crossFadeTime / 1000
+            crossFadeValueElm.textContent = this.crossFadeTime / 1000 + ' s'
+        } else {
+            this.crossFadeTime = localStorage.getItem('crossFadeTime')
+            crossFadeElm.value = this.crossFadeTime / 1000
+            crossFadeValueElm.textContent = this.crossFadeTime / 1000 + ' s'
+        }
+
+
+        // Get current track
+        if (!localStorage.getItem('track')) {
+            localStorage.setItem('track', 0)
+            this.currentTrack = localStorage.getItem('track')
+        } else {
+            this.currentTrack = localStorage.getItem('track')
+        }
+
+        // Get isRepeat:
+        this.isRepeat = localStorage.getItem('repeat')
+        if (this.isRepeat === 'true') {
+            btnMbRepeatBtn.classList.add('active')
+            btnRepeat.classList.add('active')
+        } else if (this.isRepeat === 'false') {
+            btnMbRepeatBtn.classList.remove('active')
+            btnRepeat.classList.remove('active')
+        }
+
+        // Get isShuffle:
+        this.isShuffle = localStorage.getItem('shuffle')
+        if (this.isShuffle === 'true') {
+            btnMbShuffleBtn.classList.add('active')
+            btnShuffle.classList.add('active')
+        } else if (this.isShuffle === 'false') {
+            btnMbShuffleBtn.classList.remove('active')
+            btnShuffle.classList.remove('active')
+        }
+    }
 
 }
 player.start()

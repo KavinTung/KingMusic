@@ -52,7 +52,7 @@ const banner = {
     },
     // Hanlde Index Next Funtion:
     hanldeCurrentIndexNext: function (index, length) {
-        if (window.innerWidth > 739) {
+        if (window.innerWidth > 1024) {
             index++
             if (index > length - 2) {
                 index = 1
@@ -67,7 +67,7 @@ const banner = {
     },
     // Hanlde Index Prev Function:
     hanldeCurrentIndexPrev: function (index, length) {
-        if (window.innerWidth > 739) {
+        if (window.innerWidth > 1024) {
             index--
             if (index < 1) {
                 index = length - 2

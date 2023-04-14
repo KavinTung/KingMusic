@@ -1,6 +1,7 @@
 
 // Header user:
 const userSetting = $('.user__setting')
+const userSettingItem = $$('.user__setting--item')
 const userAvatar = $('.user__avatar')
 const userChangeAvatarElm = $('#change-avt')
 
@@ -28,6 +29,7 @@ const app = {
     albumList: [],
     albumWrapElm: [],
     start: function () {
+        this.setAvatar(localStorage.getItem('avatar'))
         fetch(albumAPI)
             .then((data) => data.json())
             .then((data) => {
@@ -46,7 +48,7 @@ const app = {
                 let albumId = Number(element.getAttribute('data-id'))
                 this.renderAlbumDetail(albumId, this.albumList, player.dataList)
                 player.reloadSongElements()
-                gsap.to(window, { duration: 0, scrollTo:"#albumScroll" })
+                gsap.to(window, { duration: 0, scrollTo: "#albumScroll" })
             })
         })
 
@@ -58,7 +60,7 @@ const app = {
 
         // Listen for User Avatar Input File Change:
         userChangeAvatarElm.addEventListener('change', (e) => {
-            userAvatar.style.backgroundImage = `url(${URL.createObjectURL(e.target.files[0])})`
+            this.getBase64(e.target.files[0])
         })
 
         // Stp Propagation for User Setting Wrap:
@@ -92,6 +94,7 @@ const app = {
             elm.addEventListener('click', () => {
                 sideBarItemElm.forEach((elm) => {
                     sideBarElm.classList.remove('active')
+                    btnMbToggleSideBar.classList.remove('active')
                     elm.classList.remove('active')
                 })
                 elm.classList.toggle('active')
@@ -107,7 +110,7 @@ const app = {
             player.reloadSongElements()
             this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)
             player.reloadSongElements()
-            scrollTo(0,0)
+            scrollTo(0, 0)
         })
 
         sideBarItemElm[1].addEventListener('click', () => {
@@ -119,7 +122,7 @@ const app = {
             player.reloadSongElements()
             this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)
             player.reloadSongElements()
-            scrollTo(0,0)
+            scrollTo(0, 0)
         })
 
         sideBarItemElm[2].addEventListener('click', () => {
@@ -128,7 +131,14 @@ const app = {
             songsElm.style.display = 'none'
             this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)
             player.reloadSongElements()
-            scrollTo(0,0)
+            scrollTo(0, 0)
+        })
+
+        // Listen for User Setting Item Click Event:
+        userSettingItem.forEach((ele) => {
+            ele.addEventListener('click', () => {
+                userSetting.classList.remove('active')
+            })
         })
 
     },
@@ -136,7 +146,7 @@ const app = {
     // Render Album:
     renderAlbums: function (data) {
         let htmls = data.map((item, index) => {
-            return `<div class="album__wrap col l-3 c-6" data-id="${index}" title="${item.name}">
+            return `<div class="album__wrap col l-3 m-4 c-6" data-id="${index}" title="${item.name}">
                         <div class="album__thumb">
                             <img class="album__thumb--img" src="${item.image}">
                             <div class="control__btn--icon album__thumb--icon">
@@ -203,6 +213,23 @@ const app = {
             `
         })
         albumDetailListElm.innerHTML = htmls1.join('')
+    },
+
+    // Get Base64 And Use It:
+    getBase64: function (file) {
+        const reader = new FileReader()
+        reader.addEventListener('load', (event) => {
+            // Set Avatar:
+            userAvatar.style.backgroundImage = `url(${event.target.result})`
+            // Set localStorage avatar:
+            localStorage.setItem('avatar', `url(${event.target.result})`)
+        })
+        reader.readAsDataURL(file)
+    },
+
+    // Set Avatar Function:
+    setAvatar: function (url) {
+        userAvatar.style.backgroundImage = url
     }
 }
 app.start()
