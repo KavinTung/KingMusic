@@ -249,6 +249,10 @@
         margin-left: 12px;
     }
 
+    .user__setting {
+        animation: none;
+    }
+
     .header__user .user__avatar {
         width: 35px;
         height: 35px;
