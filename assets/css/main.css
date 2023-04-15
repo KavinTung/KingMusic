@@ -484,9 +484,22 @@ hr {
     margin: 6px 0;
 }
 
-.songs .song__wrap:hover {}
+.songs__played {
+    width: 100%;
+    display: none;
+}
 
-.song__heading {
+.song__played--list .song__wrap {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 24px;
+    margin: 6px 0;
+}
+
+.song__heading,
+.songs__played--heading {
     margin: 48px 0 24px 12px;
 }
 

@@ -299,13 +299,13 @@
         padding: 8px 12px;
     }
 
-    .songs .song__info--name {
-        margin-bottom: 0;
+    .songs__played .song__wrap {
+        width: 100%;
+        padding: 8px 12px;
     }
 
-    /* Artist CSS */
-    .artist__item--img {
-        /* width: 120px; */
+    .songs .song__info--name {
+        margin-bottom: 0;
     }
 
     /* Upload Modal */

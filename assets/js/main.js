@@ -101,6 +101,7 @@ const app = {
                     sideBarElm.classList.remove('active')
                     btnMbToggleSideBar.classList.remove('active')
                     elm.classList.remove('active')
+                    songPlayedElm.style.display = 'none'
                 })
                 elm.classList.toggle('active')
             })
@@ -111,6 +112,7 @@ const app = {
             songsElm.style.display = 'block'
             artistElm.style.display = 'block'
             albumElm.style.display = 'block'
+            player.handleShowPlayedSongs(player.playedSong)
             player.renderSongs(player.dataList, 12)
             player.reloadSongElements()
             this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)

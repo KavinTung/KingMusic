@@ -47,6 +47,8 @@ const cdArtist = $('.visualizer__cd--artist')
 const audioVisualizer = $('.visualizer__wrap')
 const lyricsElmWrap = $('.lyrics')
 const songListWrap = $('.song__list')
+const songPlayedElm = $('.songs__played')
+const songPlayedList = $('.song__played--list')
 
 
 // Volume
@@ -80,6 +82,7 @@ const player = {
     trackId: 1,
     currentTrack: 0,
     dataList: [],
+    playedSong: [],
     dataListLength: 0,
     isRepeat: false,
     isShuffle: false,
@@ -155,6 +158,7 @@ const player = {
                 this.setVolumeFunc(this.volume)
                 this.handleEvents()
                 this.handleMusicEvents()
+                this.handleShowPlayedSongs(this.playedSong)
             })
 
             .catch(() => {
@@ -583,7 +587,12 @@ const player = {
         })
 
         // When audio play:
-        this.wavesurfer.on('play', () => {
+        audio.addEventListener('play', () => {
+            // Hanlde Played Songs:
+            this.playedSong.push(Number(this.currentTrack))
+            localStorage.setItem('played', this.playedSong)
+            this.renderPlayedSongs(this.playedSong)
+            this.handleShowPlayedSongs(this.playedSong)
 
             //Smooth volume change when music play:
             this.changeVolumeSmooth(0, this.volume, this.crossFadeTime)
@@ -811,6 +820,56 @@ const player = {
             </div>`
         })
         songListWrap.innerHTML = htmls.join('')
+    },
+
+    // Render Played Songs:
+    renderPlayedSongs: function (listId) {
+        let playedSongs = []
+        let newListId = new Set(listId)
+        newListId.forEach((id) => {
+            let song = this.dataList.filter((song, index) => {
+                return index === Number(id)
+            })
+            playedSongs.push(...song)
+        })
+
+        if(playedSongs.length > 3) {
+            playedSongs = playedSongs.slice(-3)
+        }
+
+        let htmls = playedSongs.map((song, index) => {
+            return `<div class="song__wrap col l-4 m-6 c-12" data-id="${song.id}" title="${song.name}">
+            <div class="song__thumb">
+                <img src="${song.thumb}" alt="${song.name}" class="song__thumb--img">
+                <div class="playing__bars--animation" data-id="${song.id}">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <div class="playing__button--play control__btn--icon" data-id="${song.id}">
+                    <i class="bi bi-play-fill"></i>
+                </div>
+                <div class="playing__button--pause control__btn--icon" data-id="${song.id}">
+                    <i class="bi bi-pause-fill"></i>
+                </div>
+            </div>
+            <div class="song__info">
+                <p class="song__info--name">${song.name}</p>
+                <p class="song__info--artist">${song.artist}</p>
+            </div>
+            <div class="song__option">
+                <i class="bi bi-three-dots"></i>
+            </div>
+        </div>`
+        })
+        songPlayedList.innerHTML = htmls.join('')
+        this.reloadSongElements()
+    },
+
+    handleShowPlayedSongs: function (listId) {
+        if(listId.length > 0) {
+        songPlayedElm.style.display = 'block'
+        } else {
+        songPlayedElm.style.display = 'none'
+        }
     },
 
     // Reload Song Elements Function:
@@ -1260,6 +1319,12 @@ const player = {
             this.isShuffle = false
             btnMbShuffleBtn.classList.remove('active')
             btnShuffle.classList.remove('active')
+        }
+
+        // Get Played Song:
+        if (localStorage.getItem('played') != null) {
+            this.playedSong = localStorage.getItem('played').split(',')
+            this.renderPlayedSongs(this.playedSong)
         }
 
     }
