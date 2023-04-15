@@ -57,6 +57,7 @@ const volValue = $('.playing__volume--value')
 const volMbBtn = $('.volume__mobile--btn')
 const volMbProgress = $('.mobile__volume--progress')
 const volMbModal = $('.modal__mobile--volume')
+const volMbValue = $('.mobile__volume--value')
 
 // Visualizer:
 const visualizerContainer = $('.visualizer')
@@ -434,6 +435,7 @@ const player = {
         // Listen for volume mobile oninput:
         volMbProgress.addEventListener('input', (e) => {
             btnVolume.classList.remove('active')
+            volMbValue.textContent = e.target.value + '%'
             this.volume = Number(e.target.value)
             this.setVolumeFunc(this.volume)
         })
