@@ -142,6 +142,8 @@ const player = {
                 // Get data infomation:
                 this.dataList = [...dataList]
                 this.dataListLength = this.dataList.length
+                app.playerDataList = this.dataList
+                app.playerDataListLength = this.dataListLength
 
                 // Functions:
                 this.getLocalStorageVariables()
@@ -244,6 +246,9 @@ const player = {
         // Listen for playlist song click and hover event:
         songListElm.forEach((elmNode) => {
             elmNode.addEventListener('click', () => {
+
+                this.dataList = app.playerDataList
+                this.dataListLength = app.playerDataListLength
 
                 // Get trackId with data-id attribute:
                 this.trackId = elmNode.getAttribute('data-id')
@@ -718,17 +723,6 @@ const player = {
         })
 
         // When finish a song:
-        // this.wavesurfer.on('finish', () => {
-        //         if (this.isShuffle && this.isRepeat) {
-        //             this.repeatSong()
-        //         } else if (this.isShuffle) {
-        //             this.shuffleSong()
-        //         } else if (this.isRepeat) {
-        //             this.repeatSong()
-        //         } else {
-        //             this.nextSong()
-        //         }
-        // })
         audio.addEventListener('ended', () => {
             if (this.isShuffle && this.isRepeat) {
                 this.repeatSong()
@@ -825,6 +819,9 @@ const player = {
         let newSongListElm = $$('.song__wrap')
         newSongListElm.forEach((elmNode) => {
             elmNode.addEventListener('click', () => {
+
+                this.dataList = app.playerDataList
+                this.dataListLength = app.playerDataListLength
 
                 // Get trackId with data-id attribute:
                 player.trackId = elmNode.getAttribute('data-id')
@@ -1235,7 +1232,6 @@ const player = {
             crossFadeValueElm.textContent = this.crossFadeTime / 1000 + ' s'
         }
 
-
         // Get current track
         if (!localStorage.getItem('track')) {
             localStorage.setItem('track', 0)
@@ -1245,24 +1241,27 @@ const player = {
         }
 
         // Get isRepeat:
-        this.isRepeat = localStorage.getItem('repeat')
-        if (this.isRepeat === 'true') {
+        if (localStorage.getItem('repeat') === 'true') {
+            this.isRepeat = true
             btnMbRepeatBtn.classList.add('active')
             btnRepeat.classList.add('active')
-        } else if (this.isRepeat === 'false') {
+        } else {
+            this.isRepeat = false
             btnMbRepeatBtn.classList.remove('active')
             btnRepeat.classList.remove('active')
         }
 
         // Get isShuffle:
-        this.isShuffle = localStorage.getItem('shuffle')
-        if (this.isShuffle === 'true') {
+        if (localStorage.getItem('shuffle') === 'true') {
+            this.isShuffle = true
             btnMbShuffleBtn.classList.add('active')
             btnShuffle.classList.add('active')
-        } else if (this.isShuffle === 'false') {
+        } else {
+            this.isShuffle = false
             btnMbShuffleBtn.classList.remove('active')
             btnShuffle.classList.remove('active')
         }
+
     }
 
 }

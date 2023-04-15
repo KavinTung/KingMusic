@@ -8,7 +8,7 @@ const search = {
         this.handleShowSuggest()
         player.handleSearch()
         window.onload = function() {
-            search.renderSuggestElement(player.dataListLength)
+            search.renderSuggestElement(player.dataListLength - 1)
             player.reloadSongElements()
         }
     },

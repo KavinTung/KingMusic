@@ -28,6 +28,10 @@ const albumAPI = 'assets/json/album.json'
 const app = {
     albumList: [],
     albumWrapElm: [],
+    btnAlbum: '',
+    dataAlbumSongs: [],
+    playerDataList: [],
+    playerDataListLength: [],
     start: function () {
         this.setAvatar(localStorage.getItem('avatar'))
         fetch(albumAPI)
@@ -37,6 +41,7 @@ const app = {
                 this.renderAlbums(data)
                 this.albumWrapElm = $$('.album__wrap')
                 this.renderAlbumDetail(player.randomNumber(this.albumList.length), this.albumList, player.dataList)
+                this.handlePlayAlbumMusic(this.btnAlbum, this.dataAlbumSongs)
                 this.handleEvents()
             })
     },
@@ -213,6 +218,9 @@ const app = {
             `
         })
         albumDetailListElm.innerHTML = htmls1.join('')
+        this.btnAlbum = $('.album__desc--btn')
+        this.dataAlbumSongs = items
+        this.handlePlayAlbumMusic(this.btnAlbum, this.dataAlbumSongs)
     },
 
     // Get Base64 And Use It:
@@ -230,6 +238,24 @@ const app = {
     // Set Avatar Function:
     setAvatar: function (url) {
         userAvatar.style.backgroundImage = url
+    },
+
+    // Auto Play Album Songs:
+    playAlbumSongs: function (songs, index) {
+        player.currentTrack = songs[index].id - 1
+        player.loadMusicHandle(player.currentTrack)
+        player.playMusic()
+    },
+
+    // Listen for Play All Button Click Events:
+    handlePlayAlbumMusic: function (nodeElement, items) {
+        nodeElement.addEventListener('click', () => {
+            player.dataList = items
+            player.dataListLength = items.length
+            player.currentTrack = 0
+            player.loadMusicHandle(player.currentTrack)
+            player.playMusic()
+        })
     }
 }
 app.start()
