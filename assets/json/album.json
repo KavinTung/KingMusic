@@ -20,8 +20,13 @@
         "image": "assets/images/album/album4.jpg"
     },
     {
-        "name": "Tuyển Tập Lofi Hay Nhất",
-        "artist": "Various Artist",
+        "name": "Chill With Vicky Nhung",
+        "artist": "Vicky Nhung",
         "image": "assets/images/album/album5.jpg"
+    },
+    {
+        "name": "Nhạc Hoa Thịnh Hành",
+        "artist": "Various Artist",
+        "image": "assets/images/album/album6.jpg"
     }
 ]
