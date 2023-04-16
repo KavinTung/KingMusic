@@ -593,8 +593,8 @@ const player = {
             // Hanlde Played Songs:
             this.playedSong.push(Number(this.currentTrack))
             localStorage.setItem('played', this.playedSong)
-            this.renderPlayedSongs(this.playedSong)
             this.handleShowPlayedSongs(this.playedSong)
+            this.renderPlayedSongs(this.playedSong)
 
             //Smooth volume change when music play:
             this.changeVolumeSmooth(0, this.volume, this.crossFadeTime)
@@ -829,13 +829,13 @@ const player = {
         let playedSongs = []
         let newListId = new Set(listId)
         newListId.forEach((id) => {
-            let song = this.dataList.filter((song, index) => {
+            let song = this.dataList.filter((item, index) => {
                 return index === Number(id)
             })
             playedSongs.push(...song)
         })
 
-        if(playedSongs.length >= 3) {
+        if (playedSongs.length >= 3) {
             playedSongs = playedSongs.slice(-3)
         }
 
@@ -867,10 +867,10 @@ const player = {
     },
 
     handleShowPlayedSongs: function (listId) {
-        if(listId.length > 0) {
-        songPlayedElm.style.display = 'block'
+        if (listId.length > 0) {
+            songPlayedElm.style.display = 'block'
         } else {
-        songPlayedElm.style.display = 'none'
+            songPlayedElm.style.display = 'none'
         }
     },
 
