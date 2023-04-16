@@ -8,7 +8,7 @@ const search = {
         this.handleShowSuggest()
         player.handleSearch()
         window.onload = function() {
-            search.renderSuggestElement(player.dataListLength - 1)
+            search.renderSuggestElement(player.dataListLength)
             player.reloadSongElements()
         }
     },
@@ -67,7 +67,8 @@ const search = {
     // Render Suggest Element Function:
     renderSuggestElement: function (number) {
         let songId = player.randomNumber(number)
-        suggestListElm.innerHTML = `
+        if(player.dataList[songId]) {
+            suggestListElm.innerHTML = `
             <h2 class="suggest--list--heading">Đề xuất cho bạn</h2>
             <li class="song__wrap" data-id="${player.dataList[songId].id}" title="${player.dataList[songId].name}">
                 <div class="song__thumb">
@@ -92,6 +93,7 @@ const search = {
                 </div>
             </li>
             `
+        }
     }
 
 }
