@@ -835,7 +835,7 @@ const player = {
             playedSongs.push(...song)
         })
 
-        if(playedSongs.length > 3) {
+        if(playedSongs.length >= 3) {
             playedSongs = playedSongs.slice(-3)
         }
 
