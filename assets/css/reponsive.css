@@ -162,6 +162,7 @@
         backdrop-filter: blur(10px);
         left: -100% !important;
         height: 100%;
+        height: calc(100% - 150px);
         width: 70% !important;
         transition: none !important;
         padding: 24px 0;
@@ -270,9 +271,9 @@
         left: -100%;
         top: 0;
         padding-top: 70px;
-        width: 70%;
+        width: 60%;
         bottom: 0;
-        height: auto;
+        height: calc(100% - 150px);
         z-index: 51;
     }
 
