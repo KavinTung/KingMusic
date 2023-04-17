@@ -102,6 +102,8 @@ const app = {
                     btnMbToggleSideBar.classList.remove('active')
                     elm.classList.remove('active')
                     songPlayedElm.style.display = 'none'
+                    player.dataList = app.playerDataList
+                    player.dataListLength = app.playerDataListLength
                 })
                 elm.classList.toggle('active')
             })
