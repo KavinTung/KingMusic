@@ -162,7 +162,6 @@
         backdrop-filter: blur(10px);
         left: -100% !important;
         height: 100%;
-        height: calc(100% - 150px);
         width: 70% !important;
         transition: none !important;
         padding: 24px 0;
@@ -210,7 +209,7 @@
         display: block !important;
     }
     .visualizer__fullscreen--show .visualizer__cd--name {
-        font-size: 2.4rem !important;
+        font-size: 2rem !important;
     }
     .visualizer__fullscreen--show .visualizer__progress--wrap {
         display: none;
@@ -273,7 +272,7 @@
         padding-top: 70px;
         width: 60%;
         bottom: 0;
-        height: calc(100% - 150px);
+        height: auto;
         z-index: 51;
     }
 
